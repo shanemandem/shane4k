@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shane4K - Ulasan gajet, berita teknologi dan tip mencipta kandungan TikTok dalam bahasa yang mudah difahami.">
+    <title>Shane4K | Beli Gajet Dengan Lebih Yakin</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'matte-black': '#0F0F0F',     /* Navigasi Matte Black */
+                        'charcoal-hero': '#1C1C1C',   /* Hero Charcoal Slate */
+                        'silver-stone': '#F4F4F6',    /* Latar Belakang Silverish Stone */
+                        'stone-card': '#FFFFFF',      /* Kad Putih Tulen */
+                        'stone-border': '#E5E7EB',    /* Sempadan Halus Stone */
+                        'brand-red': '#FF1E27',        /* Accent Crimson Red MKBHD Style */
+                        'brand-red-hover': '#D31018',  /* Red Hover State */
+                        'dark-ink': '#111827',         /* Teks Utama (Hitam Slate) */
+                        'muted-slate': '#6B7280',     /* Teks Sekunder (Abu Stone) */
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F4F4F6; }
+        ::-webkit-scrollbar-thumb { background: #1C1C1C; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FF1E27; }
+    </style>
+</head>
+<body class="bg-silver-stone text-dark-ink font-sans antialiased selection:bg-brand-red selection:text-white">
+
+    <header class="sticky top-0 z-50 bg-matte-black/95 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#utama" class="flex items-center gap-2 group focus:outline-none focus:ring-2 focus:ring-brand-red rounded-lg p-1">
+                    <span class="text-2xl font-black tracking-wider text-white">
+                        SHANE<span class="text-brand-red">4K</span>
+                    </span>
+                    <span class="w-2 h-2 rounded-full bg-brand-red inline-block shadow-[0_0_10px_#FF1E27] animate-pulse"></span>
+                </a>
+
+                <nav class="hidden md:flex items-center gap-8" aria-label="Navigasi Utama">
+                    <a href="#utama" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Utama</a>
+                    <a href="#kandungan" onclick="filterCategory('berita')" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Berita</a>
+                    <a href="#kandungan" onclick="filterCategory('tutorial')" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Tutorial</a>
+                    <a href="#kandungan" onclick="filterCategory('tips')" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Tips</a>
+                    <a href="#kandungan" onclick="filterCategory('blog')" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Blog</a>
+                    <a href="#tentang" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Tentang</a>
+                </nav>
+
+                <div class="hidden md:flex items-center">
+                    <a href="#langgan" class="bg-brand-red hover:bg-brand-red-hover text-white font-extrabold text-sm px-6 py-2.5 rounded-full shadow-lg shadow-brand-red/20 focus:outline-none focus:ring-2 focus:ring-brand-red transition-all duration-300">
+                        Sertai Kami
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-gray-300 hover:text-white p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Buka Menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-matte-black border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#utama" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-white/10">Utama</a>
+            <a href="#kandungan" onclick="filterCategory('berita'); document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-white/10">Berita</a>
+            <a href="#kandungan" onclick="filterCategory('tutorial'); document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-white/10">Tutorial</a>
+            <a href="#kandungan" onclick="filterCategory('tips'); document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-white/10">Tips</a>
+            <a href="#kandungan" onclick="filterCategory('blog'); document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-white/10">Blog</a>
+            <a href="#tentang" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-white/10">Tentang</a>
+            <a href="#langgan" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block text-center mt-3 bg-brand-red text-white font-extrabold px-4 py-3 rounded-full shadow-md">Sertai Kami</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="utama" class="relative py-24 lg:py-32 overflow-hidden bg-charcoal-hero text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto space-y-8">
+                    
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-matte-black text-gray-300 text-xs sm:text-sm font-semibold shadow-inner">
+                        <span class="w-2 h-2 rounded-full bg-brand-red animate-ping"></span>
+                        1M+ Tontonan • 90K+ Interaksi di TikTok
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-tight">
+                        Beli Gajet <span class="text-brand-red underline decoration-brand-red/40 decoration-4 underline-offset-8">Dengan Lebih Yakin.</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-gray-300 leading-relaxed font-normal max-w-2xl mx-auto">
+                        Ulasan gajet, berita teknologi dan tip mencipta kandungan TikTok—semuanya diterangkan dalam bahasa yang mudah difahami supaya anda boleh membuat keputusan yang lebih bijak.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                        <a href="#kandungan" class="w-full sm:w-auto inline-flex items-center justify-center bg-brand-red hover:bg-brand-red-hover text-white font-extrabold text-base px-8 py-4 rounded-full shadow-lg shadow-brand-red/25 focus:outline-none focus:ring-2 focus:ring-brand-red transition-all duration-300">
+                            Terokai Kandungan
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                        <a href="#tentang" class="w-full sm:w-auto inline-flex items-center justify-center bg-matte-black text-white border border-white/10 hover:border-white/30 font-bold text-base px-8 py-4 rounded-full transition-all duration-300">
+                            Tentang Shane4K
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-red/10 rounded-full blur-[160px] pointer-events-none"></div>
+        </section>
+
+        <section class="py-20 bg-silver-stone border-b border-stone-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                    
+                    <div class="bg-stone-card border border-stone-border p-8 sm:p-10 rounded-3xl shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="inline-block bg-red-500/10 text-red-600 font-bold text-xs px-3.5 py-1 rounded-full mb-6 border border-red-500/20">
+                                Cabaran Pembeli
+                            </div>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold text-dark-ink mb-4">Terlalu Banyak Pilihan, Makin Keliru</h2>
+                            <p class="text-muted-slate text-sm sm:text-base leading-relaxed">
+                                Membandingkan gajet atau persediaan kamera kini makin rumit. Helaian spesifikasi dipenuhi istilah teknikal, manakala ulasan dalam talian kerap bertentangan. Tanpa panduan ringkas, sukar untuk memastikan sama ada sesebuah produk benar-benar berbaloi dengan wang anda.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-charcoal-hero border border-brand-red/30 p-8 sm:p-10 rounded-3xl shadow-lg flex flex-col justify-between relative overflow-hidden text-white">
+                        <div class="absolute top-0 right-0 w-40 h-40 bg-brand-red/10 rounded-full blur-3xl pointer-events-none"></div>
+                        <div>
+                            <div class="inline-block bg-brand-red/20 text-brand-red font-black text-xs px-3.5 py-1 rounded-full mb-6 border border-brand-red/40">
+                                Pendekatan Shane4K
+                            </div>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">Penerangan Jelas, Keputusan Tepat</h2>
+                            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                                Shane4K menyampaikan ulasan gajet, analisis perkembangan teknologi, dan tip penghasilan kandungan secara terus terang. Anda mendapat maklumat yang relevan, praktikal, dan mudah dipraktikkan tanpa perlu pusing kepala dengan bahasa kejuruteraan.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="kandungan" class="py-20 lg:py-28 bg-silver-stone">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                    <div>
+                        <span class="text-xs font-black tracking-widest text-brand-red uppercase">Portal Kandungan</span>
+                        <h2 class="text-3xl sm:text-5xl font-black text-dark-ink mt-2">Koleksi Artikel & Panduan</h2>
+                    </div>
+                    <p class="text-muted-slate text-sm sm:text-base max-w-md">
+                        Semua topik disusun mengikut kategori supaya anda cepat dapat maklumat yang diperlukan.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-2 mb-12 border-b border-stone-border pb-4">
+                    <button onclick="filterCategory('semua')" id="tab-semua" class="tab-btn active-tab bg-brand-red text-white border-transparent text-xs sm:text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-200">
+                        Semua Kandungan
+                    </button>
+                    <button onclick="filterCategory('berita')" id="tab-berita" class="tab-btn bg-stone-card text-dark-ink border border-stone-border hover:border-brand-red/40 text-xs sm:text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-200">
+                        📰 Berita
+                    </button>
+                    <button onclick="filterCategory('tutorial')" id="tab-tutorial" class="tab-btn bg-stone-card text-dark-ink border border-stone-border hover:border-brand-red/40 text-xs sm:text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-200">
+                        🛠️ Tutorial
+                    </button>
+                    <button onclick="filterCategory('tips')" id="tab-tips" class="tab-btn bg-stone-card text-dark-ink border border-stone-border hover:border-brand-red/40 text-xs sm:text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-200">
+                        💡 Tips
+                    </button>
+                    <button onclick="filterCategory('blog')" id="tab-blog" class="tab-btn bg-stone-card text-dark-ink border border-stone-border hover:border-brand-red/40 text-xs sm:text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-200">
+                        ✍️ Blog TikTok
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <article class="content-card tutorial bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <span class="bg-brand-red/10 text-brand-red font-bold text-xs px-3 py-1 rounded-md border border-brand-red/20">
+                                    TUTORIAL
+                                </span>
+                                <span class="text-xs font-medium text-muted-slate">3 Minit Bacaan</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-ink mb-3 group-hover:text-brand-red transition-colors">
+                                Cara Memilih Telefon Pintar Mengikut Bajet Sebenar
+                            </h3>
+                            <p class="text-muted-slate text-sm leading-relaxed mb-6">
+                                Panduan memilih spesifikasi utama yang benar-benar anda gunakan seharian tanpa membazir.
+                            </p>
+                        </div>
+                        <a href="#" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
+                            Baca Tutorial &rarr;
+                        </a>
+                    </article>
+
+                    <article class="content-card tips bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <span class="bg-brand-red/10 text-brand-red font-bold text-xs px-3 py-1 rounded-md border border-brand-red/20">
+                                    TIPS PETUA
+                                </span>
+                                <span class="text-xs font-medium text-muted-slate">5 Minit Bacaan</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-ink mb-3 group-hover:text-brand-red transition-colors">
+                                Set Kamera & Pencahayaan Ringkas Untuk Rakaman TikTok
+                            </h3>
+                            <p class="text-muted-slate text-sm leading-relaxed mb-6">
+                                Tetapan asas telefon pintar untuk menghasilkan kualiti video yang tajam dan jernih.
+                            </p>
+                        </div>
+                        <a href="#" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
+                            Baca Tips &rarr;
+                        </a>
+                    </article>
+
+                    <article class="content-card berita bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <span class="bg-brand-red/10 text-brand-red font-bold text-xs px-3 py-1 rounded-md border border-brand-red/20">
+                                    BERITA TEK
+                                </span>
+                                <span class="text-xs font-medium text-muted-slate">4 Minit Bacaan</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-ink mb-3 group-hover:text-brand-red transition-colors">
+                                Ringkasan Inovasi Pemproses Telefon Pintar Terbaharu
+                            </h3>
+                            <p class="text-muted-slate text-sm leading-relaxed mb-6">
+                                Apa maksud peningkatan prestasi cip baharu terhadap hayat bateri dan kelajuan aplikasi anda.
+                            </p>
+                        </div>
+                        <a href="#" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
+                            Baca Berita &rarr;
+                        </a>
+                    </article>
+
+                    <article class="content-card blog bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <span class="bg-brand-red/10 text-brand-red font-bold text-xs px-3 py-1 rounded-md border border-brand-red/20">
+                                    BLOG TIKTOK
+                                </span>
+                                <span class="text-xs font-medium text-muted-slate">7 Minit Bacaan</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-ink mb-3 group-hover:text-brand-red transition-colors">
+                                Teknik Suntingan Video Pantas Hanya Guna Telefon
+                            </h3>
+                            <p class="text-muted-slate text-sm leading-relaxed mb-6">
+                                Cara menyusun ritma audio dan pemotongan visual untuk mengekalkan tumpuan penonton.
+                            </p>
+                        </div>
+                        <a href="#" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
+                            Baca Blog &rarr;
+                        </a>
+                    </article>
+
+                    <article class="content-card tips bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <span class="bg-brand-red/10 text-brand-red font-bold text-xs px-3 py-1 rounded-md border border-brand-red/20">
+                                    TIPS PETUA
+                                </span>
+                                <span class="text-xs font-medium text-muted-slate">4 Minit Bacaan</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-ink mb-3 group-hover:text-brand-red transition-colors">
+                                Tetapan Sistem Operasi Untuk Kesihatan Hayat Bateri
+                            </h3>
+                            <p class="text-muted-slate text-sm leading-relaxed mb-6">
+                                Amalan cas dan tetapan latar belakang yang mengekalkan kecekapan bateri peranti anda.
+                            </p>
+                        </div>
+                        <a href="#" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
+                            Baca Tips &rarr;
+                        </a>
+                    </article>
+
+                    <article class="content-card berita bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <span class="bg-brand-red/10 text-brand-red font-bold text-xs px-3 py-1 rounded-md border border-brand-red/20">
+                                    BERITA TEK
+                                </span>
+                                <span class="text-xs font-medium text-muted-slate">6 Minit Bacaan</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark-ink mb-3 group-hover:text-brand-red transition-colors">
+                                Perkembangan Ciri AI Dalam Peranti Pengguna Harian
+                            </h3>
+                            <p class="text-muted-slate text-sm leading-relaxed mb-6">
+                                Analisis fungsi kecerdasan buatan yang benar-benar membantu produktiviti seharian.
+                            </p>
+                        </div>
+                        <a href="#" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
+                            Baca Berita &rarr;
+                        </a>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="tentang" class="py-20 bg-silver-stone border-t border-stone-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-stone-card border border-stone-border rounded-3xl p-8 sm:p-12 shadow-sm relative overflow-hidden">
+                    <div class="max-w-3xl">
+                        <span class="text-xs font-black tracking-widest text-brand-red uppercase">Mengenai Platform</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-dark-ink mt-2 mb-6">Siapa Di Sebalik Shane4K?</h2>
+                        
+                        <p class="text-muted-slate text-base leading-relaxed mb-6">
+                            Saya Shane — pencipta kandungan teknologi di Malaysia. Shane4K dibina untuk membantu pengguna awam dan pencipta kandungan memahami dunia gajet, berita teknologi, serta strategi TikTok dengan bahasa yang santai dan mudah difahami.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-stone-border">
+                            <div>
+                                <h4 class="text-dark-ink font-bold text-lg">100% Bahasa Melayu</h4>
+                                <p class="text-muted-slate text-xs mt-1">Gaya penyampaian mesra tempatan.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-dark-ink font-bold text-lg">Pencipta Kandungan</h4>
+                                <p class="text-muted-slate text-xs mt-1">Fokus tips rakaman & gajet TikTok.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-dark-ink font-bold text-lg">Keputusan Bijak</h4>
+                                <p class="text-muted-slate text-xs mt-1">Panduan praktikal mengikut bajet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="langgan" class="py-20 bg-silver-stone">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="bg-charcoal-hero border border-white/10 rounded-3xl p-8 sm:p-14 relative overflow-hidden shadow-2xl text-white">
+                    <span class="inline-block bg-brand-red/20 text-brand-red text-xs font-extrabold px-3.5 py-1 rounded-full mb-4 border border-brand-red/40 uppercase tracking-widest">
+                        Sertai Komuniti Shane4K
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-black text-white mb-4">Dapatkan Ringkasan Terus Ke Emel</h2>
+                    <p class="text-gray-300 max-w-xl mx-auto text-sm sm:text-base mb-8">
+                        Terima ulasan gajet, ringkasan berita teknologi, dan tip TikTok terkini seminggu sekali. Percuma dan terus ke peti masuk anda.
+                    </p>
+
+                    <form onsubmit="event.preventDefault(); alert('Terima kasih kerana menyertai komuniti Shane4K!');" class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
+                        <input type="email" required placeholder="Masukkan alamat emel anda..." class="w-full bg-matte-black border border-white/20 text-white text-sm px-5 py-3.5 rounded-full focus:outline-none focus:border-brand-red transition-colors placeholder-gray-400">
+                        <button type="submit" class="w-full sm:w-auto bg-brand-red hover:bg-brand-red-hover text-white font-extrabold text-sm px-7 py-3.5 rounded-full shadow-lg shadow-brand-red/30 transition-all shrink-0">
+                            Langgan Sekarang
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-matte-black border-t border-white/10 py-12 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <span class="text-xl font-black text-white tracking-wider">SHANE<span class="text-brand-red">4K</span></span>
+                <span class="text-xs text-gray-400">© Shane4K. Hak Cipta Terpelihara.</span>
+            </div>
+
+            <div class="flex items-center gap-6 text-xs text-gray-400">
+                <a href="#utama" class="hover:text-white transition-colors">Utama</a>
+                <a href="#kandungan" class="hover:text-white transition-colors">Portal</a>
+                <a href="#tentang" class="hover:text-white transition-colors">Tentang</a>
+                <a href="#langgan" class="hover:text-white transition-colors">Langgan</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function filterCategory(category) {
+            const cards = document.querySelectorAll('.content-card');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-red', 'text-white', 'border-transparent');
+                btn.classList.add('bg-stone-card', 'text-dark-ink', 'border', 'border-stone-border');
+            });
+
+            const activeTab = document.getElementById(`tab-${category}`);
+            if (activeTab) {
+                activeTab.classList.remove('bg-stone-card', 'text-dark-ink', 'border', 'border-stone-border');
+                activeTab.classList.add('bg-brand-red', 'text-white', 'border-transparent');
+            }
+
+            cards.forEach(card => {
+                if (category === 'semua' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
