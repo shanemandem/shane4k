@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shane4K - Video Blog & Panduan Tutorial Lengkap Merakam, Menyunting, Merender & Memuat Naik Video Kualiti Maksimum.">
-    <title>Shane4K | Video Blog & Tutorial Pembentukan Kandungan</title>
+    <meta name="description" content="Shane4K - Video Blog 4K 60FPS & Panduan Tutorial Lengkap Merakam, Menyunting, Merender & Memuat Naik Video Kualiti Maksimum.">
+    <title>Shane4K | Video Blog 4K 60FPS & Tutorial Video</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,17 +16,18 @@
             theme: {
                 extend: {
                     colors: {
-                        'matte-black': '#0F0F0F',     /* 1. Navigasi Matte Black */
-                        'charcoal-hero': '#1C1C1C',   /* 2. Hero Charcoal Slate */
-                        'silver-stone': '#F4F4F6',    /* 3. Latar Belakang Silverish Stone */
+                        'matte-black': '#0F0F0F',     /* Navigasi Matte Black */
+                        'charcoal-hero': '#1C1C1C',   /* Hero Charcoal Slate */
+                        'silver-stone': '#F4F4F6',    /* Latar Belakang Silverish Stone */
                         'stone-card': '#FFFFFF',      /* Kad Putih Tulen */
                         'stone-border': '#E5E7EB',    /* Sempadan Halus Stone */
                         'brand-red': '#FF1E27',        /* Accent Crimson Red MKBHD Style */
                         'brand-red-hover': '#D31018',  /* Red Hover State */
+                        'electric-cyan': '#00F0FF',   /* POP COLOR FOR 4K/60FPS SPEC BADGES */
                         'whatsapp-green': '#25D366',  /* Warna Rasmi WhatsApp */
                         'whatsapp-hover': '#1EBE57',
-                        'dark-ink': '#111827',         /* Teks Utama (Hitam Slate) */
-                        'muted-slate': '#6B7280',     /* Teks Sekunder (Abu Stone) */
+                        'dark-ink': '#111827',         /* Teks Utama */
+                        'muted-slate': '#6B7280',     /* Teks Sekunder */
                     },
                     fontFamily: {
                         sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
@@ -41,6 +42,11 @@
         ::-webkit-scrollbar-track { background: #F4F4F6; }
         ::-webkit-scrollbar-thumb { background: #1C1C1C; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #FF1E27; }
+
+        /* Smooth Carousel Transitions */
+        .slide-page {
+            transition: opacity 0.4s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-silver-stone text-dark-ink font-sans antialiased selection:bg-brand-red selection:text-white">
@@ -95,7 +101,7 @@
                     
                     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-matte-black text-gray-300 text-xs sm:text-sm font-semibold shadow-inner">
                         <span class="w-2 h-2 rounded-full bg-brand-red animate-ping"></span>
-                        Terbukti Secara Data • Panduan Kualiti Maksimum
+                        Terbukti Secara Data • Standard 4K 60FPS
                     </div>
 
                     <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-tight">
@@ -147,9 +153,9 @@
                     </div>
 
                     <div class="bg-charcoal-hero border border-white/10 p-6 sm:p-8 rounded-3xl text-center hover:border-brand-red/50 transition-colors">
-                        <div class="text-3xl sm:text-5xl font-black text-brand-red mb-1">4K/60</div>
+                        <div class="text-3xl sm:text-5xl font-black text-electric-cyan mb-1">4K/60</div>
                         <div class="text-white font-bold text-sm sm:text-base">Standard Visual</div>
-                        <p class="text-gray-400 text-xs mt-1 hidden sm:block">Penanda aras ketajaman tanpa kompromi.</p>
+                        <p class="text-gray-400 text-xs mt-1 hidden sm:block">H.265 Codec • Format MOV High-Bitrate.</p>
                     </div>
 
                     <div class="bg-charcoal-hero border border-white/10 p-6 sm:p-8 rounded-3xl text-center hover:border-brand-red/50 transition-colors">
@@ -166,97 +172,235 @@
         <section id="blog" class="py-20 lg:py-28 bg-silver-stone border-b border-stone-border">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
                     <div>
-                        <span class="text-xs font-black tracking-widest text-brand-red uppercase">Video Blog</span>
-                        <h2 class="text-3xl sm:text-5xl font-black text-dark-ink mt-2">Ringkasan Teks Kandungan Video</h2>
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-matte-black border border-electric-cyan/40 text-electric-cyan text-xs font-extrabold uppercase tracking-widest mb-3 shadow-md">
+                            <span class="w-2 h-2 rounded-full bg-electric-cyan animate-pulse"></span>
+                            ⚡ Standard Rakaman: 4K UHD • 60 FPS • H.265 CODEC • .MOV
+                        </div>
+                        <h2 class="text-3xl sm:text-5xl font-black text-dark-ink">Koleksi Video Blog</h2>
                     </div>
-                    <p class="text-muted-slate text-sm sm:text-base max-w-md">
-                        Pilihan versi teks ringkas berserta rakaman video bagi setiap ulasan dan tutorial pendek.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <article class="bg-stone-card border border-stone-border rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
-                        <div class="relative bg-charcoal-hero aspect-video overflow-hidden flex items-center justify-center">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
-                            <span class="absolute top-3 left-3 z-20 bg-brand-red text-white text-[10px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider">
-                                VIDEO PENDEK
-                            </span>
-                            <div class="w-12 h-12 rounded-full bg-brand-red/90 text-white flex items-center justify-center z-20 shadow-lg group-hover:scale-110 transition-transform">
-                                <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                            <div class="absolute bottom-3 left-3 z-20 text-xs font-semibold text-white/90">Durasi: 01:45</div>
-                        </div>
-                        <div class="p-6 flex flex-col justify-between flex-grow">
-                            <div>
-                                <h3 class="text-xl font-bold text-dark-ink mb-3 group-hover:text-brand-red transition-colors line-clamp-2">
-                                    Kenapa Video TikTok Anda Nampak Pecah Selepas Upload?
-                                </h3>
-                                <p class="text-muted-slate text-sm leading-relaxed mb-6 line-clamp-3">
-                                    Punca utama aplikasi mengurangkan kualiti video secara automatik dan tetapan tersembunyi yang perlu dihidupkan sebelum memuat naik.
-                                </p>
-                            </div>
-                            <a href="#" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
-                                Tonton Video & Baca Ringkasan &rarr;
-                            </a>
-                        </div>
-                    </article>
+                    <div class="flex items-center gap-3">
+                        <button onclick="prevSlide()" class="w-12 h-12 rounded-full bg-stone-card border border-stone-border hover:border-brand-red text-dark-ink hover:text-brand-red flex items-center justify-center font-bold text-lg shadow-sm transition-all active:scale-95">
+                            &#8592;
+                        </button>
+                        <button onclick="nextSlide()" class="w-12 h-12 rounded-full bg-stone-card border border-stone-border hover:border-brand-red text-dark-ink hover:text-brand-red flex items-center justify-center font-bold text-lg shadow-sm transition-all active:scale-95">
+                            &#8594;
+                        </button>
+                    </div>
+                </div>
 
-                    <article class="bg-stone-card border border-stone-border rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
-                        <div class="relative bg-charcoal-hero aspect-video overflow-hidden flex items-center justify-center">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
-                            <span class="absolute top-3 left-3 z-20 bg-brand-red text-white text-[10px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider">
-                                ULASAN GAJET
-                            </span>
-                            <div class="w-12 h-12 rounded-full bg-brand-red/90 text-white flex items-center justify-center z-20 shadow-lg group-hover:scale-110 transition-transform">
-                                <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                            <div class="absolute bottom-3 left-3 z-20 text-xs font-semibold text-white/90">Durasi: 08:20</div>
-                        </div>
-                        <div class="p-6 flex flex-col justify-between flex-grow">
+                <div id="slider-container" class="relative overflow-hidden min-h-[700px]">
+                    
+                    <div class="slide-page grid grid-cols-1 md:grid-cols-3 gap-6 transition-all duration-500">
+                        
+                        <div class="bg-stone-card border border-stone-border rounded-3xl p-5 shadow-sm flex flex-col justify-between">
                             <div>
-                                <h3 class="text-xl font-bold text-dark-ink mb-3 group-hover:text-brand-red transition-colors line-clamp-2">
-                                    Kamera Telefon RM1,500 vs RM4,000 Untuk Creator
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="bg-matte-black text-electric-cyan text-[10px] font-black px-2.5 py-1 rounded-md uppercase border border-electric-cyan/30">
+                                        4K 60FPS • H.265
+                                    </span>
+                                    <span class="text-xs font-bold text-brand-red bg-brand-red/10 px-2.5 py-1 rounded-md">
+                                        🔥 45.2K Views
+                                    </span>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-dark-ink mb-3 line-clamp-2">
+                                    Pendedahan Coaching TikTok: Elak Ditipu Kelas Berbayar
                                 </h3>
-                                <p class="text-muted-slate text-sm leading-relaxed mb-6 line-clamp-3">
-                                    Perbandingan pencahayaan, penstabilan imej (OIS), dan ketajaman mikrofon secara nyata dalam studio tanpa penyuntingan berlebihan.
-                                </p>
+                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[500px]">
+                                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shanemandem/video/7668236188389625104" data-video-id="7668236188389625104" style="max-width: 100%; min-width: 280px;"> 
+                                        <section><a target="_blank" href="https://www.tiktok.com/@shanemandem?refer=embed">@shanemandem</a></section> 
+                                    </blockquote>
+                                </div>
                             </div>
-                            <a href="#" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
-                                Tonton Video & Baca Ringkasan &rarr;
-                            </a>
                         </div>
-                    </article>
 
-                    <article class="bg-stone-card border border-stone-border rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
-                        <div class="relative bg-charcoal-hero aspect-video overflow-hidden flex items-center justify-center">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
-                            <span class="absolute top-3 left-3 z-20 bg-brand-red text-white text-[10px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider">
-                                TUTORIAL CEPAT
-                            </span>
-                            <div class="w-12 h-12 rounded-full bg-brand-red/90 text-white flex items-center justify-center z-20 shadow-lg group-hover:scale-110 transition-transform">
-                                <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </div>
-                            <div class="absolute bottom-3 left-3 z-20 text-xs font-semibold text-white/90">Durasi: 03:15</div>
-                        </div>
-                        <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div class="bg-stone-card border border-stone-border rounded-3xl p-5 shadow-sm flex flex-col justify-between">
                             <div>
-                                <h3 class="text-xl font-bold text-dark-ink mb-3 group-hover:text-brand-red transition-colors line-clamp-2">
-                                    Cara Set Lighting RM50 Nampak Macam Studio Profesional
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="bg-matte-black text-electric-cyan text-[10px] font-black px-2.5 py-1 rounded-md uppercase border border-electric-cyan/30">
+                                        4K 60FPS • H.265
+                                    </span>
+                                    <span class="text-xs font-bold text-brand-red bg-brand-red/10 px-2.5 py-1 rounded-md">
+                                        🔥 82.1K Views
+                                    </span>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-dark-ink mb-3 line-clamp-2">
+                                    Top 3 Smartphone Flagship Terbaik Tahun 2026
                                 </h3>
-                                <p class="text-muted-slate text-sm leading-relaxed mb-6 line-clamp-3">
-                                    Teknik pencahayaan 3-titik guna lampu meja biasa untuk memberikan pemisahan latar belakang yang tajam dan berkualiti tinggi.
+                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[500px]">
+                                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shanemandem/video/7668128257451035921" data-video-id="7668128257451035921" style="max-width: 100%; min-width: 280px;"> 
+                                        <section><a target="_blank" href="https://www.tiktok.com/@shanemandem?refer=embed">@shanemandem</a></section> 
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-stone-card border border-stone-border rounded-3xl p-5 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="bg-matte-black text-electric-cyan text-[10px] font-black px-2.5 py-1 rounded-md uppercase border border-electric-cyan/30">
+                                        4K 60FPS • H.265
+                                    </span>
+                                    <span class="text-xs font-bold text-brand-red bg-brand-red/10 px-2.5 py-1 rounded-md">
+                                        🔥 38.9K Views
+                                    </span>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-dark-ink mb-3 line-clamp-2">
+                                    Xiaomi 18 Pro Series Global Version Akhirnya Tiba!
+                                </h3>
+                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[500px]">
+                                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shanemandem/video/7667810680724098305" data-video-id="7667810680724098305" style="max-width: 100%; min-width: 280px;"> 
+                                        <section><a target="_blank" href="https://www.tiktok.com/@shanemandem?refer=embed">@shanemandem</a></section> 
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="slide-page hidden grid-cols-1 md:grid-cols-3 gap-6 transition-all duration-500">
+                        
+                        <div class="bg-stone-card border border-stone-border rounded-3xl p-5 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="bg-matte-black text-electric-cyan text-[10px] font-black px-2.5 py-1 rounded-md uppercase border border-electric-cyan/30">
+                                        4K 60FPS • H.265
+                                    </span>
+                                    <span class="text-xs font-bold text-brand-red bg-brand-red/10 px-2.5 py-1 rounded-md">
+                                        🔥 64.5K Views
+                                    </span>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-dark-ink mb-3 line-clamp-2">
+                                    Telefon Kamera Fotografi Paling Lawa 2026
+                                </h3>
+                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[500px]">
+                                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shanemandem/video/7667547496620608769" data-video-id="7667547496620608769" style="max-width: 100%; min-width: 280px;"> 
+                                        <section><a target="_blank" href="https://www.tiktok.com/@shanemandem?refer=embed">@shanemandem</a></section> 
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-stone-card border border-stone-border rounded-3xl p-5 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="bg-matte-black text-electric-cyan text-[10px] font-black px-2.5 py-1 rounded-md uppercase border border-electric-cyan/30">
+                                        4K 60FPS • H.265
+                                    </span>
+                                    <span class="text-xs font-bold text-brand-red bg-brand-red/10 px-2.5 py-1 rounded-md">
+                                        🔥 112.0K Views
+                                    </span>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-dark-ink mb-3 line-clamp-2">
+                                    Ulasan Kamera OPPO Find X9 Hasselblad
+                                </h3>
+                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[500px]">
+                                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shanemandem/video/7667401534472211713" data-video-id="7667401534472211713" style="max-width: 100%; min-width: 280px;"> 
+                                        <section><a target="_blank" href="https://www.tiktok.com/@shanemandem?refer=embed">@shanemandem</a></section> 
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-stone-card border border-stone-border rounded-3xl p-5 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="bg-matte-black text-electric-cyan text-[10px] font-black px-2.5 py-1 rounded-md uppercase border border-electric-cyan/30">
+                                        4K 60FPS • H.265
+                                    </span>
+                                    <span class="text-xs font-bold text-brand-red bg-brand-red/10 px-2.5 py-1 rounded-md">
+                                        🔥 29.4K Views
+                                    </span>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-dark-ink mb-3 line-clamp-2">
+                                    Misi 10K Followers TikTok Shane4K
+                                </h3>
+                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[500px]">
+                                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shanemandem/video/7667238689151421697" data-video-id="7667238689151421697" style="max-width: 100%; min-width: 280px;"> 
+                                        <section><a target="_blank" href="https://www.tiktok.com/@shanemandem?refer=embed">@shanemandem</a></section> 
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="slide-page hidden grid-cols-1 md:grid-cols-3 gap-6 transition-all duration-500">
+                        
+                        <div class="bg-stone-card border border-stone-border rounded-3xl p-5 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="bg-matte-black text-electric-cyan text-[10px] font-black px-2.5 py-1 rounded-md uppercase border border-electric-cyan/30">
+                                        4K 60FPS • H.265
+                                    </span>
+                                    <span class="text-xs font-bold text-brand-red bg-brand-red/10 px-2.5 py-1 rounded-md">
+                                        🔥 53.1K Views
+                                    </span>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-dark-ink mb-3 line-clamp-2">
+                                    Tutorial Editing Video Cinematic TikTok
+                                </h3>
+                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[500px]">
+                                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shanemandem/video/7666356817265577233" data-video-id="7666356817265577233" style="max-width: 100%; min-width: 280px;"> 
+                                        <section><a target="_blank" href="https://www.tiktok.com/@shanemandem?refer=embed">@shanemandem</a></section> 
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-stone-card border border-stone-border rounded-3xl p-5 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="bg-matte-black text-electric-cyan text-[10px] font-black px-2.5 py-1 rounded-md uppercase border border-electric-cyan/30">
+                                        4K 60FPS • H.265
+                                    </span>
+                                    <span class="text-xs font-bold text-brand-red bg-brand-red/10 px-2.5 py-1 rounded-md">
+                                        🔥 97.4K Views
+                                    </span>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-dark-ink mb-3 line-clamp-2">
+                                    3 Tips Wajib Tahu Sebelum Beli Smartphone 2026
+                                </h3>
+                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[500px]">
+                                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shanemandem/video/7664130569084718356" data-video-id="7664130569084718356" style="max-width: 100%; min-width: 280px;"> 
+                                        <section><a target="_blank" href="https://www.tiktok.com/@shanemandem?refer=embed">@shanemandem</a></section> 
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-charcoal-hero border border-brand-red/40 rounded-3xl p-8 shadow-xl text-white flex flex-col justify-between relative overflow-hidden group">
+                            <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-brand-red/20 rounded-full blur-3xl pointer-events-none"></div>
+                            
+                            <div>
+                                <span class="bg-brand-red text-white text-[10px] font-black px-3 py-1 rounded-md uppercase tracking-wider inline-block mb-6">
+                                    📱 RANGKAIAN RASMI
+                                </span>
+                                <h3 class="text-2xl font-black text-white mb-4 leading-tight">
+                                    Tonton 50+ Lagi Video 4K Di TikTok @shanemandem
+                                </h3>
+                                <p class="text-gray-300 text-sm leading-relaxed mb-8">
+                                    Dapatkan ulasan gajet secara terus, tip visual harian, dan petua teknologi terbaharu yang dimuat naik setiap minggu secara percuma.
                                 </p>
                             </div>
-                            <a href="#" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
-                                Tonton Video & Baca Ringkasan &rarr;
+
+                            <a href="https://www.tiktok.com/@shanemandem" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center bg-brand-red hover:bg-brand-red-hover text-white font-extrabold text-sm px-6 py-4 rounded-full shadow-lg shadow-brand-red/30 transition-all group-hover:scale-105">
+                                Ikuti @shanemandem Di TikTok &rarr;
                             </a>
                         </div>
-                    </article>
+
+                    </div>
 
                 </div>
+
+                <div class="flex items-center justify-center gap-2 mt-8">
+                    <button onclick="goToSlide(0)" class="dot-indicator w-8 h-2.5 rounded-full bg-brand-red transition-all"></button>
+                    <button onclick="goToSlide(1)" class="dot-indicator w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-brand-red transition-all"></button>
+                    <button onclick="goToSlide(2)" class="dot-indicator w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-brand-red transition-all"></button>
+                </div>
+
             </div>
         </section>
 
@@ -373,13 +517,13 @@
                             </div>
                             <span class="text-xs font-black tracking-widest text-whatsapp-green uppercase">Respon Pantas</span>
                             <h3 class="text-2xl font-black text-dark-ink mt-1 mb-3">
-                                DM WhatsApp
+                                Sembang Di WhatsApp
                             </h3>
                             <p class="text-muted-slate text-sm leading-relaxed mb-8">
                                 Mahu bertanya terus soalan berkaitan gajet, perkhidmatan tutorial, atau sebarang kolaborasi perniagaan? Mesej terus menerusi WhatsApp.
                             </p>
                         </div>
-                        <a href="https://wa.me/+601133644215?text=Hai%20Shane4K,%20saya%20berminat%20untuk%20bertanya..." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center bg-whatsapp-green hover:bg-whatsapp-hover text-white font-extrabold text-sm px-6 py-4 rounded-full shadow-md transition-all">
+                        <a href="https://wa.me/60123456789?text=Hai%20Shane4K,%20saya%20berminat%20untuk%20bertanya..." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center bg-whatsapp-green hover:bg-whatsapp-hover text-white font-extrabold text-sm px-6 py-4 rounded-full shadow-md transition-all">
                             Mula Mesej WhatsApp
                             <svg class="w-4 h-4 ml-2 fill-current" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
@@ -397,35 +541,46 @@
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 
-                                <a href="https://tiktok.com/@shanemandem" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl bg-silver-stone hover:bg-charcoal-hero hover:text-white border border-stone-border transition-all group">
+                                <a href="https://www.tiktok.com/@shanemandem" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl bg-silver-stone hover:bg-charcoal-hero hover:text-white border border-stone-border transition-all group">
                                     <div class="w-10 h-10 rounded-xl bg-matte-black text-white flex items-center justify-center font-bold text-sm shrink-0">
                                         TT
                                     </div>
                                     <div>
                                         <div class="font-bold text-sm">TikTok Rasmi</div>
-                                        <div class="text-xs text-muted-slate group-hover:text-gray-300">@shane4k • 3k Followers</div>
+                                        <div class="text-xs text-muted-slate group-hover:text-gray-300">@shanemandem • 1M+ Views</div>
                                     </div>
                                 </a>
 
-                                <a href="https://youtube.com/@shaneman4k" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl bg-silver-stone hover:bg-charcoal-hero hover:text-white border border-stone-border transition-all group">
+                                <a href="https://youtube.com/@shanemandem" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl bg-silver-stone hover:bg-charcoal-hero hover:text-white border border-stone-border transition-all group">
                                     <div class="w-10 h-10 rounded-xl bg-brand-red text-white flex items-center justify-center font-bold text-sm shrink-0">
                                         YT
                                     </div>
                                     <div>
                                         <div class="font-bold text-sm">YouTube Channel</div>
-                                        <div class="text-xs text-muted-slate group-hover:text-gray-300">Tech Video</div>
+                                        <div class="text-xs text-muted-slate group-hover:text-gray-300">Shane4K Tech & Video</div>
                                     </div>
                                 </a>
 
-                                <a href="https://instagram.com/shaneman4k" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl bg-silver-stone hover:bg-charcoal-hero hover:text-white border border-stone-border transition-all group">
+                                <a href="https://instagram.com/shanemandem" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl bg-silver-stone hover:bg-charcoal-hero hover:text-white border border-stone-border transition-all group">
                                     <div class="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center font-bold text-sm shrink-0">
                                         IG
                                     </div>
                                     <div>
                                         <div class="font-bold text-sm">Instagram</div>
-                                        <div class="text-xs text-muted-slate group-hover:text-gray-300">@shane4k • News</div>
+                                        <div class="text-xs text-muted-slate group-hover:text-gray-300">@shanemandem • Visual Behind The Scene</div>
                                     </div>
                                 </a>
+
+                                <a href="https://x.com/shanemandem" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl bg-silver-stone hover:bg-charcoal-hero hover:text-white border border-stone-border transition-all group">
+                                    <div class="w-10 h-10 rounded-xl bg-matte-black text-white flex items-center justify-center font-bold text-sm shrink-0">
+                                        X
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-sm">X (Twitter)</div>
+                                        <div class="text-xs text-muted-slate group-hover:text-gray-300">@shanemandem • Ringkasan Tek Pantas</div>
+                                    </div>
+                                </a>
+
                             </div>
                         </div>
 
@@ -479,5 +634,47 @@
         </div>
     </footer>
 
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 3;
+
+        function goToSlide(index) {
+            currentSlide = index;
+            const slides = document.querySelectorAll('.slide-page');
+            const dots = document.querySelectorAll('.dot-indicator');
+
+            slides.forEach((slide, idx) => {
+                if (idx === currentSlide) {
+                    slide.classList.remove('hidden');
+                    slide.classList.add('grid');
+                } else {
+                    slide.classList.add('hidden');
+                    slide.classList.remove('grid');
+                }
+            });
+
+            dots.forEach((dot, idx) => {
+                if (idx === currentSlide) {
+                    dot.classList.add('bg-brand-red', 'w-8');
+                    dot.classList.remove('bg-gray-300', 'w-2.5');
+                } else {
+                    dot.classList.remove('bg-brand-red', 'w-8');
+                    dot.classList.add('bg-gray-300', 'w-2.5');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            goToSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            goToSlide(currentSlide);
+        }
+    </script>
+
+    <script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
