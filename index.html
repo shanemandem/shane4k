@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Video anda dah cantik. Jangan biar TikTok rosakkan bila muat naik. Shane kongsi cara dia buat, langkah demi langkah, dalam bahasa yang senang faham.">
-    <title>Shane4K | Cara Muat Naik Video 4K 60FPS di TikTok</title>
+    <title>Shane4K | Cara Muat Naik Video 4K 60FPS Tanpa Rosak Kualiti</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,11 +105,11 @@
                     </div>
 
                     <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-tight">
-                        Video Cantik, Tapi Hodoh <span class="text-brand-red underline decoration-brand-red/40 decoration-4 underline-offset-8">Bila Upload Di TikTok?</span>
+                        Video Anda Cantik. Kenapa Ia Jadi Hodoh <span class="text-brand-red underline decoration-brand-red/40 decoration-4 underline-offset-8">Bila Sampai Di TikTok?</span>
                     </h1>
 
                     <p class="text-lg sm:text-xl text-gray-300 leading-relaxed font-normal max-w-2xl mx-auto">
-                        Ni bukan salah smartphone korang, tapi TikTok yang compressed kan video korang. Jadi saya nak kongsikan cara saya upload di TikTok, tanpa merosakkan kualiti video.
+                        Bukan telefon anda yang rosakkan kualiti tu — TikTok yang mampatkan video anda semasa muat naik. Saya kongsikan cara saya elakkan benda ni, untuk setiap video yang saya muat naik.
                     </p>
 
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -134,8 +134,8 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="text-center max-w-2xl mx-auto mb-10">
-                    <span class="text-xs font-black tracking-widest text-brand-red uppercase">Aku tak Kosong</span>
-                    <h2 class="text-2xl sm:text-3xl font-black text-white mt-1">Ni Adalah Hasil, Dari Video Saya Sendiri</h2>
+                    <span class="text-xs font-black tracking-widest text-brand-red uppercase">Bukan Cakap Kosong</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-white mt-1">Semua Nombor Ni, Dari Video Saya Sendiri</h2>
                 </div>
 
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -432,9 +432,9 @@
                                 ISO, FPS, shutter speed — semua penting, tapi tak payah pening kepala pun. Saya kongsi setting yang saya sendiri pakai, dan kenapa saya pilih macam tu.
                             </p>
                         </div>
-                        <a href="#" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
+                        <button onclick="openModal('modal-fasa1')" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform focus:outline-none">
                             Cerita Penuh &rarr;
-                        </a>
+                        </button>
                     </div>
 
                     <div class="bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
@@ -450,9 +450,9 @@
                                 Potong bahagian yang membosankan. Betulkan warna. Pastikan audio jelas. Konsepnya simple — orang je yang selalu buat rumit.
                             </p>
                         </div>
-                        <a href="#" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
+                        <button onclick="openModal('modal-fasa2')" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform focus:outline-none">
                             Cerita Penuh &rarr;
-                        </a>
+                        </button>
                     </div>
 
                     <div class="bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
@@ -468,9 +468,9 @@
                                 Sini lah tempat paling ramai orang rosakkan kualiti video depa — sebelum sempat muat naik pun lagi. Saya tunjuk setting export yang betul.
                             </p>
                         </div>
-                        <a href="#" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
+                        <button onclick="openModal('modal-fasa3')" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform focus:outline-none">
                             Cerita Penuh &rarr;
-                        </a>
+                        </button>
                     </div>
 
                     <div class="bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
@@ -486,9 +486,9 @@
                                 TikTok akan mampatkan video anda — itu memang berlaku pada semua orang, tak boleh dielakkan sepenuhnya. Tapi ada cara nak kurangkan kerosakan tu. Ini bahagian yang paling ramai orang tanya saya.
                             </p>
                         </div>
-                        <a href="#" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
+                        <button onclick="openModal('modal-fasa4')" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform focus:outline-none">
                             Cerita Penuh &rarr;
-                        </a>
+                        </button>
                     </div>
 
                 </div>
@@ -634,7 +634,197 @@
         </div>
     </footer>
 
+    <div id="modal-fasa1" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300" onclick="closeModalOnBackdrop(event, 'modal-fasa1')">
+        <div class="modal-content bg-charcoal-hero text-white border border-white/10 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl transform scale-95 transition-transform duration-300">
+            <button onclick="closeModal('modal-fasa1')" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-matte-black border border-white/20 text-gray-400 hover:text-white hover:border-brand-red flex items-center justify-center font-bold text-lg transition-colors">
+                ✕
+            </button>
+
+            <div class="mb-6">
+                <span class="bg-brand-red/10 text-brand-red border border-brand-red/30 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                    FASA 01 • RAKAM
+                </span>
+                <h3 class="text-2xl sm:text-3xl font-black text-white mt-3">Panduan Fasa 1: Rakam</h3>
+            </div>
+
+            <div class="space-y-6 text-gray-300 text-sm sm:text-base leading-relaxed">
+                <p>
+                    Rakaman yang cantik bermula sebelum anda tekan butang Record. Kamera mahal tak semestinya hasilkan video terbaik kalau setting tak betul. Saya sentiasa utamakan hasil visual yang nampak natural, tajam, dan konsisten.
+                </p>
+
+                <div class="bg-matte-black border border-white/10 rounded-2xl p-5 space-y-2">
+                    <div class="text-xs font-black text-electric-cyan uppercase tracking-wider mb-2">⚡ Setting Yang Saya Gunakan</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-gray-200">
+                        <div>• Resolusi: <span class="text-white font-bold">4K (3840 x 2160)</span></div>
+                        <div>• Frame Rate: <span class="text-white font-bold">60fps</span></div>
+                        <div>• Codec: <span class="text-white font-bold">HEVC / H.265</span></div>
+                        <div>• HDR: <span class="text-white font-bold">Ikut Situasi Lighting</span></div>
+                        <div class="sm:col-span-2">• Stabilization: <span class="text-white font-bold">On (Bila Handheld)</span></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-base mb-3">Checklist Sebelum Tekan Record:</h4>
+                    <ul class="space-y-2 text-sm text-gray-300 list-disc list-inside">
+                        <li>Bersihkan lensa kamera telefon dengan kain microfiber.</li>
+                        <li>Guna pencahayaan semula jadi atau softbox bila boleh.</li>
+                        <li>Kunci exposure (*AE/AF Lock*) supaya brightness tak berubah.</li>
+                        <li>Jangan zoom digital kalau tak perlu (elak noise pecah).</li>
+                        <li>Gerakkan kamera perlahan-lahan. *Slow is smooth*.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-brand-red/10 border border-brand-red/30 rounded-2xl p-4 text-xs text-gray-300">
+                    <span class="font-bold text-brand-red">Rumusan Shane4K:</span> Kunci utama fasa rakaman ialah kawalan fokus dan pencahayaan yang stabil sebelum video dipindahkan ke dalam perisian penyuntingan.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-fasa2" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300" onclick="closeModalOnBackdrop(event, 'modal-fasa2')">
+        <div class="modal-content bg-charcoal-hero text-white border border-white/10 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl transform scale-95 transition-transform duration-300">
+            <button onclick="closeModal('modal-fasa2')" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-matte-black border border-white/20 text-gray-400 hover:text-white hover:border-brand-red flex items-center justify-center font-bold text-lg transition-colors">
+                ✕
+            </button>
+
+            <div class="mb-6">
+                <span class="bg-brand-red/10 text-brand-red border border-brand-red/30 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                    FASA 02 • SUNTING
+                </span>
+                <h3 class="text-2xl sm:text-3xl font-black text-white mt-3">Panduan Fasa 2: Sunting</h3>
+            </div>
+
+            <div class="space-y-6 text-gray-300 text-sm sm:text-base leading-relaxed">
+                <p>
+                    Ramai orang terlalu fokus pada transition dan effect. Sebenarnya, video yang sedap ditonton datang daripada pacing yang baik. Kalau ada bahagian yang tak menambah nilai pada cerita, buang sahaja tanpa ragu.
+                </p>
+
+                <div class="bg-matte-black border border-white/10 rounded-2xl p-5 space-y-2">
+                    <div class="text-xs font-black text-electric-cyan uppercase tracking-wider mb-2">⚡ Cara Saya Edit Video</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-gray-200">
+                        <div>• Potong <span class="text-white font-bold">Dead Space</span> & jeda diam</div>
+                        <div>• Hilangkan ayat <span class="text-white font-bold">tersangkut</span></div>
+                        <div>• Visual cut <span class="text-white font-bold">setiap 2–5 saat</span></div>
+                        <div>• Subtitle <span class="text-white font-bold">jelas & kontras</span></div>
+                        <div class="sm:col-span-2">• Color Correction <span class="text-white font-bold">Natural & Seimbang</span></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-base mb-3">Prinsip Suntingan Pantas:</h4>
+                    <ul class="space-y-2 text-sm text-gray-300 list-disc list-inside">
+                        <li>Jara imbangan aras volume audio pertuturan (vocal clarity).</li>
+                        <li>Gunakan transisi asas seperti hard-cut sahaja.</li>
+                        <li>Elakkan kesan khas berlebihan yang mengganggu cerita.</li>
+                        <li>Pilih muzik latar yang melengkapi mood video.</li>
+                        <li>Semak semula tumpuan visual pada skrin telefon pintar.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-brand-red/10 border border-brand-red/30 rounded-2xl p-4 text-xs text-gray-300">
+                    <span class="font-bold text-brand-red">Rumusan Shane4K:</span> Semakin ringkas dan kemas hasil suntingan anda, semakin mudah untuk penonton fokus dan faham mesej utama yang hendak disampaikan.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-fasa3" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300" onclick="closeModalOnBackdrop(event, 'modal-fasa3')">
+        <div class="modal-content bg-charcoal-hero text-white border border-white/10 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl transform scale-95 transition-transform duration-300">
+            <button onclick="closeModal('modal-fasa3')" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-matte-black border border-white/20 text-gray-400 hover:text-white hover:border-brand-red flex items-center justify-center font-bold text-lg transition-colors">
+                ✕
+            </button>
+
+            <div class="mb-6">
+                <span class="bg-brand-red/10 text-brand-red border border-brand-red/30 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                    FASA 03 • RENDER
+                </span>
+                <h3 class="text-2xl sm:text-3xl font-black text-white mt-3">Panduan Fasa 3: Render</h3>
+            </div>
+
+            <div class="space-y-6 text-gray-300 text-sm sm:text-base leading-relaxed">
+                <p>
+                    Ramai orang dah rakam cantik, edit pun cantik, tapi video jadi rosak masa render sebab setting export yang salah. Fasa ini sangat kritikal untuk mengekalkan kejelasan fail sebelum diserah ke platform sosial.
+                </p>
+
+                <div class="bg-matte-black border border-white/10 rounded-2xl p-5 space-y-2">
+                    <div class="text-xs font-black text-electric-cyan uppercase tracking-wider mb-2">⚡ Export Setting Yang Saya Gunakan</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-gray-200">
+                        <div>• Resolusi: <span class="text-white font-bold">4K (3840 × 2160)</span></div>
+                        <div>• Frame Rate: <span class="text-white font-bold">60fps</span></div>
+                        <div>• Bitrate: <span class="text-white font-bold">100 Mbps Target</span></div>
+                        <div>• Codec: <span class="text-white font-bold">H.265 (HEVC)</span></div>
+                        <div>• Format: <span class="text-white font-bold">.MOV</span></div>
+                        <div>• Audio: <span class="text-white font-bold">AAC, 48kHz</span></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-base mb-3">Perkara Wajib Semak Masa Render:</h4>
+                    <ul class="space-y-2 text-sm text-gray-300 list-disc list-inside">
+                        <li>Bitrate tinggi bantu kekal detail sebelum dimampatkan server.</li>
+                        <li>Aktifkan Hardware Encoding untuk proses render yang lebih pantas.</li>
+                        <li>Pastikan tetapan aspek nisbah menegak 9:16 tepat.</li>
+                        <li>Gunakan profil warna Rec.709 yang standard.</li>
+                        <li>Mainkan fail render penuh sekali sebelum dipindahkan.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-brand-red/10 border border-brand-red/30 rounded-2xl p-4 text-xs text-gray-300">
+                    <span class="font-bold text-brand-red">Rumusan Shane4K:</span> Render yang betul memastikan fail digital anda mempunyai tahap ketajaman maksimum sebagai ketahanan sebelum dimampatkan oleh server TikTok.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-fasa4" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300" onclick="closeModalOnBackdrop(event, 'modal-fasa4')">
+        <div class="modal-content bg-charcoal-hero text-white border border-white/10 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl transform scale-95 transition-transform duration-300">
+            <button onclick="closeModal('modal-fasa4')" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-matte-black border border-white/20 text-gray-400 hover:text-white hover:border-brand-red flex items-center justify-center font-bold text-lg transition-colors">
+                ✕
+            </button>
+
+            <div class="mb-6">
+                <span class="bg-brand-red/10 text-brand-red border border-brand-red/30 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                    FASA 04 • MUAT NAIK
+                </span>
+                <h3 class="text-2xl sm:text-3xl font-black text-white mt-3">Panduan Fasa 4: Muat Naik</h3>
+            </div>
+
+            <div class="space-y-6 text-gray-300 text-sm sm:text-base leading-relaxed">
+                <p>
+                    Langkah terakhir ini paling ramai orang terlepas pandang. Walaupun saya edit dan render di PC, saya tidak muat naik terus dari komputer. Saya pindahkan fail asal ke telefon dan guna aplikasi rasmi platform.
+                </p>
+
+                <div class="bg-matte-black border border-white/10 rounded-2xl p-5 space-y-2">
+                    <div class="text-xs font-black text-electric-cyan uppercase tracking-wider mb-2">⚡ Workflow Muat Naik Saya</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-gray-200">
+                        <div>1. Render video <span class="text-white font-bold">master di PC</span></div>
+                        <div>2. Hantar fail asal <span class="text-white font-bold">ke iPhone</span></div>
+                        <div>3. Semak playback <span class="text-white font-bold">pada telefon</span></div>
+                        <div>4. Upload guna <span class="text-white font-bold">app rasmi TikTok</span></div>
+                        <div class="sm:col-span-2">5. Hidupkan <span class="text-white font-bold">Allow HD Upload</span></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-base mb-3">Sebelum Tekan Upload:</h4>
+                    <ul class="space-y-2 text-sm text-gray-300 list-disc list-inside">
+                        <li>Elak hantar fail guna WhatsApp (guna AirDrop / Cable).</li>
+                        <li>Gunakan sambungan Wi-Fi yang pantas & stabil.</li>
+                        <li>Pilih thumbnail, tajuk, dan kapsyen yang menarik.</li>
+                        <li>Periksa semula subtitle tidak tertutup oleh butang UI.</li>
+                        <li>Biarkan aplikasi memproses video hingga selesai.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-brand-red/10 border border-brand-red/30 rounded-2xl p-4 text-xs text-gray-300">
+                    <span class="font-bold text-brand-red">Rumusan Shane4K:</span> Server TikTok tetap akan mampatkan video anda. Namun dengan menghantar fail master berkualiti tinggi, hasil akhirnya kekal tajam dan bersih.
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
+        /* Slider Logic */
         let currentSlide = 0;
         const totalSlides = 3;
 
@@ -673,6 +863,48 @@
             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
             goToSlide(currentSlide);
         }
+
+        /* Modal Logic */
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modal.querySelector('.modal-content').classList.remove('scale-95');
+                    modal.querySelector('.modal-content').classList.add('scale-100');
+                }, 10);
+                document.body.classList.add('overflow-hidden');
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.querySelector('.modal-content').classList.remove('scale-100');
+                modal.querySelector('.modal-content').classList.add('scale-95');
+                modal.classList.add('opacity-0');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                }, 300);
+            }
+        }
+
+        function closeModalOnBackdrop(event, modalId) {
+            if (event.target.classList.contains('modal-overlay')) {
+                closeModal(modalId);
+            }
+        }
+
+        /* Close Modals on ESC Key */
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay:not(.hidden)').forEach(modal => {
+                    closeModal(modal.id);
+                });
+            }
+        });
     </script>
 
     <script async src="https://www.tiktok.com/embed.js"></script>
