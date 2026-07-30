@@ -47,11 +47,17 @@
         .slide-page {
             transition: opacity 0.4s ease-in-out;
         }
+
+        /* Nav Active Link Class */
+        .nav-link.active {
+            color: #FF1E27 !important;
+            font-weight: 800;
+        }
     </style>
 </head>
 <body class="bg-silver-stone text-dark-ink font-sans antialiased selection:bg-brand-red selection:text-white">
 
-    <header class="sticky top-0 z-50 bg-matte-black/95 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+    <header class="sticky top-0 z-40 bg-matte-black/95 backdrop-blur-md border-b border-white/10 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 
@@ -63,10 +69,10 @@
                 </a>
 
                 <nav class="hidden md:flex items-center gap-10" aria-label="Navigasi Utama">
-                    <a href="#utama" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Utama</a>
-                    <a href="#blog" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Blog</a>
-                    <a href="#tutorials" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Tutorials</a>
-                    <a href="#hubungi" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Hubungi</a>
+                    <a href="#utama" class="nav-link text-sm font-semibold text-gray-300 hover:text-white transition-colors">Utama</a>
+                    <a href="#blog" class="nav-link text-sm font-semibold text-gray-300 hover:text-white transition-colors">Blog</a>
+                    <a href="#tutorials" class="nav-link text-sm font-semibold text-gray-300 hover:text-white transition-colors">Tutorials</a>
+                    <a href="#hubungi" class="nav-link text-sm font-semibold text-gray-300 hover:text-white transition-colors">Hubungi</a>
                 </nav>
 
                 <div class="hidden md:flex items-center">
@@ -76,7 +82,7 @@
                 </div>
 
                 <div class="md:hidden flex items-center">
-                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-gray-300 hover:text-white p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Buka Menu">
+                    <button type="button" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red" aria-label="Menu Utama">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -86,16 +92,16 @@
         </div>
 
         <div id="mobile-menu" class="hidden md:hidden bg-matte-black border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
-            <a href="#utama" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-white/10">Utama</a>
-            <a href="#blog" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-white/10">Blog</a>
-            <a href="#tutorials" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-white/10">Tutorials</a>
-            <a href="#hubungi" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-white/10">Hubungi</a>
-            <a href="#sertai" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block text-center mt-3 bg-brand-red text-white font-extrabold px-4 py-3 rounded-full shadow-md">Sertai Saya</a>
+            <a href="#utama" onclick="closeMobileMenu()" class="nav-link block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-white/10">Utama</a>
+            <a href="#blog" onclick="closeMobileMenu()" class="nav-link block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-white/10">Blog</a>
+            <a href="#tutorials" onclick="closeMobileMenu()" class="nav-link block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-white/10">Tutorials</a>
+            <a href="#hubungi" onclick="closeMobileMenu()" class="nav-link block px-3 py-2 rounded-md text-base font-semibold text-white hover:bg-white/10">Hubungi</a>
+            <a href="#sertai" onclick="closeMobileMenu()" class="block text-center mt-3 bg-brand-red text-white font-extrabold px-4 py-3 rounded-full shadow-md">Sertai Saya</a>
         </div>
     </header>
 
     <main>
-        <section id="utama" class="relative py-24 lg:py-32 overflow-hidden bg-charcoal-hero text-white">
+        <section id="utama" class="scroll-mt-20 relative py-24 lg:py-32 overflow-hidden bg-charcoal-hero text-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center max-w-3xl mx-auto space-y-8">
                     
@@ -169,7 +175,7 @@
             </div>
         </section>
 
-        <section id="blog" class="py-20 lg:py-28 bg-silver-stone border-b border-stone-border">
+        <section id="blog" class="scroll-mt-20 py-20 lg:py-28 bg-silver-stone border-b border-stone-border">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
@@ -182,16 +188,16 @@
                     </div>
                     
                     <div class="flex items-center gap-3">
-                        <button onclick="prevSlide()" class="w-12 h-12 rounded-full bg-stone-card border border-stone-border hover:border-brand-red text-dark-ink hover:text-brand-red flex items-center justify-center font-bold text-lg shadow-sm transition-all active:scale-95">
+                        <button onclick="prevSlide()" aria-label="Slaid Sebelum" class="w-12 h-12 rounded-full bg-stone-card border border-stone-border hover:border-brand-red text-dark-ink hover:text-brand-red flex items-center justify-center font-bold text-lg shadow-sm transition-all active:scale-95">
                             &#8592;
                         </button>
-                        <button onclick="nextSlide()" class="w-12 h-12 rounded-full bg-stone-card border border-stone-border hover:border-brand-red text-dark-ink hover:text-brand-red flex items-center justify-center font-bold text-lg shadow-sm transition-all active:scale-95">
+                        <button onclick="nextSlide()" aria-label="Slaid Seterusnya" class="w-12 h-12 rounded-full bg-stone-card border border-stone-border hover:border-brand-red text-dark-ink hover:text-brand-red flex items-center justify-center font-bold text-lg shadow-sm transition-all active:scale-95">
                             &#8594;
                         </button>
                     </div>
                 </div>
 
-                <div id="slider-container" class="relative overflow-hidden min-h-[700px]">
+                <div id="slider-container" class="relative overflow-hidden min-h-[650px] touch-pan-y">
                     
                     <div class="slide-page grid grid-cols-1 md:grid-cols-3 gap-6 transition-all duration-500">
                         
@@ -208,7 +214,7 @@
                                 <h3 class="text-lg font-extrabold text-dark-ink mb-3 line-clamp-2">
                                     Pendedahan Coaching TikTok: Elak Ditipu Kelas Berbayar
                                 </h3>
-                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[500px]">
+                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[480px]">
                                     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shanemandem/video/7668236188389625104" data-video-id="7668236188389625104" style="max-width: 100%; min-width: 280px;"> 
                                         <section><a target="_blank" href="https://www.tiktok.com/@shanemandem?refer=embed">@shanemandem</a></section> 
                                     </blockquote>
@@ -229,7 +235,7 @@
                                 <h3 class="text-lg font-extrabold text-dark-ink mb-3 line-clamp-2">
                                     Top 3 Smartphone Flagship Terbaik Tahun 2026
                                 </h3>
-                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[500px]">
+                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[480px]">
                                     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shanemandem/video/7668128257451035921" data-video-id="7668128257451035921" style="max-width: 100%; min-width: 280px;"> 
                                         <section><a target="_blank" href="https://www.tiktok.com/@shanemandem?refer=embed">@shanemandem</a></section> 
                                     </blockquote>
@@ -250,7 +256,7 @@
                                 <h3 class="text-lg font-extrabold text-dark-ink mb-3 line-clamp-2">
                                     Xiaomi 18 Pro Series Global Version Akhirnya Tiba!
                                 </h3>
-                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[500px]">
+                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[480px]">
                                     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shanemandem/video/7667810680724098305" data-video-id="7667810680724098305" style="max-width: 100%; min-width: 280px;"> 
                                         <section><a target="_blank" href="https://www.tiktok.com/@shanemandem?refer=embed">@shanemandem</a></section> 
                                     </blockquote>
@@ -275,7 +281,7 @@
                                 <h3 class="text-lg font-extrabold text-dark-ink mb-3 line-clamp-2">
                                     Telefon Kamera Fotografi Paling Lawa 2026
                                 </h3>
-                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[500px]">
+                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[480px]">
                                     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shanemandem/video/7667547496620608769" data-video-id="7667547496620608769" style="max-width: 100%; min-width: 280px;"> 
                                         <section><a target="_blank" href="https://www.tiktok.com/@shanemandem?refer=embed">@shanemandem</a></section> 
                                     </blockquote>
@@ -296,7 +302,7 @@
                                 <h3 class="text-lg font-extrabold text-dark-ink mb-3 line-clamp-2">
                                     Ulasan Kamera OPPO Find X9 Hasselblad
                                 </h3>
-                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[500px]">
+                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[480px]">
                                     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shanemandem/video/7667401534472211713" data-video-id="7667401534472211713" style="max-width: 100%; min-width: 280px;"> 
                                         <section><a target="_blank" href="https://www.tiktok.com/@shanemandem?refer=embed">@shanemandem</a></section> 
                                     </blockquote>
@@ -317,7 +323,7 @@
                                 <h3 class="text-lg font-extrabold text-dark-ink mb-3 line-clamp-2">
                                     Misi 10K Followers TikTok Shane4K
                                 </h3>
-                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[500px]">
+                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[480px]">
                                     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shanemandem/video/7667238689151421697" data-video-id="7667238689151421697" style="max-width: 100%; min-width: 280px;"> 
                                         <section><a target="_blank" href="https://www.tiktok.com/@shanemandem?refer=embed">@shanemandem</a></section> 
                                     </blockquote>
@@ -342,7 +348,7 @@
                                 <h3 class="text-lg font-extrabold text-dark-ink mb-3 line-clamp-2">
                                     Tutorial Editing Video Cinematic TikTok
                                 </h3>
-                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[500px]">
+                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[480px]">
                                     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shanemandem/video/7666356817265577233" data-video-id="7666356817265577233" style="max-width: 100%; min-width: 280px;"> 
                                         <section><a target="_blank" href="https://www.tiktok.com/@shanemandem?refer=embed">@shanemandem</a></section> 
                                     </blockquote>
@@ -363,7 +369,7 @@
                                 <h3 class="text-lg font-extrabold text-dark-ink mb-3 line-clamp-2">
                                     3 Tips Wajib Tahu Sebelum Beli Smartphone 2026
                                 </h3>
-                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[500px]">
+                                <div class="rounded-2xl overflow-hidden border border-stone-border bg-black/5 min-h-[480px]">
                                     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@shanemandem/video/7664130569084718356" data-video-id="7664130569084718356" style="max-width: 100%; min-width: 280px;"> 
                                         <section><a target="_blank" href="https://www.tiktok.com/@shanemandem?refer=embed">@shanemandem</a></section> 
                                     </blockquote>
@@ -396,15 +402,15 @@
                 </div>
 
                 <div class="flex items-center justify-center gap-2 mt-8">
-                    <button onclick="goToSlide(0)" class="dot-indicator w-8 h-2.5 rounded-full bg-brand-red transition-all"></button>
-                    <button onclick="goToSlide(1)" class="dot-indicator w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-brand-red transition-all"></button>
-                    <button onclick="goToSlide(2)" class="dot-indicator w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-brand-red transition-all"></button>
+                    <button onclick="goToSlide(0)" aria-label="Go to slide 1" class="dot-indicator w-8 h-2.5 rounded-full bg-brand-red transition-all"></button>
+                    <button onclick="goToSlide(1)" aria-label="Go to slide 2" class="dot-indicator w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-brand-red transition-all"></button>
+                    <button onclick="goToSlide(2)" aria-label="Go to slide 3" class="dot-indicator w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-brand-red transition-all"></button>
                 </div>
 
             </div>
         </section>
 
-        <section id="tutorials" class="py-20 lg:py-28 bg-silver-stone">
+        <section id="tutorials" class="scroll-mt-20 py-20 lg:py-28 bg-silver-stone">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -495,7 +501,7 @@
             </div>
         </section>
 
-        <section id="hubungi" class="py-20 lg:py-28 bg-silver-stone border-t border-stone-border">
+        <section id="hubungi" class="scroll-mt-20 py-20 lg:py-28 bg-silver-stone border-t border-stone-border">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="text-center max-w-3xl mx-auto mb-16">
@@ -570,14 +576,22 @@
                                         <div class="text-xs text-muted-slate group-hover:text-gray-300">@shanemandem • Visual Behind The Scene</div>
                                     </div>
                                 </a>
+
                             </div>
                         </div>
+
+                        <div class="mt-8 pt-6 border-t border-stone-border text-xs text-muted-slate flex items-center justify-between">
+                            <span>Emel Rasmi Urusan Kerja:</span>
+                            <span class="font-bold text-dark-ink">contact@shane4k.com</span>
+                        </div>
                     </div>
+
                 </div>
+
             </div>
         </section>
 
-        <section id="sertai" class="py-20 bg-silver-stone">
+        <section id="sertai" class="scroll-mt-20 py-20 bg-silver-stone">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div class="bg-charcoal-hero border border-white/10 rounded-3xl p-8 sm:p-14 relative overflow-hidden shadow-2xl text-white">
                     <span class="inline-block bg-brand-red/20 text-brand-red text-xs font-extrabold px-3.5 py-1 rounded-full mb-4 border border-brand-red/40 uppercase tracking-widest">
@@ -618,7 +632,7 @@
 
     <div id="modal-fasa1" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300" onclick="closeModalOnBackdrop(event, 'modal-fasa1')">
         <div class="modal-content bg-charcoal-hero text-white border border-white/10 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl transform scale-95 transition-transform duration-300">
-            <button onclick="closeModal('modal-fasa1')" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-matte-black border border-white/20 text-gray-400 hover:text-white hover:border-brand-red flex items-center justify-center font-bold text-lg transition-colors">
+            <button onclick="closeModal('modal-fasa1')" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-matte-black border border-white/20 text-gray-400 hover:text-white hover:border-brand-red flex items-center justify-center font-bold text-lg transition-colors" aria-label="Tutup">
                 ✕
             </button>
 
@@ -665,7 +679,7 @@
 
     <div id="modal-fasa2" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300" onclick="closeModalOnBackdrop(event, 'modal-fasa2')">
         <div class="modal-content bg-charcoal-hero text-white border border-white/10 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl transform scale-95 transition-transform duration-300">
-            <button onclick="closeModal('modal-fasa2')" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-matte-black border border-white/20 text-gray-400 hover:text-white hover:border-brand-red flex items-center justify-center font-bold text-lg transition-colors">
+            <button onclick="closeModal('modal-fasa2')" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-matte-black border border-white/20 text-gray-400 hover:text-white hover:border-brand-red flex items-center justify-center font-bold text-lg transition-colors" aria-label="Tutup">
                 ✕
             </button>
 
@@ -712,7 +726,7 @@
 
     <div id="modal-fasa3" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300" onclick="closeModalOnBackdrop(event, 'modal-fasa3')">
         <div class="modal-content bg-charcoal-hero text-white border border-white/10 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl transform scale-95 transition-transform duration-300">
-            <button onclick="closeModal('modal-fasa3')" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-matte-black border border-white/20 text-gray-400 hover:text-white hover:border-brand-red flex items-center justify-center font-bold text-lg transition-colors">
+            <button onclick="closeModal('modal-fasa3')" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-matte-black border border-white/20 text-gray-400 hover:text-white hover:border-brand-red flex items-center justify-center font-bold text-lg transition-colors" aria-label="Tutup">
                 ✕
             </button>
 
@@ -760,7 +774,7 @@
 
     <div id="modal-fasa4" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300" onclick="closeModalOnBackdrop(event, 'modal-fasa4')">
         <div class="modal-content bg-charcoal-hero text-white border border-white/10 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl transform scale-95 transition-transform duration-300">
-            <button onclick="closeModal('modal-fasa4')" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-matte-black border border-white/20 text-gray-400 hover:text-white hover:border-brand-red flex items-center justify-center font-bold text-lg transition-colors">
+            <button onclick="closeModal('modal-fasa4')" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-matte-black border border-white/20 text-gray-400 hover:text-white hover:border-brand-red flex items-center justify-center font-bold text-lg transition-colors" aria-label="Tutup">
                 ✕
             </button>
 
@@ -806,7 +820,18 @@
     </div>
 
     <script>
-        /* Slider Logic */
+        /* Mobile Menu Controls */
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.add('hidden');
+        }
+
+        /* Slider Controls */
         let currentSlide = 0;
         const totalSlides = 3;
 
@@ -846,7 +871,32 @@
             goToSlide(currentSlide);
         }
 
-        /* Modal Logic */
+        /* Touch Swipe Support for Mobile Carousel */
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const sliderContainer = document.getElementById('slider-container');
+
+        if (sliderContainer) {
+            sliderContainer.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            sliderContainer.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+        }
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchStartX - touchEndX > swipeThreshold) {
+                nextSlide(); /* Swipe Ke Kiri */
+            } else if (touchEndX - touchStartX > swipeThreshold) {
+                prevSlide(); /* Swipe Ke Kanan */
+            }
+        }
+
+        /* Modal Controls */
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             if (modal) {
@@ -879,13 +929,34 @@
             }
         }
 
-        /* Close Modals on ESC Key */
+        /* ESC Key Listener */
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 document.querySelectorAll('.modal-overlay:not(.hidden)').forEach(modal => {
                     closeModal(modal.id);
                 });
             }
+        });
+
+        /* ScrollSpy - Auto Highlight Active Nav Links */
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPos = window.scrollY + 120;
+
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+                const id = section.getAttribute('id');
+
+                if (scrollPos >= top && scrollPos < top + height) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
         });
     </script>
 
