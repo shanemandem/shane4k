@@ -425,7 +425,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
-                    <div class="bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div onclick="openModal('modal-fasa1')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('modal-fasa1');}" class="bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer">
                         <div>
                             <div class="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red font-black text-lg flex items-center justify-center mb-6">
                                 01
@@ -438,12 +438,12 @@
                                 ISO, FPS, shutter speed — semua penting, kualiti video start dari sini. Kalau rakaman asal dah blur ke shaky, edit sehebat mana pun tak boleh selamatkan benda tu.
                             </p>
                         </div>
-                        <button onclick="openModal('modal-fasa1')" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform focus:outline-none">
+                        <span class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
                             Cerita Penuh &rarr;
-                        </button>
+                        </span>
                     </div>
 
-                    <div class="bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div onclick="openModal('modal-fasa2')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('modal-fasa2');}" class="bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer">
                         <div>
                             <div class="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red font-black text-lg flex items-center justify-center mb-6">
                                 02
@@ -456,12 +456,12 @@
                                 Potong bahagian yang membosankan. Betulkan warna. Pastikan audio jelas. Konsepnya simple, jangan rumitkan kerja editing korang.
                             </p>
                         </div>
-                        <button onclick="openModal('modal-fasa2')" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform focus:outline-none">
+                        <span class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
                             Cerita Penuh &rarr;
-                        </button>
+                        </span>
                     </div>
 
-                    <div class="bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div onclick="openModal('modal-fasa3')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('modal-fasa3');}" class="bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer">
                         <div>
                             <div class="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red font-black text-lg flex items-center justify-center mb-6">
                                 03
@@ -474,12 +474,12 @@
                                 Sini lah tempat kualiti video itu ditentukan — sebelum korang upload, saya akan tunjuk setting export yang betul.
                             </p>
                         </div>
-                        <button onclick="openModal('modal-fasa3')" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform focus:outline-none">
+                        <span class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
                             Cerita Penuh &rarr;
-                        </button>
+                        </span>
                     </div>
 
-                    <div class="bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div onclick="openModal('modal-fasa4')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('modal-fasa4');}" class="bg-stone-card border border-stone-border rounded-3xl p-7 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer">
                         <div>
                             <div class="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red font-black text-lg flex items-center justify-center mb-6">
                                 04
@@ -492,9 +492,9 @@
                                 TikTok akan compressed kan video korang — benda ini bakan berlaku dan tak boleh dielakkan. Tapi ada cara nak kurangkan kerosakan tu.
                             </p>
                         </div>
-                        <button onclick="openModal('modal-fasa4')" class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform focus:outline-none">
+                        <span class="inline-flex items-center font-bold text-xs text-brand-red group-hover:translate-x-1 transition-transform">
                             Cerita Penuh &rarr;
-                        </button>
+                        </span>
                     </div>
 
                 </div>
@@ -821,7 +821,7 @@
 
     <script>
         /* ============================================================
-           1. MOBILE MENU CONTROLS (WITH CLICK OUTSIDE & RESIZE RESET)
+           1. MOBILE MENU CONTROLS
            ============================================================ */
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -842,7 +842,6 @@
             mobileMenu.classList.remove('hidden');
             if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'true');
             if (menuIcon) {
-                /* Tukar ikon ke tanda Pangkah 'X' */
                 menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
             }
         }
@@ -852,12 +851,10 @@
             mobileMenu.classList.add('hidden');
             if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
             if (menuIcon) {
-                /* Tukar ikon kembali ke Hamburger ☰ */
                 menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
             }
         }
 
-        /* Tutup Mobile Menu jika Pengguna Tekan Luar Kawasan Header */
         document.addEventListener('click', function(e) {
             if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                 if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
@@ -866,7 +863,6 @@
             }
         });
 
-        /* Reset Menu Secara Automatik Bila Saiz Skrin Ditukar ke PC */
         window.addEventListener('resize', function() {
             if (window.innerWidth >= 768) {
                 closeMobileMenu();
@@ -874,7 +870,7 @@
         });
 
         /* ============================================================
-           2. CAROUSEL CONTROLS (WITH SMART TOUCH SWIPE - X/Y CHECK)
+           2. CAROUSEL CONTROLS
            ============================================================ */
         let currentSlide = 0;
         const totalSlides = 3;
@@ -915,7 +911,6 @@
             goToSlide(currentSlide);
         }
 
-        /* Touch Swipe dengan Pengasingan Paksi X & Y */
         let touchStartX = 0;
         let touchStartY = 0;
         let touchEndX = 0;
@@ -940,12 +935,11 @@
             const diffX = touchStartX - touchEndX;
             const diffY = touchStartY - touchEndY;
 
-            /* Pastikan gerakan mengufuk (X) lebih panjang dari gerakan menegak (Y) */
             if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
                 if (diffX > 0) {
-                    nextSlide(); /* Swipe Ke Kiri */
+                    nextSlide();
                 } else {
-                    prevSlide(); /* Swipe Ke Kanan */
+                    prevSlide();
                 }
             }
         }
@@ -985,7 +979,6 @@
             }
         }
 
-        /* Kawalan Kekunci ESC */
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 document.querySelectorAll('.modal-overlay:not(.hidden)').forEach(modal => {
@@ -1001,7 +994,6 @@
         const headerElement = document.querySelector('header');
 
         window.addEventListener('scroll', function() {
-            /* 1. Tambah bayangan halus pada Header bila diskrol */
             if (headerElement) {
                 if (window.scrollY > 20) {
                     headerElement.classList.add('shadow-xl', 'border-white/20');
@@ -1010,7 +1002,6 @@
                 }
             }
 
-            /* 2. Highlight Pautan Navigasi Aktif (ScrollSpy) */
             const sections = document.querySelectorAll('section[id]');
             const scrollPos = window.scrollY + 120;
 
