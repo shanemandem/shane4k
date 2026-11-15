@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+​
 <style>
 :root{
   color-scheme:light;
@@ -44,7 +44,7 @@ a{color:inherit}
 :focus-visible{outline:3px solid var(--primary);outline-offset:2px;border-radius:6px}
 .skip{position:absolute;left:-999px;top:0;background:var(--primary);color:#fff;padding:.6rem 1rem;z-index:100}
 .skip:focus{left:1rem;top:1rem}
-
+​
 /* Header */
 .site-header{background:var(--surface);border-bottom:1px solid var(--border)}
 .bar{display:flex;align-items:center;justify-content:space-between;height:60px}
@@ -55,7 +55,7 @@ a{color:inherit}
   display:grid;place-items:center;cursor:pointer}
 .icon-btn:hover{border-color:var(--primary)}
 .sun{display:none}[data-theme="dark"] .sun{display:block}[data-theme="dark"] .moon{display:none}
-
+​
 /* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:inherit;font-weight:700;letter-spacing:.03em;
   padding:.8rem 1.4rem;border-radius:6px;border:1px solid transparent;cursor:pointer;text-decoration:none;transition:background .2s,border-color .2s,transform .15s}
@@ -65,7 +65,7 @@ a{color:inherit}
 .btn-ghost{background:var(--surface);color:var(--text);border-color:var(--border)}
 .btn-ghost:hover{border-color:var(--primary)}
 .btn.sm{padding:.5rem .9rem;font-size:.9rem}
-
+​
 /* Hero / form */
 .hero{padding:2.2rem 0 1.2rem}
 .hero h1{font-size:clamp(1.9rem,4.5vw,2.5rem);font-weight:800;margin-bottom:.6rem}
@@ -73,6 +73,9 @@ a{color:inherit}
 .field label{display:block;font-weight:600;font-size:.92rem;margin-bottom:.35rem}
 .combo{position:relative}
 .combo input{width:100%;font:inherit;font-size:1rem;padding:.85rem 1rem;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text)}
+.combo input{padding-right:3rem}
+.combo-toggle{position:absolute;right:.4rem;top:50%;transform:translateY(-50%);width:2.3rem;height:2.3rem;border:0;border-radius:6px;background:transparent;color:var(--muted);cursor:pointer;font-size:1rem}
+.combo-toggle:hover{background:var(--soft);color:var(--text)}
 .combo input::placeholder{color:#7b8190}
 .combo input[aria-invalid="true"]{border-color:#dc2626}
 .combo ul{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:30;margin:0;padding:.3rem;list-style:none;max-height:280px;overflow:auto;
@@ -84,7 +87,7 @@ a{color:inherit}
 .vs{text-align:center;font-weight:800;font-size:1.6rem;color:var(--primary);margin:.6rem 0}
 .err{color:#dc2626;font-weight:600;min-height:1.5em;margin:.7rem 0 .3rem}
 [data-theme="dark"] .err{color:#f87171}
-
+​
 /* ===== KEGUNAAN ===== */
 .use-grid{
   display:grid;
@@ -121,7 +124,7 @@ a{color:inherit}
 .use-ico{font-size:28px;line-height:1;margin-bottom:6px}
 .use-t{font-weight:700;font-size:15px;line-height:1.3}
 .use-d{font-size:13px;line-height:1.4;opacity:.7}
-
+​
 .use-card:hover .use-body{
   border-color:#5c6bc0;
   transform:translateY(-2px);
@@ -135,14 +138,14 @@ a{color:inherit}
   outline:2px solid #5c6bc0;
   outline-offset:2px;
 }
-
+​
 @media (max-width:900px){
   .use-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:360px){
   .use-grid{grid-template-columns:1fr}
 }
-
+​
 /* Result */
 .res{margin:1.6rem 0 2rem;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem;box-shadow:var(--shadow);scroll-margin-top:1rem}
 .res h2{font-size:1.35rem;margin-bottom:1.1rem}
@@ -155,7 +158,7 @@ a{color:inherit}
 .phone small{color:var(--muted)}
 .duel-arrow{align-self:center;font-size:1.6rem;color:var(--primary);font-weight:800}
 @media(max-width:620px){.duel{grid-template-columns:1fr}.duel-arrow{transform:rotate(90deg);justify-self:center}}
-
+​
 .verdict-wrap{text-align:center;margin:1.8rem 0 1rem}
 .score{font-weight:800;line-height:1;letter-spacing:-.04em;font-size:clamp(3.8rem,13vw,6rem)}
 .score .of{font-size:1.2rem;color:var(--muted);letter-spacing:0;font-weight:600}
@@ -166,7 +169,7 @@ a{color:inherit}
 [data-tier="2"] .score,[data-tier="2"] .verdict{color:var(--t2)}
 [data-tier="3"] .score,[data-tier="3"] .verdict{color:var(--t3)}
 [data-tier="4"] .score,[data-tier="4"] .verdict{color:var(--t4)}
-
+​
 .meter{padding:0 14px;margin:1.4rem 0 .4rem}
 .track{position:relative;height:18px;border-radius:999px;background:linear-gradient(90deg,#dc2626 0%,#f97316 25%,#eab308 50%,#84cc16 75%,#16a34a 100%)}
 .pin{position:absolute;top:50%;left:0;width:30px;height:30px;border-radius:50%;background:#fff;border:5px solid #111827;transform:translate(-50%,-50%);
@@ -176,7 +179,7 @@ a{color:inherit}
 .segs{margin-top:.3rem;font-weight:600;font-size:.7rem;gap:.3rem}
 .segs span{flex:1;text-align:center;line-height:1.25}
 @media(max-width:560px){.segs{display:none}}
-
+​
 .why h3{font-size:1.1rem;margin:1.6rem 0 .7rem}
 .reasons{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
 .reasons li{display:grid;grid-template-columns:auto 1fr;gap:.7rem;align-items:start;padding:.75rem .9rem;border-radius:8px;border-left:4px solid}
@@ -184,7 +187,7 @@ a{color:inherit}
 .reasons li.warn{background:var(--warn-bg);border-color:#d97706}
 .reasons li.bad{background:var(--bad-bg);border-color:#dc2626}
 .actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem}
-
+​
 .spec{margin-top:1.5rem;border-top:1px solid var(--border);padding-top:1.3rem;animation:fade .35s ease}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}}
 .spec h3{font-size:1.15rem}
@@ -201,25 +204,25 @@ thead th{background:var(--soft);font-size:.92rem}
 tbody th{font-weight:600;width:32%;color:var(--muted)}
 td.better{background:var(--good-bg);color:var(--good-ink);font-weight:800}
 .fine{color:var(--muted);font-size:.8rem;margin-top:1.2rem}
-
+​
 /* Footer */
 footer{border-top:1px solid var(--border);margin-top:2rem;padding:1.8rem 0 2.2rem;background:var(--surface)}
 .foot{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
 footer p{color:var(--muted);font-size:.85rem;max-width:560px}
 footer a{color:var(--primary);font-weight:700}
 [data-theme="dark"] footer a{color:#aab4ff}
-
+​
 #toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,20px);background:#111827;color:#fff;padding:.7rem 1.1rem;border-radius:8px;
   font-weight:600;opacity:0;pointer-events:none;transition:.3s;z-index:60;max-width:90vw;text-align:center}
 #toast.show{opacity:1;transform:translate(-50%,0)}
-
+​
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
-
+​
 <body>
 <a class="skip" href="#utama">Terus ke kandungan</a>
-
+​
 <header class="site-header">
   <div class="wrap bar">
     <a class="brand" href="./" aria-label="Shane4K — laman utama"><span class="brand-mark">S4K</span>Shane4K</a>
@@ -232,19 +235,20 @@ footer a{color:var(--primary);font-weight:700}
     </div>
   </div>
 </header>
-
+​
 <main id="utama" class="wrap">
-
+​
   <!-- ===== BAR PERBANDINGAN ===== -->
   <section class="hero" aria-labelledby="h1">
     <h1 id="h1">Bandingkan iPhone</h1>
     <p class="lead">Nak upgrade iPhone tapi takut membazir? Pilih iPhone awak sekarang dan iPhone yang awak nak beli. Kami kira sama ada berbaloi atau tak, ikut cara awak guna telefon. Siap dengan skor, sebab dan perbandingan spesifikasi.</p>
-
+​
     <form id="cmp" novalidate>
       <div class="field">
         <label for="q1">Telefon saya sekarang</label>
         <div class="combo">
           <input id="q1" type="text" role="combobox" aria-expanded="false" aria-controls="l1" aria-autocomplete="list" autocomplete="off" placeholder="Taip nama telefon awak sekarang (cth: iPhone 13)">
+          <button class="combo-toggle" type="button" aria-label="Papar senarai telefon sekarang" aria-controls="l1" aria-expanded="false">▼</button>
           <ul id="l1" role="listbox" hidden></ul>
         </div>
       </div>
@@ -253,6 +257,7 @@ footer a{color:var(--primary);font-weight:700}
         <label for="q2">Telefon yang saya nak beli</label>
         <div class="combo">
           <input id="q2" type="text" role="combobox" aria-expanded="false" aria-controls="l2" aria-autocomplete="list" autocomplete="off" placeholder="Taip nama telefon yang awak nak beli (cth: iPhone 17 Pro)">
+          <button class="combo-toggle" type="button" aria-label="Papar senarai telefon untuk dibeli" aria-controls="l2" aria-expanded="false">▼</button>
           <ul id="l2" role="listbox" hidden></ul>
         </div>
       </div>
@@ -260,10 +265,10 @@ footer a{color:var(--primary);font-weight:700}
       <button class="btn btn-primary" type="submit">BANDINGKAN</button>
     </form>
   </section>
-
+​
   <!-- ===== CARA PENGGUNAAN ===== -->
 <div class="use-grid" role="radiogroup" aria-label="Kegunaan telefon">
-
+​
   <label class="use-card">
     <input type="radio" name="guna" value="harian" checked>
     <span class="use-body">
@@ -272,7 +277,7 @@ footer a{color:var(--primary);font-weight:700}
       <span class="use-d">Bateri, skrin &amp; kelajuan asas</span>
     </span>
   </label>
-
+​
   <label class="use-card">
     <input type="radio" name="guna" value="foto">
     <span class="use-body">
@@ -281,7 +286,7 @@ footer a{color:var(--primary);font-weight:700}
       <span class="use-d">Gambar cantik &amp; zoom jauh</span>
     </span>
   </label>
-
+​
   <label class="use-card">
     <input type="radio" name="guna" value="video">
     <span class="use-body">
@@ -290,7 +295,7 @@ footer a{color:var(--primary);font-weight:700}
       <span class="use-d">Rakaman video &amp; stabilisasi</span>
     </span>
   </label>
-
+​
   <label class="use-card">
     <input type="radio" name="guna" value="gaming">
     <span class="use-body">
@@ -299,7 +304,7 @@ footer a{color:var(--primary);font-weight:700}
       <span class="use-d">Laju, lancar &amp; tak panas</span>
     </span>
   </label>
-
+​
   <label class="use-card">
     <input type="radio" name="guna" value="multi">
     <span class="use-body">
@@ -308,7 +313,7 @@ footer a{color:var(--primary);font-weight:700}
       <span class="use-d">Banyak app serentak</span>
     </span>
   </label>
-
+​
   <label class="use-card">
     <input type="radio" name="guna" value="edit">
     <span class="use-body">
@@ -317,7 +322,7 @@ footer a{color:var(--primary);font-weight:700}
       <span class="use-d">Edit terus atas telefon</span>
     </span>
   </label>
-
+​
   <label class="use-card">
     <input type="radio" name="guna" value="kedua">
     <span class="use-body">
@@ -326,7 +331,7 @@ footer a{color:var(--primary);font-weight:700}
       <span class="use-d">Jimat duit, janji berfungsi</span>
     </span>
   </label>
-
+​
   <label class="use-card">
     <input type="radio" name="guna" value="anak">
     <span class="use-body">
@@ -335,53 +340,53 @@ footer a{color:var(--primary);font-weight:700}
       <span class="use-d">Tahan lasak &amp; berpatutan</span>
     </span>
   </label>
-
+​
 </div>
-
+​
   <!-- ===== KEPUTUSAN ===== -->
   <section class="res" id="res" hidden aria-labelledby="resH">
     <h2 id="resH" tabindex="-1">Keputusan: patut tukar ke tak?</h2>
-
+​
     <div class="duel">
       <div class="phone"><span class="tag">Telefon sekarang</span><strong id="oName"></strong><small id="oMeta"></small></div>
       <div class="duel-arrow" aria-hidden="true">→</div>
       <div class="phone new"><span class="tag">Nak beli</span><strong id="nName"></strong><small id="nMeta"></small></div>
     </div>
-
+​
     <div class="verdict-wrap">
       <div class="score"><span id="scoreNum">0</span><span class="of">/100</span></div>
       <p class="verdict" id="verdict"></p>
       <p class="tagline" id="tagline"></p>
     </div>
-
+​
     <div class="meter" id="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Skor patut tukar">
       <div class="track"><div class="pin" id="pin"></div></div>
       <div class="ticks" aria-hidden="true"><span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span></div>
       <div class="segs" aria-hidden="true"><span>Jangan sesekali tukar</span><span>Takyah tukar</span><span>Boleh tukar</span><span>Digalakkan tukar</span><span>Tukar sekarang</span></div>
     </div>
-
+​
     <div class="why">
       <h3>Kenapa skor ni?</h3>
       <ul class="reasons" id="reasons"></ul>
     </div>
-
+​
     <div class="actions">
       <button class="btn btn-primary" id="moreBtn" aria-expanded="false" aria-controls="spec">Baca Lanjut ▼</button>
       <button class="btn btn-ghost" id="shareBtn">📤 Kongsi Keputusan</button>
       <button class="btn btn-ghost" id="linkBtn">🔗 Salin Pautan</button>
     </div>
-
+​
     <div class="spec" id="spec" hidden>
       <h3 id="specH"></h3>
       <p class="note">Hanya spesifikasi yang berkaitan dengan cara penggunaan awak dipaparkan. <b>Hijau</b> = spesifikasi lebih baik.</p>
       <div class="sum" id="specSum"></div>
       <div class="tbl"><table id="specTable"></table></div>
     </div>
-
+​
     <p class="fine">Skor ialah anggaran Shane4K berdasarkan spesifikasi dan harga lancar di Malaysia. Ini bukan nasihat kewangan. Semak harga semasa di apple.com/my sebelum beli.</p>
   </section>
 </main>
-
+​
 <footer>
   <div class="wrap foot">
     <div>
@@ -392,7 +397,7 @@ footer a{color:var(--primary);font-weight:700}
   </div>
 </footer>
 <div id="toast" role="status" aria-live="polite"></div>
-
+​
 <script>
 /* =====================================================================
    1) DATA TELEFON — EDIT DI SINI
@@ -412,7 +417,7 @@ const CPU={'A11 Bionic':18,'A12 Bionic':26,'A13 Bionic':34,'A14 Bionic':44,'A15 
 const PH=[];
 const add=(b,l)=>l.forEach(o=>PH.push({...b,...o}));
 const V60='4K 60fps', DV='4K 60fps Dolby Vision', XDR='Super Retina XDR OLED';
-
+​
 /* 2017 */
 add({y:2017,chip:'A11 Bionic',gp:15,gc:3,sb:64,sm:256,pn:'Retina HD LCD',oled:0,hz:60,nit:625,w:18,ww:7.5,uw:0,fr:7,vid:V60,vr:2,st:1,ip:1,gl:1,usb:1,cool:0,ended:1,ios:'iOS 16'},[
  {n:'iPhone 8',rm:2788,ram:2,inch:4.7,mah:1821,hr:13,cam:12,tz:0,fm:'Aluminium',g:148},
@@ -470,13 +475,13 @@ add({y:2025,hz:120,nit:3000,fr:18,gl:3,ip:4,st:2,ios:'iOS 26'},[
  {n:'iPhone Air',rm:4999,chip:'A19 Pro',gp:94,gc:5,ram:12,sb:256,sm:1024,pn:P25,oled:1,inch:6.5,mah:3149,hr:27,w:30,ww:20,cam:48,uw:0,tz:0,vid:DV,vr:4,fm:'Titanium',g:165,usb:2,cool:0},
  {n:'iPhone 17 Pro',rm:5299,chip:'A19 Pro',gp:100,gc:6,ram:12,sb:256,sm:2048,pn:P25,oled:1,inch:6.3,mah:4252,hr:33,w:40,ww:25,cam:48,uw:48,tz:4,vid:'4K 120fps ProRes RAW',vr:8,fm:'Aluminium',g:206,usb:3,cool:1},
  {n:'iPhone 17 Pro Max',rm:5999,chip:'A19 Pro',gp:100,gc:6,ram:12,sb:256,sm:2048,pn:P25,oled:1,inch:6.9,mah:5088,hr:39,w:40,ww:25,cam:48,uw:48,tz:4,vid:'4K 120fps ProRes RAW',vr:8,fm:'Aluminium',g:233,usb:3,cool:1}]);
-
+​
 const slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 const norm=s=>s.toLowerCase().replace(/[^a-z0-9]/g,'');
 PH.forEach(p=>{p.id=slug(p.n);p.cpu=CPU[p.chip]});
 PH.sort((a,b)=>b.y-a.y||b.rm-a.rm);
 const BY=Object.fromEntries(PH.map(p=>[p.id,p]));
-
+​
 /* =====================================================================
    2) METRIK, CARA PENGGUNAAN & LOGIK SKOR
    ===================================================================== */
@@ -486,7 +491,7 @@ const pct=(v,a,b)=>clamp((v-a)/(b-a)*100);
 const rm=n=>'RM '+n.toLocaleString('en-MY');
 const gb=n=>n>=1024?(n/1024)+' TB':n+' GB';
 const yl=p=>p.ended?0:Math.max(0,p.y+7-NOW);
-
+​
 /* l=label BM, v=nilai paparan, s=skor 0-100 (tiada s = neutral, tak diserlahkan) */
 const M={
  cip:{l:'Cip (Chipset)',v:p=>p.chip,s:p=>p.cpu},
@@ -517,7 +522,7 @@ const M={
  frame:{l:'Bingkai',v:p=>p.fm},
  berat:{l:'Berat (lebih ringan lebih baik)',v:p=>p.g+' g',s:p=>100-pct(p.g,130,260)}
 };
-
+​
 /* rows: [metrik, berat]. Berat 0 = dipaparkan sahaja, tak masuk kiraan skor. pw = pengganda penalti harga */
 const USAGES=[
  {id:'harian',l:'Guna Harian',i:'📱',d:'Bateri, skrin & kelajuan asas',pw:1,
@@ -537,7 +542,7 @@ const USAGES=[
  {id:'anak',l:'Telefon Anak',i:'🧒',d:'Tahan lasak & berpatutan',pw:2.5,
   rows:[['harga',0],['ip',3],['glass',2],['frame',0],['bateriJam',2],['bateriMah',0],['berat',1.5],['size',0]]}
 ];
-
+​
 const TIERS=[
  {max:20,t:'Jangan sesekali tukar',tag:'Simpan duit awak. Memang tak berbaloi langsung. 💸',c:'#f87171'},
  {max:40,t:'Takyah tukar',tag:'Telefon sekarang masih power. Takyah bazir duit!',c:'#fb923c'},
@@ -546,7 +551,7 @@ const TIERS=[
  {max:100,t:'Tukar sekarang',tag:'Beza jauh gila! Memang patut upgrade. 🔥',c:'#4ade80'}
 ];
 const tierOf=s=>TIERS.findIndex(t=>s<=t.max);
-
+​
 /* Beza berwajaran (D) antara dua telefon untuk satu cara penggunaan */
 function core(o,n,u){
   let sw=0,sd=0;const rows=[];
@@ -586,63 +591,62 @@ function reasons(o,n,u,ev){
   else if(D<20)add('warn',`Ada peningkatan untuk ${use}, tapi sederhana je.`);
   else if(D<35)add('good',`Peningkatan untuk ${use} agak ketara. Awak akan rasa bezanya.`);
   else add('good',`Peningkatan untuk ${use} memang besar. Terasa sangat bezanya!`);
-
+​
   rows.filter(r=>r.m.s&&r.w>0&&r.d>=15).sort((a,b)=>b.w*b.d-a.w*a.d).slice(0,2)
     .forEach(r=>add('good',`${r.m.l} naik taraf: ${r.m.v(o)} → ${r.m.v(n)}.`));
   rows.filter(r=>r.m.s&&r.w>0&&r.d<=-10).sort((a,b)=>a.w*a.d-b.w*b.d).slice(0,2)
     .forEach(r=>add('warn',`${r.m.l} sebenarnya lebih rendah: ${r.m.v(o)} → ${r.m.v(n)}.`));
-
+​
   if(D>0){
     if(pen>=6)add('bad',`Harga ${rm(n.rm)} terlalu mahal untuk perubahan yang awak dapat. Tak berbaloi.`);
     else if(n.rm>=3500&&B<35)add('warn',`${rm(n.rm)} bukan sikit. Duit tu boleh guna untuk benda lain.`);
     else if(B>=55&&n.rm<=3500)add('good',`Harga ${rm(n.rm)} berbaloi dengan peningkatan yang awak dapat.`);
   }
   if(u.pw>1&&n.rm>3000)add('bad',`${rm(n.rm)} terlalu mahal untuk ${use.toLowerCase()}. Ada pilihan lebih murah.`);
-
+​
   const age=NOW-o.y;
   if(o.ended)add(D>0?'good':'warn',`${o.n} dah tak dapat kemas kini iOS. Ada risiko keselamatan dan app baru mungkin tak support.`);
   else if(age>=5)add(D>0?'good':'warn',`${o.n} dah ${age} tahun. Bateri biasanya dah mengendur.`);
   else if(age<=2&&D<20)add('bad',`${o.n} masih baru (${o.y}). Takde sebab nak tergesa-gesa tukar.`);
-
+​
   const alt=findAlt(o,n,u,D);
   if(alt)add('warn',`Dengan harga lancar sama atau lebih murah, ${alt.p.n} (${rm(alt.p.rm)}) lebih bagus untuk ${use}.`);
   return out.slice(0,7);
 }
-
+​
 /* =====================================================================
    3) UI
    ===================================================================== */
 const $=s=>document.querySelector(s);
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-
+​
 /* Tema */
 $('#themeBtn').addEventListener('click',()=>{
   const t=document.documentElement.dataset.theme==='dark'?'light':'dark';
   document.documentElement.dataset.theme=t;try{localStorage.setItem('s4k-theme',t)}catch(e){}
 });
 $('#year').textContent=NOW;
-
-/* Kotak cara penggunaan */
-$('#useGrid').innerHTML=USAGES.map((u,i)=>`
-  <label class="use"><input type="radio" name="guna" value="${u.id}" ${i===0?'checked':''}>
-  <span class="use-card"><span class="ico" aria-hidden="true">${u.i}</span><b>${u.l}</b><small>${u.d}</small></span></label>`).join('');
+​
+/* Pilihan cara penggunaan sudah tersedia dalam HTML. */
 const curUsage=()=>USAGES.find(u=>u.id===document.querySelector('input[name=guna]:checked').value);
-
+​
 /* Autocomplete */
 function makeCombo(inputId,listId){
   const input=document.getElementById(inputId),list=document.getElementById(listId);
-  const api={input,selected:null};let act=-1,shown=[];
-  const open=()=>{list.hidden=false;input.setAttribute('aria-expanded','true')};
-  const close=()=>{list.hidden=true;input.setAttribute('aria-expanded','false');act=-1;input.removeAttribute('aria-activedescendant')};
+  const toggle=input.parentElement.querySelector('.combo-toggle');
+  const api={input,selected:null};let act=-1,shown=[],blurTimer;
+  const open=()=>{list.hidden=false;input.setAttribute('aria-expanded','true');toggle.setAttribute('aria-expanded','true')};
+  const close=()=>{list.hidden=true;input.setAttribute('aria-expanded','false');toggle.setAttribute('aria-expanded','false');act=-1;input.removeAttribute('aria-activedescendant')};
   function draw(){
-    const q=norm(input.value);
+    const q=api.selected&&norm(input.value)===norm(api.selected.n)?'':norm(input.value);
     shown=PH.filter(p=>!q||norm(p.n).includes(q));
     list.innerHTML='';
     if(!shown.length){list.innerHTML='<li class="empty" role="presentation">Tak jumpa. Cuba taip nama lain (cth: iPhone 15).</li>';open();return}
     shown.forEach((p,i)=>{
       const li=document.createElement('li');li.id=`${listId}-${i}`;li.setAttribute('role','option');
       li.innerHTML=`<span>${p.n}</span><small>${p.y} · ${rm(p.rm)}</small>`;
-      li.addEventListener('mousedown',e=>{e.preventDefault();pick(p)});
+      li.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse')e.preventDefault()});
+      li.addEventListener('click',()=>pick(p));
       list.appendChild(li);
     });
     open();
@@ -654,7 +658,7 @@ function makeCombo(inputId,listId){
     input.setAttribute('aria-activedescendant',items[act].id);
     items[act].scrollIntoView({block:'nearest'});
   }
-  function pick(p){api.selected=p;input.value=p.n;input.removeAttribute('aria-invalid');close()}
+  function pick(p){clearTimeout(blurTimer);api.selected=p;input.value=p.n;input.removeAttribute('aria-invalid');close()}
   api.set=p=>{api.selected=p;input.value=p.n};
   api.resolve=()=>{
     if(api.selected&&norm(api.selected.n)===norm(input.value))return api.selected;
@@ -662,22 +666,28 @@ function makeCombo(inputId,listId){
     return PH.find(p=>norm(p.n)===q)||null;
   };
   input.addEventListener('input',()=>{api.selected=null;draw()});
-  input.addEventListener('focus',draw);
-  input.addEventListener('blur',close);
+  input.addEventListener('focus',()=>{clearTimeout(blurTimer);draw()});
+  input.addEventListener('blur',()=>{blurTimer=setTimeout(close,200)});
+  toggle.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse')e.preventDefault()});
+  toggle.addEventListener('click',()=>{
+    clearTimeout(blurTimer);
+    if(document.activeElement!==input){input.focus();draw()}
+    else if(list.hidden)draw();else close();
+  });
   input.addEventListener('keydown',e=>{
     if(e.key==='ArrowDown'){e.preventDefault();if(list.hidden)draw();setActive(act+1)}
-    else if(e.key==='ArrowUp'){e.preventDefault();if(list.hidden)draw();setActive(act-1)}
+    else if(e.key==='ArrowUp'){e.preventDefault();if(list.hidden)draw();setActive(act<0?shown.length-1:act-1)}
     else if(e.key==='Enter'&&!list.hidden&&act>=0){e.preventDefault();pick(shown[act])}
     else if(e.key==='Escape')close();
   });
   return api;
 }
 const c1=makeCombo('q1','l1'),c2=makeCombo('q2','l2');
-
+​
 /* Keputusan */
 let state=null,last=null,raf;
 const res=$('#res'),pin=$('#pin');
-
+​
 function countTo(el,to){
   cancelAnimationFrame(raf);
   if(reduce){el.textContent=to;el.dataset.v=to;return}
@@ -688,7 +698,7 @@ function countTo(el,to){
 }
 const meta=p=>`${p.y} · ${p.chip} · ${rm(p.rm)}`;
 const ICON={good:'✅',warn:'⚠️',bad:'❌'};
-
+​
 function renderSpecs(o,n,u,ev){
   let wo=0,wn=0;
   const body=ev.rows.map(r=>{
@@ -701,7 +711,7 @@ function renderSpecs(o,n,u,ev){
   $('#specSum').innerHTML=`<span class="${wo>wn?'g':''}">${o.n} menang: ${wo}</span><span class="${wn>wo?'g':''}">${n.n} menang: ${wn}</span>`;
   $('#specTable').innerHTML=`<thead><tr><th scope="col">Spesifikasi</th><th scope="col"><span class="th-tag">Sekarang</span>${o.n}</th><th scope="col"><span class="th-tag">Nak beli</span>${n.n}</th></tr></thead><tbody>${body}</tbody>`;
 }
-
+​
 function renderAll(scroll){
   const {o,n}=state,u=curUsage(),ev=evaluate(o,n,u),ti=tierOf(ev.score),T=TIERS[ti];
   last={o,n,u,ev,T};
@@ -720,7 +730,7 @@ function renderAll(scroll){
   try{history.replaceState(null,'','?'+new URLSearchParams({lama:o.id,baru:n.id,guna:u.id}))}catch(e){}
   if(scroll){res.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});$('#resH').focus({preventScroll:true})}
 }
-
+​
 function run(scroll){
   const err=$('#err');err.textContent='';
   c1.input.removeAttribute('aria-invalid');c2.input.removeAttribute('aria-invalid');
@@ -734,7 +744,7 @@ function run(scroll){
 }
 $('#cmp').addEventListener('submit',e=>{e.preventDefault();run(true)});
 document.querySelectorAll('input[name=guna]').forEach(r=>r.addEventListener('change',()=>{if(state)renderAll(false)}));
-
+​
 /* Baca Lanjut */
 $('#moreBtn').addEventListener('click',e=>{
   const spec=$('#spec'),open=spec.hidden;spec.hidden=!open;
@@ -742,16 +752,16 @@ $('#moreBtn').addEventListener('click',e=>{
   e.currentTarget.textContent=open?'Tutup Spesifikasi ▲':'Baca Lanjut ▼';
   if(open)spec.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
 });
-
+​
 /* Toast */
 let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),3200)}
-
+​
 /* Salin pautan */
 $('#linkBtn').addEventListener('click',async()=>{
   try{await navigator.clipboard.writeText(location.href);toast('Pautan disalin! Tampal dalam bio atau komen TikTok 🔗')}
   catch(e){prompt('Salin pautan ini:',location.href)}
 });
-
+​
 /* Kad kongsi (1080×1920, sesuai TikTok / Instagram Story) */
 const rr=(x,a,b,w,h,r)=>{x.beginPath();x.moveTo(a+r,b);x.arcTo(a+w,b,a+w,b+h,r);x.arcTo(a+w,b+h,a,b+h,r);x.arcTo(a,b+h,a,b,r);x.arcTo(a,b,a+w,b,r);x.closePath()};
 function fit(x,txt,max,size,wt){let s=size;do{x.font=`${wt} ${s}px Inter,system-ui,sans-serif`;s-=2}while(x.measureText(txt).width>max&&s>24)}
@@ -796,14 +806,15 @@ $('#shareBtn').addEventListener('click',async()=>{
     toast('Kad dimuat turun! Muat naik ke TikTok / Story 🎉');
   }catch(e){toast('Alamak, kad gagal dijana. Cuba lagi.')}
 });
-
+​
 /* Buka terus dari pautan: ?lama=iphone-13&baru=iphone-17-pro&guna=gaming */
 (function(){
   const q=new URLSearchParams(location.search),o=BY[q.get('lama')],n=BY[q.get('baru')];
-  const g=document.querySelector(`input[name=guna][value="${q.get('guna')}"]`);
+  const g=[...document.querySelectorAll('input[name=guna]')].find(input=>input.value===q.get('guna'));
   if(g)g.checked=true;
   if(o&&n&&o.id!==n.id){c1.set(o);c2.set(n);state={o,n};renderAll(false)}
 })();
 </script>
 </body>
 </html>
+​
