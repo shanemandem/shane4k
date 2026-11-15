@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shane4K — Patut Tukar iPhone ke Tak?</title>
-<meta name="description" content="Bandingkan iPhone lama dan baru awak. Tahu sama ada patut upgrade atau simpan duit. Oleh Shane4K.">
+<title>Shane4K — Patut Tukar Phone ke Tak?</title>
+<meta name="description" content="Bandingkan Phone lama dan baru. Patut upgrade atau simpan duit dulu? Oleh Shane4K.">
 <meta name="theme-color" content="#3949ab">
 
 <script>
@@ -924,14 +924,14 @@ footer a {
     <h1 id="h1">Bandingkan iPhone</h1>
 
     <p class="lead">
-      Nak upgrade iPhone tapi takut membazir? Pilih iPhone awak sekarang dan
-      iPhone yang awak nak beli. Kami kira sama ada berbaloi atau tak, ikut
-      cara awak guna telefon. Siap dengan skor, sebab dan perbandingan spesifikasi.
+      Anda nak upgrade Phone tapi takut salah pilih? Pilih Phone awak sekarang dan
+      Phone yang awak nak beli. Kami akan kira sama ada phone baru itu berbaloi atau tak. 
+      Siap dengan skor, sebab dan perbandingan spesifikasi.
     </p>
 
     <form id="cmp" novalidate>
       <div class="field">
-        <label for="q1">Telefon saya sekarang</label>
+        <label for="q1">Phone saya sekarang</label>
 
         <div class="combo">
           <input
@@ -960,7 +960,7 @@ footer a {
       <div class="vs" aria-hidden="true">VS</div>
 
       <div class="field">
-        <label for="q2">Telefon yang saya nak beli</label>
+        <label for="q2">Phone yang saya nak beli</label>
 
         <div class="combo">
           <input
@@ -1002,7 +1002,7 @@ footer a {
       <span class="use-body">
         <span class="use-ico">📱</span>
         <span class="use-t">Guna Harian</span>
-        <span class="use-d">Bateri, skrin &amp; kelajuan asas</span>
+        <span class="use-d">Bateri, skrin &amp; kelajuan</span>
       </span>
     </label>
 
@@ -1020,7 +1020,7 @@ footer a {
       <span class="use-body">
         <span class="use-ico">🎬</span>
         <span class="use-t">Videografi</span>
-        <span class="use-d">Rakaman video &amp; stabilisasi</span>
+        <span class="use-d">Rakaman video clear &amp; stabil</span>
       </span>
     </label>
 
@@ -1172,7 +1172,7 @@ footer a {
     </div>
 
     <p class="fine">
-      Skor ialah anggaran Shane4K berdasarkan spesifikasi dan harga lancar
+      Skor ialah anggaran Shane4K berdasarkan spesifikasi dan harga
       di Malaysia. Ini bukan nasihat kewangan. Semak harga semasa di
       apple.com/my sebelum beli.
     </p>
@@ -1227,7 +1227,7 @@ footer a {
    Medan:
    n = nama
    y = tahun
-   rm = harga lancar di Malaysia
+   rm = harga di Malaysia
    chip = cip
    gp = indeks GPU
    gc = bilangan teras GPU
@@ -2262,7 +2262,7 @@ const M = {
   },
 
   hz: {
-    l: 'Kadar Segar Skrin',
+    l: 'Kadar refresh rate',
     v: p => p.hz + ' Hz',
     s: p => pct(p.hz, 60, 120)
   },
@@ -2300,7 +2300,7 @@ const M = {
   },
 
   ios: {
-    l: 'Sokongan iOS',
+    l: 'sokongan OS',
     v: p => {
       if (p.ended) {
         return `${p.ios} (dah tamat sokongan)`;
@@ -2369,7 +2369,7 @@ const M = {
   },
 
   harga: {
-    l: 'Harga Lancar',
+    l: 'harga',
     v: p => rm(p.rm),
     s: p => 100 - pct(p.rm, 1500, 6500)
   },
@@ -2783,7 +2783,7 @@ function reasons(o, n, u, ev) {
   if (alt) {
     add(
       'warn',
-      `Dengan harga lancar sama atau lebih murah, ${alt.p.n} (${rm(alt.p.rm)}) lebih bagus untuk ${use}.`
+      `Dengan harga sama atau lebih murah, ${alt.p.n} (${rm(alt.p.rm)}) lebih bagus untuk ${use}.`
     );
   }
 
