@@ -1007,7 +1007,7 @@ footer a {
       </div>
 
       <fieldset class="uses">
-        <legend>Untuk apa awak guna phone?</legend>
+        <legend>Tukar phone untuk?</legend>
   <div class="use-grid" role="radiogroup" aria-label="Kegunaan phone">
 
     <label class="use-card">
@@ -1187,7 +1187,7 @@ footer a {
         <summary>Cara skor dikira</summary>
         <p>Skor 50 bermaksud kedua-dua phone hampir sama. Lebih tinggi bermakna phone baru lebih baik; lebih rendah bermakna phone lama masih lebih baik. Setiap ciri diberi berat mengikut kegunaan yang dipilih. Skor = 50 + 0.6 × purata beza ciri (had 0–100).</p>
         <p><b>Kamera:</b> skor DXOMARK (foto dan video) digunakan jika kedua-dua phone sudah diuji. Selain itu kami kira megapiksel (MP), lensa ultra lebar dan telefoto, stabilisasi (OIS), keupayaan rakaman video dan generasi kamera. MP lebih besar dan teknologi lebih baru akan menang.</p>
-        <p><b>Cip &amp; GPU:</b> indeks anggaran mengikut keluarga cip, bukan skor penanda aras. Skor DXOMARK lama dan baru diuji dengan protokol berbeza, jadi perbandingan antara phone yang jauh tahunnya hanyalah panduan.</p>
+        <p><b>CPU &amp; GPU:</b> indeks anggaran mengikut keluarga CPU, bukan skor penanda aras. Skor DXOMARK lama dan baru diuji dengan protokol berbeza, jadi perbandingan antara phone yang jauh tahunnya hanyalah panduan.</p>
         <p>Harga, hayat bateri sebenar dan sokongan OS tidak masuk dalam skor. Semak ulasan dan harga semasa sebelum membeli.</p>
       </details>
       <p class="note" id="modelSources"></p>
@@ -1241,7 +1241,7 @@ footer a {
    n = nama
    y = tahun
    rm = harga di Malaysia
-   chip = cip
+   chip = CPU
    gp = indeks GPU
    gc = bilangan teras GPU
    ram = RAM dalam GB
@@ -2138,7 +2138,7 @@ add({
   Kuasa cas berwayar sebenar tidak dinyatakan. 60W ialah rating penyesuai,
   bukan semestinya kuasa yang diterima phone.
 
-  Indeks cip dan GPU ialah anggaran.
+  Indeks CPU dan GPU ialah anggaran.
 */
 add({
   y: 2026,
@@ -4519,8 +4519,8 @@ const yl = p =>
   s = skor 0–100
 */
 const M = {
-  cip: {
-    l: 'Cip (Chipset)',
+  CPU: {
+    l: 'CPU (Chipset)',
     v: p => p.chip,
     s: p => p.cpu / 1.1
   },
@@ -4717,8 +4717,8 @@ for (const [key, field] of Object.entries({ram:'ram',stanA:'sb',stanM:'sm',panel
   if(originalScore) metric.s=p=>p[field]==null?null:originalScore(p);
   if(!['casWayar','vid','stab','usb','ip','glass','cool'].includes(key)) metric.v=p=>p[field]==null?missing:originalValue(p);
 }
-M.cip.v=p=>p.chip||missing;
-M.cip.s=p=>p.cpu==null?null:p.cpu/1.1;
+M.CPU.v=p=>p.chip||missing;
+M.CPU.s=p=>p.cpu==null?null:p.cpu/1.1;
 M.gpu.v=p=>p.brand==='Samsung'?(p.gpuText||missing):`GPU ${p.gc}-teras`;
 M.gpu.s=p=>p.gp==null?null:p.gp/1.2;
 M.ios.l='Sistem operasi / sokongan';
@@ -4737,7 +4737,7 @@ M.casWayar.s=p=>p.w==null?null:pct(p.w,15,60);
 
 /* Indeks relatif 0–100: anggaran rentas jenama, bukan markah Geekbench/3DMark.
    Penentukuran berpandukan ujian PhoneArena: A53/A54, A36/A56, S23/S24,
-   S25/iPhone16, S26/17 dan Flip7. Model lain dianggar berdasarkan keluarga cip;
+   S25/iPhone16, S26/17 dan Flip7. Model lain dianggar berdasarkan keluarga CPU;
    keputusan berbeza mengikut model, suhu, sistem dan varian serantau. */
 const CHIP_INDEX = [
  [/Snapdragon\s*8\s*Gen\s*5/i, 86,78], [/Snapdragon\s*7\s*Gen\s*4/i, 50,30], [/Snapdragon\s*7\s*Gen\s*3/i, 36,20],
@@ -4797,9 +4797,9 @@ PH.forEach(p => {
   if (d) { p.dxo = d[0]; p.dxoP = d[1] || d[0]; p.dxoV = d[2] || d[0]; }
 });
 
-M.cip.l='Cip · indeks prestasi anggaran';
-M.cip.v=p=>p.chip ? `${p.chip} · ${p.cpu ?? '—'}/100 (anggaran)` : 'Tidak disahkan';
-M.cip.s=p=>Number.isFinite(p.cpu)?p.cpu:null;
+M.CPU.l='CPU · indeks prestasi anggaran';
+M.CPU.v=p=>p.chip ? `${p.chip} · ${p.cpu ?? '—'}/100 (anggaran)` : 'Tidak disahkan';
+M.CPU.s=p=>Number.isFinite(p.cpu)?p.cpu:null;
 M.gpu.l='GPU · indeks prestasi anggaran';
 M.gpu.v=p=>`${p.brand==='Apple'?`GPU ${p.gc}-teras`:(p.gpuText||'GPU tidak disahkan')} · ${p.gp ?? '—'}/100 (anggaran)`;
 M.gpu.s=p=>Number.isFinite(p.gp)?p.gp:null;
@@ -4839,7 +4839,7 @@ const USAGES = [
       ['hz', 1.5],
       ['nit', 1],
       ['size', 0],
-      ['cip', 2],
+      ['CPU', 2],
       ['casWayar', 1.5],
       ['casWayarles', .5],
       ['ios', 1.5]
@@ -4861,7 +4861,7 @@ const USAGES = [
       ['stab', 1.5],
       ['camGen', 1.5],
       ['vid', .5],
-      ['cip', .5]
+      ['CPU', .5]
     ]
   },
 
@@ -4880,7 +4880,7 @@ const USAGES = [
       ['uw', 1],
       ['front', 1],
       ['camGen', 1.5],
-      ['cip', .5]
+      ['CPU', .5]
     ]
   },
 
@@ -4891,7 +4891,7 @@ const USAGES = [
     d: 'Laju, lancar & tak panas',
     pw: 1,
     rows: [
-      ['cip', 2],
+      ['CPU', 2],
       ['gpu', 3],
       ['ram', 1.5],
       ['hz', 2],
@@ -4906,7 +4906,7 @@ const USAGES = [
     d: 'Banyak app serentak',
     pw: 1,
     rows: [
-      ['cip', 2],
+      ['CPU', 2],
       ['ram', 3],
       ['stanA', 1.5],
       ['stanM', .5]
@@ -4920,7 +4920,7 @@ const USAGES = [
     d: 'Edit terus atas phone',
     pw: 1,
     rows: [
-      ['cip', 2.5],
+      ['CPU', 2.5],
       ['gpu', 1.5],
       ['ram', 2.5],
       ['stanA', 1.5],
@@ -5280,7 +5280,7 @@ function countTo(el, to) {
   raf = requestAnimationFrame(step);
 }
 
-const meta = p => `${p.y} · ${p.chip || 'Cip tidak disahkan'} · ${rm(p.rm)} (harga rujukan)`;
+const meta = p => `${p.y} · ${p.chip || 'CPU tidak disahkan'} · ${rm(p.rm)} (harga rujukan)`;
 
 const ICON = {
   good: '✅',
