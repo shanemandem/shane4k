@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shane4K — Patut Tukar iPhone ke Tak?</title>
-<meta name="description" content="Bandingkan iPhone lama dan baru awak. Tahu sama ada patut upgrade atau simpan duit. Oleh Shane4K.">
+<title>Shane4K — Patut Tukar Phone ke Tak?</title>
+<meta name="description" content="Bandingkan Phone lama dan baru. Patut upgrade atau simpan duit dulu? Oleh Shane4K.">
 <meta name="theme-color" content="#3949ab">
 
 <script>
@@ -881,6 +881,24 @@ footer a {
     scroll-behavior: auto;
   }
 }
+
+/* Susun atur baharu: dua phone sebelah-menyebelah, kegunaan dalam borang */
+.pair{display:grid;gap:.8rem}
+@media(min-width:720px){.pair{grid-template-columns:1fr auto 1fr;align-items:end;gap:1rem}.pair .vs{margin:0 0 .75rem}}
+.pair .vs{margin:0}
+.uses{border:0;margin:1.4rem 0 0;padding:0;min-width:0}
+.uses legend{font-weight:700;font-size:1rem;padding:0;margin-bottom:.2rem}
+.uses .use-grid{margin-top:.6rem}
+.use-body{border:1.5px solid var(--border);background:var(--surface);padding:14px}
+.use-d{opacity:1;color:var(--muted)}
+.use-card:hover .use-body{border-color:var(--primary);transform:none}
+.use-card input:checked + .use-body{border-color:var(--primary);background:var(--soft);box-shadow:0 0 0 2px var(--primary)}
+.use-card input:focus-visible + .use-body{outline:3px solid var(--primary)}
+.how{margin:.2rem 0 .8rem;font-size:.92rem;color:var(--muted)}
+.how summary{cursor:pointer;font-weight:600;color:var(--text);padding:.3rem 0}
+.how p{margin:.5rem 0}
+.btn-primary[type=submit]{width:100%}
+@media(min-width:720px){.btn-primary[type=submit]{width:auto;min-width:14rem}}
 </style>
 </head>
 
@@ -921,17 +939,17 @@ footer a {
 
   <!-- Bar perbandingan -->
   <section class="hero" aria-labelledby="h1">
-    <h1 id="h1">Bandingkan iPhone</h1>
+    <h1 id="h1">Patut tukar phone ke tak?</h1>
 
     <p class="lead">
-      Nak upgrade iPhone tapi takut membazir? Pilih iPhone awak sekarang dan
-      iPhone yang awak nak beli. Kami kira sama ada berbaloi atau tak, ikut
-      cara awak guna telefon. Siap dengan skor, sebab dan perbandingan spesifikasi.
+      Nak upgrade tapi takut tersalah pilih? Pilih phone awak sekarang, phone yang awak nak beli,
+      dan untuk apa awak guna. Kami bagi skor 0–100 beserta sebabnya.
     </p>
 
     <form id="cmp" novalidate>
+      <div class="pair">
       <div class="field">
-        <label for="q1">Telefon saya sekarang</label>
+        <label for="q1">Phone saya sekarang</label>
 
         <div class="combo">
           <input
@@ -942,13 +960,13 @@ footer a {
             aria-controls="l1"
             aria-autocomplete="list"
             autocomplete="off"
-            placeholder="Taip nama telefon awak sekarang (cth: iPhone 13)"
+            placeholder="Cari phone awak sekarang, cth: iPhone 13"
           >
 
           <button
             class="combo-toggle"
             type="button"
-            aria-label="Papar senarai telefon sekarang"
+            aria-label="Papar senarai phone sekarang"
             aria-controls="l1"
             aria-expanded="false"
           >▼</button>
@@ -960,7 +978,7 @@ footer a {
       <div class="vs" aria-hidden="true">VS</div>
 
       <div class="field">
-        <label for="q2">Telefon yang saya nak beli</label>
+        <label for="q2">Phone yang saya nak beli</label>
 
         <div class="combo">
           <input
@@ -971,13 +989,13 @@ footer a {
             aria-controls="l2"
             aria-autocomplete="list"
             autocomplete="off"
-            placeholder="Taip nama telefon yang awak nak beli (cth: iPhone 17 Pro)"
+            placeholder="Cari phone yang nak dibeli, cth: iPhone 17 Pro"
           >
 
           <button
             class="combo-toggle"
             type="button"
-            aria-label="Papar senarai telefon untuk dibeli"
+            aria-label="Papar senarai phone untuk dibeli"
             aria-controls="l2"
             aria-expanded="false"
           >▼</button>
@@ -986,23 +1004,18 @@ footer a {
         </div>
       </div>
 
-      <p class="err" id="err" role="alert"></p>
+      </div>
 
-      <button class="btn btn-primary" type="submit">
-        BANDINGKAN
-      </button>
-    </form>
-  </section>
-
-  <!-- Cara penggunaan -->
-  <div class="use-grid" role="radiogroup" aria-label="Kegunaan telefon">
+      <fieldset class="uses">
+        <legend>Untuk apa awak guna phone?</legend>
+  <div class="use-grid" role="radiogroup" aria-label="Kegunaan phone">
 
     <label class="use-card">
       <input type="radio" name="guna" value="harian" checked>
       <span class="use-body">
         <span class="use-ico">📱</span>
         <span class="use-t">Guna Harian</span>
-        <span class="use-d">Bateri, skrin &amp; kelajuan asas</span>
+        <span class="use-d">Bateri, skrin &amp; kelajuan</span>
       </span>
     </label>
 
@@ -1020,7 +1033,7 @@ footer a {
       <span class="use-body">
         <span class="use-ico">🎬</span>
         <span class="use-t">Videografi</span>
-        <span class="use-d">Rakaman video &amp; stabilisasi</span>
+        <span class="use-d">Video jelas &amp; stabil</span>
       </span>
     </label>
 
@@ -1047,7 +1060,7 @@ footer a {
       <span class="use-body">
         <span class="use-ico">✂️</span>
         <span class="use-t">Edit Video/Foto</span>
-        <span class="use-d">Edit terus atas telefon</span>
+        <span class="use-d">Edit terus atas phone</span>
       </span>
     </label>
 
@@ -1055,7 +1068,7 @@ footer a {
       <input type="radio" name="guna" value="kedua">
       <span class="use-body">
         <span class="use-ico">📞</span>
-        <span class="use-t">Telefon Kedua</span>
+        <span class="use-t">Phone kedua</span>
         <span class="use-d">Jimat duit, janji berfungsi</span>
       </span>
     </label>
@@ -1064,12 +1077,21 @@ footer a {
       <input type="radio" name="guna" value="anak">
       <span class="use-body">
         <span class="use-ico">🧒</span>
-        <span class="use-t">Telefon Anak</span>
+        <span class="use-t">Phone anak</span>
         <span class="use-d">Tahan lasak &amp; berpatutan</span>
       </span>
     </label>
 
   </div>
+      </fieldset>
+
+      <p class="err" id="err" role="alert"></p>
+
+      <button class="btn btn-primary" type="submit">
+        Bandingkan
+      </button>
+    </form>
+  </section>
 
   <!-- Keputusan -->
   <section class="res" id="res" hidden aria-labelledby="resH">
@@ -1077,7 +1099,7 @@ footer a {
 
     <div class="duel">
       <div class="phone">
-        <span class="tag">Telefon sekarang</span>
+        <span class="tag">Phone sekarang</span>
         <strong id="oName"></strong>
         <small id="oMeta"></small>
       </div>
@@ -1143,7 +1165,7 @@ footer a {
         aria-expanded="false"
         aria-controls="spec"
       >
-        Baca Lanjut ▼
+        Lihat spesifikasi ▼
       </button>
 
       <button class="btn btn-ghost" id="shareBtn">
@@ -1159,11 +1181,16 @@ footer a {
       <h3 id="specH"></h3>
 
       <p class="note">
-        Hanya spesifikasi yang berkaitan dengan cara penggunaan awak dipaparkan.
-        <b>Hijau</b> = spesifikasi lebih baik. Spesifikasi yang tidak diketahui
-        pada salah satu model tidak dikira dalam skor.
+        Hijau = lebih baik. Ciri yang tiada data pada salah satu phone tidak dikira dalam skor.
       </p>
-
+      <details class="how">
+        <summary>Cara skor dikira</summary>
+        <p>Skor 50 bermaksud kedua-dua phone hampir sama. Lebih tinggi bermakna phone baru lebih baik; lebih rendah bermakna phone lama masih lebih baik. Setiap ciri diberi berat mengikut kegunaan yang dipilih. Skor = 50 + 0.6 × purata beza ciri (had 0–100).</p>
+        <p><b>Kamera:</b> skor DXOMARK (foto dan video) digunakan jika kedua-dua phone sudah diuji. Selain itu kami kira megapiksel (MP), lensa ultra lebar dan telefoto, stabilisasi (OIS), keupayaan rakaman video dan generasi kamera. MP lebih besar dan teknologi lebih baru akan menang.</p>
+        <p><b>Cip &amp; GPU:</b> indeks anggaran mengikut keluarga cip, bukan skor penanda aras. Skor DXOMARK lama dan baru diuji dengan protokol berbeza, jadi perbandingan antara phone yang jauh tahunnya hanyalah panduan.</p>
+        <p>Harga, hayat bateri sebenar dan sokongan OS tidak masuk dalam skor. Semak ulasan dan harga semasa sebelum membeli.</p>
+      </details>
+      <p class="note" id="modelSources"></p>
       <div class="sum" id="specSum"></div>
 
       <div class="tbl">
@@ -1172,9 +1199,7 @@ footer a {
     </div>
 
     <p class="fine">
-      Skor ialah anggaran Shane4K berdasarkan spesifikasi dan harga lancar
-      di Malaysia. Ini bukan nasihat kewangan. Semak harga semasa di
-      apple.com/my sebelum beli.
+      Skor ialah anggaran daripada data yang ada. Harga ialah harga rujukan semasa pelancaran; semak harga terkini sebelum membeli.
     </p>
   </section>
 </main>
@@ -1185,23 +1210,11 @@ footer a {
       <strong>© <span id="year"></span> Shane4K</strong>
 
       <p>
-        Data spesifikasi dan harga ialah anggaran dan mungkin berubah.
-        Skor CPU/GPU ialah indeks anggaran, bukan keputusan penanda aras.
-        Semak laman rasmi sebelum membuat keputusan. Sumber data dari:
-
-        <a
-          href="https://www.gsmarena.com/apple_iphone_18_pro-14934.php"
-          target="_blank"
-          rel="noopener noreferrer"
-        ><strong>GSMArena</strong></a>
-
-        dan
-
-        <a
-          href="https://nanoreview.net/en/phone-compare"
-          target="_blank"
-          rel="noopener noreferrer"
-        ><strong>NanoReview</strong></a>.
+        Data dan harga ialah anggaran dan mungkin berubah. Skor ialah panduan, bukan keputusan ujian penanda aras. Semak laman rasmi sebelum membeli.
+        Sumber: <a href="https://www.gsmarena.com/" target="_blank" rel="noopener noreferrer"><strong>GSMArena</strong></a>,
+        <a href="https://nanoreview.net/en/phone-compare" target="_blank" rel="noopener noreferrer"><strong>NanoReview</strong></a>
+        dan <a href="https://www.dxomark.com/smartphones/" target="_blank" rel="noopener noreferrer"><strong>DXOMARK</strong></a> (kamera).
+        Rujukan tambahan: <a href="https://www.phonearena.com/phones/benchmarks/performance" target="_blank" rel="noopener noreferrer">PhoneArena</a>, <a href="https://www.devicespecifications.com/en/" target="_blank" rel="noopener noreferrer">DeviceSpecifications</a> dan <a href="https://technave.com/" target="_blank" rel="noopener noreferrer">TechNave</a>.
       </p>
     </div>
 
@@ -1219,7 +1232,7 @@ footer a {
 
 <script>
 /* =====================================================================
-   1) DATA TELEFON
+   1) DATA phone
    ---------------------------------------------------------------------
    Semua data ialah anggaran. Sila semak dengan GSMArena, NanoReview
    dan laman rasmi Apple Malaysia sebelum siar.
@@ -1227,7 +1240,7 @@ footer a {
    Medan:
    n = nama
    y = tahun
-   rm = harga lancar di Malaysia
+   rm = harga di Malaysia
    chip = cip
    gp = indeks GPU
    gc = bilangan teras GPU
@@ -1492,7 +1505,7 @@ add({
   }
 ]);
 
-/* iPhone SE */
+/* phone SE */
 add({
   chip: 'A13 Bionic',
   gp: 32,
@@ -2119,11 +2132,11 @@ add({
 ]);
 
 /*
-  2026 — iPhone 18 Pro dan iPhone 18 Pro Max
+  2026 — phone 18 Pro dan phone 18 Pro Max
 
   Kapasiti bateri ialah varian nano-SIM. Varian eSIM mungkin berbeza.
   Kuasa cas berwayar sebenar tidak dinyatakan. 60W ialah rating penyesuai,
-  bukan semestinya kuasa yang diterima telefon.
+  bukan semestinya kuasa yang diterima phone.
 
   Indeks cip dan GPU ialah anggaran.
 */
@@ -2175,23 +2188,2310 @@ add({
   }
 ]);
 
+/* Samsung: model yang disahkan dilancar di Malaysia. */
+const SAMSUNG = [
+  {
+    "n": "Samsung Galaxy A51",
+    "brand": "Samsung",
+    "y": 2020,
+    "rm": 1299,
+    "ram": 6,
+    "sb": 128,
+    "sm": null,
+    "chip": "Exynos 9611",
+    "gpuText": "Mali-G72 MP3",
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED",
+    "oled": 1,
+    "inch": 6.5,
+    "hz": 60,
+    "nit": null,
+    "mah": 4000,
+    "hr": null,
+    "w": 15,
+    "ww": null,
+    "cam": 48,
+    "uw": 12,
+    "tz": 0,
+    "fr": 32,
+    "vid": "4K@30fps, 1080p@30/120fps; gyro-EIS",
+    "vr": null,
+    "st": null,
+    "stabText": "Tidak dinyatakan",
+    "ip": null,
+    "ipText": "Tidak dinyatakan",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass 3",
+    "fm": "Glass front (Gorilla Glass 3), plastic back, plastic frame",
+    "g": 172,
+    "usb": null,
+    "usbText": "USB Type-C 2.0, OTG",
+    "cool": null,
+    "ios": "Android 10, upgradable to Android 13, One UI 5",
+    "source": "https://www.gsmarena.com/samsung_galaxy_a51-9963.php"
+  },
+  {
+    "n": "Samsung Galaxy A71",
+    "brand": "Samsung",
+    "y": 2020,
+    "rm": 1799,
+    "ram": 8,
+    "sb": 128,
+    "sm": null,
+    "chip": "Snapdragon 730",
+    "gpuText": "Adreno 618",
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED Plus",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": 60,
+    "nit": null,
+    "mah": 4500,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 64,
+    "uw": 12,
+    "tz": 0,
+    "fr": 32,
+    "vid": "4K@30fps, 1080p@30/240fps, 1080p@960fps; gyro-EIS",
+    "vr": null,
+    "st": null,
+    "stabText": "Tidak dinyatakan",
+    "ip": null,
+    "ipText": "Tidak dinyatakan",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass 3",
+    "fm": "Glass front (Gorilla Glass 3), plastic back, plastic frame",
+    "g": 179,
+    "usb": null,
+    "usbText": "USB Type-C 2.0, OTG",
+    "cool": null,
+    "ios": "Android 10, upgradable to Android 13, One UI 5",
+    "source": "https://www.gsmarena.com/samsung_galaxy_a71-9995.php"
+  },
+  {
+    "n": "Samsung Galaxy A31",
+    "brand": "Samsung",
+    "y": 2020,
+    "rm": null,
+    "ram": null,
+    "sb": null,
+    "sm": null,
+    "chip": "Helio P65",
+    "gpuText": "Mali-G52 MC2",
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED",
+    "oled": 1,
+    "inch": 6.4,
+    "hz": 60,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": 15,
+    "ww": null,
+    "cam": 48,
+    "uw": 8,
+    "tz": 0,
+    "fr": 20,
+    "vid": "1080p@30fps",
+    "vr": null,
+    "st": null,
+    "stabText": "Tidak dinyatakan",
+    "ip": null,
+    "ipText": "Tidak dinyatakan",
+    "gl": null,
+    "glassText": "Tidak dinyatakan",
+    "fm": "Tidak dinyatakan",
+    "g": 185,
+    "usb": null,
+    "usbText": "USB Type-C 2.0, OTG",
+    "cool": null,
+    "ios": "Android 10, upgradable to Android 12, One UI 4.1",
+    "source": "https://www.gsmarena.com/samsung_galaxy_a31-10149.php"
+  },
+  {
+    "n": "Samsung Galaxy S20",
+    "brand": "Samsung",
+    "y": 2020,
+    "rm": 3599,
+    "ram": 8,
+    "sb": 128,
+    "sm": null,
+    "chip": "Exynos 990",
+    "gpuText": "Mali-G77 MP11 - Global Adreno 650 - USA",
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X, 120Hz, HDR10+, 1200 nits (peak)",
+    "oled": 1,
+    "inch": 6.2,
+    "hz": 120,
+    "nit": 1200,
+    "mah": 4000,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 12,
+    "uw": 12,
+    "tz": 1.1,
+    "fr": 10,
+    "vid": "8K@24fps, 4K@30/60fps, 1080p@30/60/240fps, 720p@960fps, HDR10+, stereo sound rec., gyro-EIS & OIS",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass 6",
+    "fm": "Glass front (Gorilla Glass 6), glass back (Gorilla Glass 6), aluminum frame",
+    "g": 163,
+    "usb": null,
+    "usbText": "USB Type-C 3.2, OTG",
+    "cool": null,
+    "ios": "Android 10, upgradable to Android 13, One UI 5",
+    "source": "https://www.gsmarena.com/samsung_galaxy_s20-10081.php"
+  },
+  {
+    "n": "Samsung Galaxy S20+",
+    "brand": "Samsung",
+    "y": 2020,
+    "rm": 3999,
+    "ram": 8,
+    "sb": 128,
+    "sm": null,
+    "chip": "Exynos 990",
+    "gpuText": "Mali-G77 MP11 - Global Adreno 650 - USA",
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X, 120Hz, HDR10+, 1200 nits (peak)",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": 120,
+    "nit": 1200,
+    "mah": 4500,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 12,
+    "uw": 12,
+    "tz": 1.1,
+    "fr": 10,
+    "vid": "8K@24fps, 4K@30/60fps, 1080p@30/60/240fps, 720p@960fps, HDR10+, stereo sound rec., gyro-EIS & OIS",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass 6",
+    "fm": "Glass front (Gorilla Glass 6), glass back (Gorilla Glass 6), aluminum frame",
+    "g": 186,
+    "usb": null,
+    "usbText": "USB Type-C 3.2, OTG",
+    "cool": null,
+    "ios": "Android 10, upgradable to Android 13, One UI 5",
+    "source": "https://www.gsmarena.com/samsung_galaxy_s20+-10080.php"
+  },
+  {
+    "n": "Samsung Galaxy S20 Ultra 5G",
+    "brand": "Samsung",
+    "y": 2020,
+    "rm": 4999,
+    "ram": 12,
+    "sb": 128,
+    "sm": null,
+    "chip": "Exynos 990",
+    "gpuText": "Mali-G77 MP11 - Global Adreno 650 - USA",
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X, 120Hz, HDR10+, 1400 nits (peak)",
+    "oled": 1,
+    "inch": 6.9,
+    "hz": 120,
+    "nit": 1400,
+    "mah": 5000,
+    "hr": null,
+    "w": 45,
+    "ww": null,
+    "cam": 108,
+    "uw": 12,
+    "tz": 4,
+    "fr": 40,
+    "vid": "8K@24fps, 4K@30/60fps, 1080p@30/60/240fps, 720p@960fps, HDR10+, stereo sound rec., gyro-EIS & OIS",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass 6",
+    "fm": "Glass front (Gorilla Glass 6), glass back (Gorilla Glass 6), aluminum frame",
+    "g": 222,
+    "usb": null,
+    "usbText": "USB Type-C 3.2, OTG",
+    "cool": null,
+    "ios": "Android 10, upgradable to Android 13, One UI 5.1",
+    "source": "https://www.gsmarena.com/samsung_galaxy_s20_ultra_5g-10040.php"
+  },
+  {
+    "n": "Samsung Galaxy S20 FE 5G",
+    "brand": "Samsung",
+    "y": 2020,
+    "rm": 3399,
+    "ram": null,
+    "sb": null,
+    "sm": null,
+    "chip": "Snapdragon 865 5G",
+    "gpuText": "Adreno 650",
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED, 120Hz, HDR10+",
+    "oled": 1,
+    "inch": 6.5,
+    "hz": 120,
+    "nit": null,
+    "mah": 4500,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 12,
+    "uw": 12,
+    "tz": 3,
+    "fr": 32,
+    "vid": "4K@30/60fps, 1080p@30/60fps, gyro-EIS",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass 3",
+    "fm": "Glass front (Gorilla Glass 3), plastic back, aluminum frame",
+    "g": 190,
+    "usb": null,
+    "usbText": "USB Type-C 3.2, OTG",
+    "cool": null,
+    "ios": "Android 10, upgradable to Android 13, One UI 5.1",
+    "source": "https://www.gsmarena.com/samsung_galaxy_s20_fe_5g-10377.php"
+  },
+  {
+    "n": "Samsung Galaxy S21 5G",
+    "brand": "Samsung",
+    "y": 2021,
+    "rm": 3699,
+    "ram": 8,
+    "sb": 256,
+    "sm": null,
+    "chip": "Exynos 2100",
+    "gpuText": "Mali-G78 MP14 - International Adreno 660 - USA/China",
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X, 120Hz, HDR10+, 1300 nits (peak)",
+    "oled": 1,
+    "inch": 6.2,
+    "hz": 120,
+    "nit": 1300,
+    "mah": 4000,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 12,
+    "uw": 12,
+    "tz": 1.1,
+    "fr": 10,
+    "vid": "8K@24fps, 4K@30/60fps, 1080p@30/60/120/240fps, HDR10+, stereo sound rec., gyro-EIS",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass Victus",
+    "fm": "Glass front (Gorilla Glass Victus), plastic back, aluminum frame",
+    "g": 169,
+    "usb": null,
+    "usbText": "USB Type-C 3.2, OTG",
+    "cool": null,
+    "ios": "Android 11, up to 4 major OS updates, One UI 7",
+    "source": "https://www.gsmarena.com/samsung_galaxy_s21_5g-10626.php"
+  },
+  {
+    "n": "Samsung Galaxy S21+ 5G",
+    "brand": "Samsung",
+    "y": 2021,
+    "rm": 4299,
+    "ram": 8,
+    "sb": 256,
+    "sm": null,
+    "chip": "Exynos 2100",
+    "gpuText": "Mali-G78 MP14 - International Adreno 660 - USA/China",
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X, 120Hz, HDR10+, 1300 nits (peak)",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": 120,
+    "nit": 1300,
+    "mah": 4800,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 12,
+    "uw": 12,
+    "tz": 1.1,
+    "fr": 10,
+    "vid": "8K@24fps, 4K@30/60fps, 1080p@30/60/120/240fps, HDR10+, stereo sound rec., gyro-EIS",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass Victus",
+    "fm": "Glass front (Gorilla Glass Victus), glass back (Gorilla Glass Victus), aluminum frame",
+    "g": 200,
+    "usb": null,
+    "usbText": "USB Type-C 3.2, OTG",
+    "cool": null,
+    "ios": "Android 11, up to 4 major OS updates, One UI 7",
+    "source": "https://www.gsmarena.com/samsung_galaxy_s21+_5g-10625.php"
+  },
+  {
+    "n": "Samsung Galaxy A32",
+    "brand": "Samsung",
+    "y": 2021,
+    "rm": 1099,
+    "ram": null,
+    "sb": null,
+    "sm": null,
+    "chip": "MT6769V",
+    "gpuText": "Mali-G52 MC2",
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED, 90Hz, 800 nits (HBM)",
+    "oled": 1,
+    "inch": 6.4,
+    "hz": 90,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": 15,
+    "ww": null,
+    "cam": 64,
+    "uw": 8,
+    "tz": 0,
+    "fr": 20,
+    "vid": "1080p@30fps",
+    "vr": null,
+    "st": null,
+    "stabText": "Tidak dinyatakan",
+    "ip": null,
+    "ipText": "Tidak dinyatakan",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass 5",
+    "fm": "Glass front (Gorilla Glass 5), plastic frame, plastic back",
+    "g": 184,
+    "usb": null,
+    "usbText": "USB Type-C 2.0, OTG",
+    "cool": null,
+    "ios": "Android 11, upgradable to Android 13, One UI 5",
+    "source": "https://www.gsmarena.com/samsung_galaxy_a32-10753.php"
+  },
+  {
+    "n": "Samsung Galaxy A52",
+    "brand": "Samsung",
+    "y": 2021,
+    "rm": 1499,
+    "ram": 8,
+    "sb": 256,
+    "sm": null,
+    "chip": "Snapdragon 720G",
+    "gpuText": "Adreno 618",
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED, 90Hz, 800 nits (HBM)",
+    "oled": 1,
+    "inch": 6.5,
+    "hz": 90,
+    "nit": null,
+    "mah": 4500,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 64,
+    "uw": 12,
+    "tz": 0,
+    "fr": 32,
+    "vid": "4K@30fps, 1080p@30/60fps; gyro-EIS",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP67",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass 5",
+    "fm": "Glass front (Gorilla Glass 5), plastic frame, plastic back",
+    "g": 189,
+    "usb": null,
+    "usbText": "USB Type-C 2.0, OTG",
+    "cool": null,
+    "ios": "Android 11, upgradable to Android 14, One UI 6.1",
+    "source": "https://www.gsmarena.com/samsung_galaxy_a52-10641.php"
+  },
+  {
+    "n": "Samsung Galaxy A72",
+    "brand": "Samsung",
+    "y": 2021,
+    "rm": 1899,
+    "ram": 8,
+    "sb": 256,
+    "sm": null,
+    "chip": "Snapdragon 720G",
+    "gpuText": "Adreno 618",
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED, 90Hz, 800 nits (HBM)",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": 90,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 64,
+    "uw": 12,
+    "tz": 3,
+    "fr": 32,
+    "vid": "4K@30fps, 1080p@30/60fps; gyro-EIS",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP67",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass 5",
+    "fm": "Glass front (Gorilla Glass 5), plastic frame, plastic back",
+    "g": 203,
+    "usb": null,
+    "usbText": "USB Type-C 2.0, OTG",
+    "cool": null,
+    "ios": "Android 11, upgradable to Android 14 One UI 6.1",
+    "source": "https://www.gsmarena.com/samsung_galaxy_a72-10469.php"
+  },
+  {
+    "n": "Samsung Galaxy Z Flip3 5G",
+    "brand": "Samsung",
+    "y": 2021,
+    "rm": 3999,
+    "ram": 8,
+    "sb": 128,
+    "sm": null,
+    "chip": "Snapdragon 888 5G",
+    "gpuText": "Adreno 660",
+    "cpu": null,
+    "gp": null,
+    "pn": "Foldable Dynamic AMOLED 2X, 120Hz, HDR10+, 1200 nits (peak)",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": 120,
+    "nit": 1200,
+    "mah": 3300,
+    "hr": null,
+    "w": 15,
+    "ww": null,
+    "cam": 12,
+    "uw": 12,
+    "tz": 0,
+    "fr": 10,
+    "vid": "4K@30/60fps, 1080p@60/240fps, HDR10+",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "Tidak dinyatakan",
+    "gl": null,
+    "glassText": "Tidak dinyatakan",
+    "fm": "Plastic front, glass back (Gorilla Glass Victus), aluminum frame",
+    "g": 183,
+    "usb": null,
+    "usbText": "USB Type-C 2.0, OTG",
+    "cool": null,
+    "ios": "Android 11, upgradable to Android 15, One UI 7",
+    "source": "https://www.gsmarena.com/samsung_galaxy_z_flip3_5g-11044.php"
+  },
+  {
+    "n": "Samsung Galaxy S22 5G",
+    "brand": "Samsung",
+    "y": 2022,
+    "rm": 3499,
+    "ram": 8,
+    "sb": 128,
+    "sm": null,
+    "chip": "Snapdragon 8 Gen 1",
+    "gpuText": "Xclipse 920 - Europe Adreno 730 - ROW",
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X, 120Hz, HDR10+, 1300 nits (peak)",
+    "oled": 1,
+    "inch": 6.1,
+    "hz": 120,
+    "nit": 1300,
+    "mah": 3700,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 50,
+    "uw": 12,
+    "tz": 3,
+    "fr": 10,
+    "vid": "8K@24fps, 4K@30/60fps, 1080p@30/60/120/240fps, HDR10+, stereo sound rec., gyro-EIS",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass Victus+",
+    "fm": "Glass front (Gorilla Glass Victus+), glass back (Gorilla Glass Victus+), aluminum frame",
+    "g": 167,
+    "usb": null,
+    "usbText": "USB Type-C 3.2, OTG",
+    "cool": null,
+    "ios": "Android 12, up to 4 major OS updates, One UI 8",
+    "source": "https://www.gsmarena.com/samsung_galaxy_s22_5g-11253.php"
+  },
+  {
+    "n": "Samsung Galaxy S22+ 5G",
+    "brand": "Samsung",
+    "y": 2022,
+    "rm": 4099,
+    "ram": 8,
+    "sb": 128,
+    "sm": null,
+    "chip": "Snapdragon 8 Gen 1",
+    "gpuText": "Xclipse 920 - Europe Adreno 730 - ROW",
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X, 120Hz, HDR10+, 1750 nits (peak)",
+    "oled": 1,
+    "inch": 6.6,
+    "hz": 120,
+    "nit": 1750,
+    "mah": 4500,
+    "hr": null,
+    "w": 45,
+    "ww": null,
+    "cam": 50,
+    "uw": 12,
+    "tz": 3,
+    "fr": 10,
+    "vid": "8K@24fps, 4K@30/60fps, 1080p@30/60/120/240fps, HDR10+, stereo sound rec., gyro-EIS",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass Victus+",
+    "fm": "Glass front (Gorilla Glass Victus+), glass back (Gorilla Glass Victus+), aluminum frame",
+    "g": 195,
+    "usb": null,
+    "usbText": "USB Type-C 3.2, OTG",
+    "cool": null,
+    "ios": "Android 12, up to 4 major OS updates, One UI 6.1.1",
+    "source": "https://www.gsmarena.com/samsung_galaxy_s22+_5g-11252.php"
+  },
+  {
+    "n": "Samsung Galaxy S22 Ultra 5G",
+    "brand": "Samsung",
+    "y": 2022,
+    "rm": 5099,
+    "ram": 8,
+    "sb": 128,
+    "sm": null,
+    "chip": "Snapdragon 8 Gen 1",
+    "gpuText": "Xclipse 920 - Europe Adreno 730 - ROW",
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X, 120Hz, HDR10+, 1750 nits (peak)",
+    "oled": 1,
+    "inch": 6.8,
+    "hz": 120,
+    "nit": 1750,
+    "mah": 5000,
+    "hr": null,
+    "w": 45,
+    "ww": null,
+    "cam": 108,
+    "uw": 12,
+    "tz": 10,
+    "fr": 40,
+    "vid": "8K@24fps, 4K@30/60fps, 1080p@30/60/120/240fps, HDR10+, stereo sound rec., gyro-EIS",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass Victus+",
+    "fm": "Glass front (Gorilla Glass Victus+), glass back (Gorilla Glass Victus+), aluminum frame",
+    "g": 228,
+    "usb": null,
+    "usbText": "USB Type-C 3.2, OTG",
+    "cool": null,
+    "ios": "Android 12, up to 4 major OS updates, One UI 8",
+    "source": "https://www.gsmarena.com/samsung_galaxy_s22_ultra_5g-11251.php"
+  },
+  {
+    "n": "Samsung Galaxy A33 5G",
+    "brand": "Samsung",
+    "y": 2022,
+    "rm": 1499,
+    "ram": 8,
+    "sb": 128,
+    "sm": null,
+    "chip": "Exynos 1280",
+    "gpuText": "Mali-G68",
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED, 90Hz",
+    "oled": 1,
+    "inch": 6.4,
+    "hz": 90,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 48,
+    "uw": 8,
+    "tz": 0,
+    "fr": 13,
+    "vid": "4K@30fps, 1080p@30/60fps",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP67",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass 5",
+    "fm": "Glass front (Gorilla Glass 5), plastic frame, plastic back",
+    "g": 186,
+    "usb": null,
+    "usbText": "USB Type-C 2.0, OTG",
+    "cool": null,
+    "ios": "Android 12, up to 4 major OS updates, One UI 8",
+    "source": "https://www.gsmarena.com/samsung_galaxy_a33_5g-11429.php"
+  },
+  {
+    "n": "Samsung Galaxy Z Flip4",
+    "brand": "Samsung",
+    "y": 2022,
+    "rm": null,
+    "ram": null,
+    "sb": null,
+    "sm": null,
+    "chip": "Snapdragon 8+ Gen 1",
+    "gpuText": "Adreno 730",
+    "cpu": null,
+    "gp": null,
+    "pn": "Foldable Dynamic AMOLED 2X, 120Hz, HDR10+, 1200 nits (peak)",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": 120,
+    "nit": 1200,
+    "mah": 3700,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 12,
+    "uw": 12,
+    "tz": 0,
+    "fr": 10,
+    "vid": "4K@30/60fps, 1080p@60/240fps, HDR10+",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "Tidak dinyatakan",
+    "gl": null,
+    "glassText": "Tidak dinyatakan",
+    "fm": "Plastic front (unfolded), glass back (Gorilla Glass Victus+), aluminum frame",
+    "g": 187,
+    "usb": null,
+    "usbText": "USB Type-C 2.0, OTG",
+    "cool": null,
+    "ios": "Android 12, upgradable to Android 16, One UI 8",
+    "source": "https://www.gsmarena.com/samsung_galaxy_z_flip4-11538.php"
+  },
+  {
+    "n": "Samsung Galaxy S23+",
+    "brand": "Samsung",
+    "y": 2023,
+    "rm": 4699,
+    "ram": 8,
+    "sb": 256,
+    "sm": null,
+    "chip": "Snapdragon 8 Gen 2",
+    "gpuText": "Adreno 740",
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X, 120Hz, HDR10+, 1200 nits (HBM), 1750 nits (peak)",
+    "oled": 1,
+    "inch": 6.6,
+    "hz": 120,
+    "nit": 1750,
+    "mah": 4700,
+    "hr": null,
+    "w": 45,
+    "ww": null,
+    "cam": 50,
+    "uw": 12,
+    "tz": 3,
+    "fr": 12,
+    "vid": "8K@24/30fps, 4K@30/60fps, 1080p@30/60/120/240fps, HDR10+, stereo sound rec., gyro-EIS",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass Victus 2",
+    "fm": "Glass front (Gorilla Glass Victus 2), glass back (Gorilla Glass Victus 2), aluminum frame",
+    "g": 196,
+    "usb": null,
+    "usbText": "USB Type-C 3.2, OTG",
+    "cool": null,
+    "ios": "Android 13, upgradable to Android 17, up to 4 major OS updates, One UI 9.0",
+    "source": "https://www.gsmarena.com/samsung_galaxy_s23+-12083.php"
+  },
+  {
+    "n": "Samsung Galaxy S23 Ultra",
+    "brand": "Samsung",
+    "y": 2023,
+    "rm": 5699,
+    "ram": 12,
+    "sb": 256,
+    "sm": null,
+    "chip": "Snapdragon 8 Gen 2",
+    "gpuText": "Adreno 740",
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X, 120Hz, HDR10+, 1200 nits (HBM), 1750 nits (peak)",
+    "oled": 1,
+    "inch": 6.8,
+    "hz": 120,
+    "nit": 1750,
+    "mah": 5000,
+    "hr": null,
+    "w": 45,
+    "ww": null,
+    "cam": 200,
+    "uw": 12,
+    "tz": 10,
+    "fr": 12,
+    "vid": "8K@24/30fps, 4K@30/60fps, 1080p@30/60/120/240fps, HDR10+, stereo sound rec., gyro-EIS",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass Victus 2",
+    "fm": "Glass front (Gorilla Glass Victus 2), glass back (Gorilla Glass Victus 2), aluminum frame",
+    "g": 234,
+    "usb": null,
+    "usbText": "USB Type-C 3.2, OTG",
+    "cool": null,
+    "ios": "Android 13, upgradable to Android 17, up to 4 major OS updates, One UI 9.0",
+    "source": "https://www.gsmarena.com/samsung_galaxy_s23_ultra-12024.php"
+  },
+  {
+    "n": "Samsung Galaxy A55 5G",
+    "brand": "Samsung",
+    "y": 2024,
+    "rm": 1999,
+    "ram": 12,
+    "sb": 256,
+    "sm": null,
+    "chip": "Exynos 1480",
+    "gpuText": "Xclipse 530",
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED, 120Hz, HDR10+",
+    "oled": 1,
+    "inch": 6.6,
+    "hz": 120,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": 25,
+    "ww": 0,
+    "cam": 50,
+    "uw": 12,
+    "tz": 0,
+    "fr": 32,
+    "vid": "4K@30fps, 1080p@30/60fps",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP67",
+    "gl": null,
+    "glassText": "Corning Gorilla Glass Victus+",
+    "fm": "Aluminium",
+    "g": 213,
+    "usb": null,
+    "usbText": "USB Type-C 2.0",
+    "cool": null,
+    "ios": "Android 14; sehingga 4 kemas kini utama",
+    "source": "https://www.gsmarena.com/samsung_galaxy_a55-12824.php"
+  },
+  {
+    "n": "Samsung Galaxy A26 5G",
+    "brand": "Samsung",
+    "y": 2025,
+    "rm": 1199,
+    "ram": 6,
+    "sb": 128,
+    "sm": null,
+    "chip": null,
+    "cpu": null,
+    "gp": null,
+    "gpuText": null,
+    "pn": "Super AMOLED",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": null,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": null,
+    "uw": null,
+    "tz": null,
+    "fr": null,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "ip": null,
+    "ipText": "IP67",
+    "gl": null,
+    "fm": null,
+    "g": null,
+    "usb": null,
+    "cool": null,
+    "ios": "Android; sehingga 6 generasi kemas kini OS dan keselamatan",
+    "source": "https://news.samsung.com/my/introducing-awesome-intelligence-the-galaxy-a56-5g-galaxy-a36-5g-galaxy-a26-5g-available-in-malaysia-from-18-march-2025"
+  },
+  {
+    "n": "Samsung Galaxy A36 5G",
+    "brand": "Samsung",
+    "y": 2025,
+    "rm": 1499,
+    "ram": 6,
+    "sb": 128,
+    "sm": null,
+    "chip": "Snapdragon 6 Gen 3",
+    "cpu": null,
+    "gp": null,
+    "gpuText": null,
+    "pn": "Tidak dinyatakan",
+    "oled": null,
+    "inch": null,
+    "hz": null,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": 45,
+    "ww": null,
+    "cam": null,
+    "uw": null,
+    "tz": null,
+    "fr": null,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "ip": null,
+    "ipText": "IP67",
+    "gl": null,
+    "fm": null,
+    "g": null,
+    "usb": null,
+    "cool": null,
+    "ios": "Android; sehingga 6 generasi kemas kini OS dan keselamatan",
+    "source": "https://news.samsung.com/my/introducing-awesome-intelligence-the-galaxy-a56-5g-galaxy-a36-5g-galaxy-a26-5g-available-in-malaysia-from-18-march-2025"
+  },
+  {
+    "n": "Samsung Galaxy A56 5G",
+    "brand": "Samsung",
+    "y": 2025,
+    "rm": 1999,
+    "ram": 8,
+    "sb": 128,
+    "sm": null,
+    "chip": "Exynos 1580",
+    "cpu": null,
+    "gp": null,
+    "gpuText": null,
+    "pn": "Tidak dinyatakan",
+    "oled": null,
+    "inch": null,
+    "hz": null,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": 45,
+    "ww": null,
+    "cam": null,
+    "uw": null,
+    "tz": null,
+    "fr": null,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "ip": null,
+    "ipText": "IP67",
+    "gl": null,
+    "fm": null,
+    "g": null,
+    "usb": null,
+    "cool": null,
+    "ios": "Android; sehingga 6 generasi kemas kini OS dan keselamatan",
+    "source": "https://news.samsung.com/my/introducing-awesome-intelligence-the-galaxy-a56-5g-galaxy-a36-5g-galaxy-a26-5g-available-in-malaysia-from-18-march-2025"
+  },
+  {
+    "n": "Samsung Galaxy S26 Ultra",
+    "brand": "Samsung",
+    "y": 2026,
+    "rm": 6799,
+    "ram": 12,
+    "sb": 512,
+    "sm": null,
+    "chip": "Snapdragon 8 Elite Gen 5 for Galaxy",
+    "gpuText": "Adreno 840",
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic LTPO AMOLED 2X",
+    "oled": 1,
+    "inch": 6.9,
+    "hz": 120,
+    "nit": 2600,
+    "mah": 5000,
+    "hr": null,
+    "w": 60,
+    "ww": 25,
+    "cam": 200,
+    "uw": 50,
+    "tz": 5,
+    "fr": 12,
+    "vid": "8K@30fps, 4K@120fps",
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68 (sehingga 1.5m, 30 min)",
+    "gl": null,
+    "glassText": "Corning Gorilla Armor 2",
+    "fm": "Aluminium",
+    "g": 214,
+    "usb": null,
+    "usbText": "USB Type-C 3.2",
+    "cool": null,
+    "ios": "Android 16, sehingga 7 kemas kini utama",
+    "source": "https://www.gsmarena.com/samsung_galaxy_s26_ultra_5g-14320.php"
+  }
+];
+// Tambahan: varian dan harga pelancaran yang disahkan untuk Malaysia.
+SAMSUNG.push(...[
+  {
+    "brand": "Samsung",
+    "rm": 1849,
+    "ram": 8,
+    "sb": 256,
+    "sm": null,
+    "chip": "Exynos 1280",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED",
+    "oled": 1,
+    "inch": 6.5,
+    "hz": 120,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 64,
+    "uw": 12,
+    "tz": 0,
+    "fr": 32,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP67",
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": null,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": "Android 12 ketika dilancarkan; sehingga 4 generasi kemas kini OS",
+    "n": "Samsung Galaxy A53 5G",
+    "y": 2022,
+    "source": "https://hitechcentury.com/samsung-galaxy-a73-a53-a33-launch"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 2099,
+    "ram": 8,
+    "sb": 256,
+    "sm": null,
+    "chip": "Snapdragon 778G",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": 120,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 108,
+    "uw": 12,
+    "tz": 0,
+    "fr": 32,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP67",
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": null,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": "Android 12 ketika dilancarkan; sehingga 4 generasi kemas kini OS",
+    "n": "Samsung Galaxy A73 5G",
+    "y": 2022,
+    "source": "https://hitechcentury.com/samsung-galaxy-a73-a53-a33-launch"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 1599,
+    "ram": 8,
+    "sb": 256,
+    "sm": null,
+    "chip": "Dimensity 1080",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED",
+    "oled": 1,
+    "inch": 6.6,
+    "hz": 120,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": 48,
+    "uw": 8,
+    "tz": 0,
+    "fr": 13,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP67",
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": null,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy A34 5G",
+    "y": 2023,
+    "source": "https://www.lowyat.net/2023/297080/samsung-galaxy-a545g-a345g-price-my"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 1899,
+    "ram": 8,
+    "sb": 256,
+    "sm": null,
+    "chip": "Exynos 1380",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED",
+    "oled": 1,
+    "inch": 6.4,
+    "hz": 120,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": 50,
+    "uw": 12,
+    "tz": 0,
+    "fr": 32,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP67",
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": null,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy A54 5G",
+    "y": 2023,
+    "source": "https://www.lowyat.net/2023/297080/samsung-galaxy-a545g-a345g-price-my"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 5299,
+    "ram": 12,
+    "sb": 256,
+    "sm": 512,
+    "chip": "Exynos 2100",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X",
+    "oled": 1,
+    "inch": 6.8,
+    "hz": 120,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": 108,
+    "uw": 12,
+    "tz": 10,
+    "fr": 40,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68",
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 227,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": "Android 11 ketika dilancarkan",
+    "n": "Samsung Galaxy S21 Ultra 5G",
+    "y": 2021,
+    "source": "https://hitechcentury.com/best-galaxy-s21-deals-malaysia"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 3899,
+    "ram": 8,
+    "sb": 256,
+    "sm": null,
+    "chip": "Exynos 990",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED Plus",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": 60,
+    "nit": null,
+    "mah": 4300,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": 12,
+    "uw": 12,
+    "tz": null,
+    "fr": 10,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": null,
+    "ip": null,
+    "ipText": null,
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 192,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy Note20 4G",
+    "y": 2020,
+    "source": "https://ringgitplus.com/en/blog/smartphones/samsung-announces-galaxy-note-20-and-note-20-ultra-priced-from-rm3899.html"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 4299,
+    "ram": 8,
+    "sb": 256,
+    "sm": null,
+    "chip": "Exynos 990",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED Plus",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": 60,
+    "nit": null,
+    "mah": 4300,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": 12,
+    "uw": 12,
+    "tz": null,
+    "fr": 10,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": null,
+    "ip": null,
+    "ipText": null,
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 192,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy Note20 5G",
+    "y": 2020,
+    "source": "https://ringgitplus.com/en/blog/smartphones/samsung-announces-galaxy-note-20-and-note-20-ultra-priced-from-rm3899.html"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 5199,
+    "ram": 12,
+    "sb": 256,
+    "sm": null,
+    "chip": "Exynos 990",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X",
+    "oled": 1,
+    "inch": 6.9,
+    "hz": 120,
+    "nit": null,
+    "mah": 4500,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": 108,
+    "uw": 12,
+    "tz": 5,
+    "fr": null,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": null,
+    "ip": null,
+    "ipText": null,
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 208,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy Note20 Ultra 5G",
+    "y": 2020,
+    "source": "https://ringgitplus.com/en/blog/smartphones/samsung-announces-galaxy-note-20-and-note-20-ultra-priced-from-rm3899.html"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 3899,
+    "ram": 8,
+    "sb": 128,
+    "sm": null,
+    "chip": "Snapdragon 8 Gen 2 for Galaxy",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X",
+    "oled": 1,
+    "inch": 6.1,
+    "hz": 120,
+    "nit": null,
+    "mah": null,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": 50,
+    "uw": 12,
+    "tz": 3,
+    "fr": 12,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": null,
+    "ip": null,
+    "ipText": null,
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": null,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy S23",
+    "y": 2023,
+    "source": "https://ringgitplus.com/en/blog/smartphones/samsung-launches-galaxy-s23-series-available-for-pre-order-starting-from-rm3899.html"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 4099,
+    "ram": 8,
+    "sb": 256,
+    "sm": 512,
+    "chip": "Exynos 2400 for Galaxy",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X",
+    "oled": 1,
+    "inch": 6.2,
+    "hz": 120,
+    "nit": null,
+    "mah": null,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": 50,
+    "uw": 12,
+    "tz": 3,
+    "fr": 12,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": null,
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": null,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy S24",
+    "y": 2024,
+    "source": "https://hitechcentury.com/samsung-galaxy-s24-malaysia-preorder"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 4899,
+    "ram": 12,
+    "sb": 256,
+    "sm": 512,
+    "chip": "Exynos 2400 for Galaxy",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": 120,
+    "nit": null,
+    "mah": null,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": 50,
+    "uw": 12,
+    "tz": 3,
+    "fr": 12,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": null,
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": null,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy S24+",
+    "y": 2024,
+    "source": "https://hitechcentury.com/samsung-galaxy-s24-malaysia-preorder"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 6299,
+    "ram": 12,
+    "sb": 256,
+    "sm": 1024,
+    "chip": "Snapdragon 8 Gen 3 for Galaxy",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X",
+    "oled": 1,
+    "inch": 6.8,
+    "hz": 120,
+    "nit": null,
+    "mah": null,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": 200,
+    "uw": 12,
+    "tz": 5,
+    "fr": 12,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": null,
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": null,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy S24 Ultra",
+    "y": 2024,
+    "source": "https://hitechcentury.com/samsung-galaxy-s24-malaysia-preorder"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 899,
+    "ram": 8,
+    "sb": 256,
+    "sm": null,
+    "chip": null,
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": null,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 50,
+    "uw": 5,
+    "tz": 0,
+    "fr": 13,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": null,
+    "ip": null,
+    "ipText": "IP54",
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": null,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": "Sehingga 6 generasi kemas kini OS",
+    "n": "Samsung Galaxy A16 5G",
+    "y": 2024,
+    "source": "https://news.samsung.com/my/elevating-everyday-experiences-with-the-new-samsung-galaxy-a16-5g"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 6799,
+    "ram": 12,
+    "sb": 256,
+    "sm": 1024,
+    "chip": "Snapdragon 8 Gen 2",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X (skrin utama)",
+    "oled": 1,
+    "inch": 7.6,
+    "hz": null,
+    "nit": null,
+    "mah": 4400,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": 50,
+    "uw": 12,
+    "tz": null,
+    "fr": 10,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": null,
+    "ip": null,
+    "ipText": null,
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 253,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy Z Fold5",
+    "y": 2023,
+    "source": "https://ringgitplus.com/en/blog/lifestyle/samsung-galaxy-z-fold-5-and-galaxy-z-flip-5-now-available-in-malaysia-from-rm6799-and-rm4499.html"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 4499,
+    "ram": 8,
+    "sb": 256,
+    "sm": 512,
+    "chip": "Snapdragon 8 Gen 2",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": null,
+    "oled": null,
+    "inch": 6.7,
+    "hz": null,
+    "nit": null,
+    "mah": 3700,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": 12,
+    "uw": 12,
+    "tz": 0,
+    "fr": 10,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": null,
+    "ip": null,
+    "ipText": null,
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 187,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy Z Flip5",
+    "y": 2023,
+    "source": "https://ringgitplus.com/en/blog/lifestyle/samsung-galaxy-z-fold-5-and-galaxy-z-flip-5-now-available-in-malaysia-from-rm6799-and-rm4499.html"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 7299,
+    "ram": 12,
+    "sb": 256,
+    "sm": 1024,
+    "chip": "Snapdragon 8 Gen 3 for Galaxy",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X (skrin utama)",
+    "oled": 1,
+    "inch": 7.6,
+    "hz": 120,
+    "nit": 2600,
+    "mah": 4400,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 50,
+    "uw": 12,
+    "tz": 3,
+    "fr": 10,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP48",
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 239,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": "Sehingga 7 generasi kemas kini OS",
+    "n": "Samsung Galaxy Z Fold6",
+    "y": 2024,
+    "source": "https://news.samsung.com/my/samsung-galaxy-z-fold6-and-galaxy-z-flip6-elevate-galaxy-ai-to-new-heights"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 4999,
+    "ram": 12,
+    "sb": 256,
+    "sm": 512,
+    "chip": "Snapdragon 8 Gen 3 for Galaxy",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X (skrin utama)",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": 120,
+    "nit": null,
+    "mah": 4000,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 50,
+    "uw": 12,
+    "tz": 0,
+    "fr": 10,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP48",
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 187,
+    "usb": null,
+    "usbText": null,
+    "cool": 1,
+    "ios": "Sehingga 7 generasi kemas kini OS",
+    "n": "Samsung Galaxy Z Flip6",
+    "y": 2024,
+    "source": "https://news.samsung.com/my/samsung-galaxy-z-fold6-and-galaxy-z-flip6-elevate-galaxy-ai-to-new-heights"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 3999,
+    "ram": 12,
+    "sb": 256,
+    "sm": 512,
+    "chip": "Snapdragon 8 Elite for Galaxy",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X",
+    "oled": 1,
+    "inch": 6.2,
+    "hz": 120,
+    "nit": null,
+    "mah": 4000,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 50,
+    "uw": 12,
+    "tz": 3,
+    "fr": 12,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68",
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 162,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": "Android 15 ketika dilancarkan; sehingga 7 generasi kemas kini OS",
+    "n": "Samsung Galaxy S25",
+    "y": 2025,
+    "source": "https://news.samsung.com/my/samsung-galaxy-s25-series-sets-the-standard-of-ai-phone-as-a-true-ai-companion"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 4999,
+    "ram": 12,
+    "sb": 256,
+    "sm": 512,
+    "chip": "Snapdragon 8 Elite for Galaxy",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": 120,
+    "nit": null,
+    "mah": 4900,
+    "hr": null,
+    "w": 45,
+    "ww": null,
+    "cam": 50,
+    "uw": 12,
+    "tz": 3,
+    "fr": 12,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68",
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 190,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": "Android 15 ketika dilancarkan; sehingga 7 generasi kemas kini OS",
+    "n": "Samsung Galaxy S25+",
+    "y": 2025,
+    "source": "https://news.samsung.com/my/samsung-galaxy-s25-series-sets-the-standard-of-ai-phone-as-a-true-ai-companion"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 5999,
+    "ram": 12,
+    "sb": 256,
+    "sm": 1024,
+    "chip": "Snapdragon 8 Elite for Galaxy",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X",
+    "oled": 1,
+    "inch": 6.9,
+    "hz": 120,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": 45,
+    "ww": null,
+    "cam": 200,
+    "uw": 50,
+    "tz": 5,
+    "fr": 12,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68",
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 218,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": "Android 15 ketika dilancarkan; sehingga 7 generasi kemas kini OS",
+    "n": "Samsung Galaxy S25 Ultra",
+    "y": 2025,
+    "source": "https://news.samsung.com/my/samsung-galaxy-s25-series-sets-the-standard-of-ai-phone-as-a-true-ai-companion"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 7799,
+    "ram": 12,
+    "sb": 256,
+    "sm": 1024,
+    "chip": "Snapdragon 8 Elite for Galaxy",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X (skrin utama)",
+    "oled": 1,
+    "inch": 8,
+    "hz": 120,
+    "nit": null,
+    "mah": 4400,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 200,
+    "uw": 12,
+    "tz": 3,
+    "fr": 10,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP48",
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 215,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": "Android 16 ketika dilancarkan",
+    "n": "Samsung Galaxy Z Fold7",
+    "y": 2025,
+    "source": "https://news.samsung.com/my/samsung-galaxy-z-fold7-raising-the-bar-for-smartphones"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 4999,
+    "ram": 12,
+    "sb": 256,
+    "sm": 512,
+    "chip": null,
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X (skrin utama)",
+    "oled": 1,
+    "inch": 6.9,
+    "hz": 120,
+    "nit": 2600,
+    "mah": null,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": null,
+    "uw": null,
+    "tz": null,
+    "fr": null,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": null,
+    "ip": null,
+    "ipText": null,
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 188,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy Z Flip7",
+    "y": 2025,
+    "source": "https://news.samsung.com/my/samsung-galaxy-z-fold7-raising-the-bar-for-smartphones"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 3999,
+    "ram": 8,
+    "sb": 128,
+    "sm": 256,
+    "chip": null,
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": null,
+    "oled": null,
+    "inch": null,
+    "hz": null,
+    "nit": null,
+    "mah": null,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": null,
+    "uw": null,
+    "tz": null,
+    "fr": null,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": null,
+    "ip": null,
+    "ipText": null,
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": null,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy Z Flip7 FE",
+    "y": 2025,
+    "source": "https://news.samsung.com/my/samsung-galaxy-z-fold7-raising-the-bar-for-smartphones"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 5199,
+    "ram": 12,
+    "sb": 512,
+    "sm": null,
+    "chip": "Exynos 2600",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X",
+    "oled": 1,
+    "inch": 6.3,
+    "hz": 120,
+    "nit": null,
+    "mah": 4300,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 50,
+    "uw": 12,
+    "tz": 3,
+    "fr": 12,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": null,
+    "ip": null,
+    "ipText": null,
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 167,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy S26",
+    "y": 2026,
+    "source": "https://news.samsung.com/my/samsung-unveils-galaxy-s26-series-the-most-intuitive-galaxy-ai-phone-yet"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 6199,
+    "ram": 12,
+    "sb": 512,
+    "sm": null,
+    "chip": "Exynos 2600",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": 120,
+    "nit": null,
+    "mah": 4900,
+    "hr": null,
+    "w": 45,
+    "ww": null,
+    "cam": 50,
+    "uw": 12,
+    "tz": 3,
+    "fr": 12,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": null,
+    "ip": null,
+    "ipText": null,
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 190,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy S26+",
+    "y": 2026,
+    "source": "https://news.samsung.com/my/samsung-unveils-galaxy-s26-series-the-most-intuitive-galaxy-ai-phone-yet"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 2899,
+    "ram": 8,
+    "sb": 128,
+    "sm": 512,
+    "chip": "Exynos 2500",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Dynamic AMOLED 2X",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": 120,
+    "nit": 1900,
+    "mah": 4900,
+    "hr": null,
+    "w": 45,
+    "ww": 15,
+    "cam": 50,
+    "uw": 12,
+    "tz": 3,
+    "fr": 12,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP68",
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 193,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": "Android 17 ketika dilancarkan; sehingga 7 generasi kemas kini OS",
+    "n": "Samsung Galaxy S26 FE",
+    "y": 2026,
+    "source": "https://news.samsung.com/my/samsung-galaxy-s26-fe-delivering-the-latest-flagship-experience-focused-on-what-matters-most"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 1399,
+    "ram": 8,
+    "sb": 128,
+    "sm": 256,
+    "chip": "Snapdragon 6 Gen 3",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": "Super AMOLED",
+    "oled": 1,
+    "inch": 6.7,
+    "hz": 120,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": 25,
+    "ww": null,
+    "cam": 50,
+    "uw": 5,
+    "tz": 0,
+    "fr": 12,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": "OIS",
+    "ip": null,
+    "ipText": "IP64",
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 200,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": "Android 16 ketika dilancarkan; sehingga 6 generasi kemas kini OS",
+    "n": "Samsung Galaxy A27 5G",
+    "y": 2026,
+    "source": "https://news.samsung.com/my/samsung-galaxy-a27-5g-brings-an-immersive-display-and-awesome-intelligence-to-more-users"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 7299,
+    "ram": null,
+    "sb": 256,
+    "sm": 1024,
+    "chip": "Snapdragon 8 Elite Gen 5 for Galaxy",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": null,
+    "oled": null,
+    "inch": null,
+    "hz": null,
+    "nit": null,
+    "mah": 4800,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": 50,
+    "uw": 50,
+    "tz": null,
+    "fr": null,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": null,
+    "ip": null,
+    "ipText": null,
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 201,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy Z Fold8",
+    "y": 2026,
+    "source": "https://news.samsung.com/my/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 8099,
+    "ram": null,
+    "sb": 256,
+    "sm": 1024,
+    "chip": "Snapdragon 8 Elite Gen 5 for Galaxy",
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": null,
+    "oled": null,
+    "inch": 8,
+    "hz": null,
+    "nit": null,
+    "mah": 5000,
+    "hr": null,
+    "w": 45,
+    "ww": null,
+    "cam": 200,
+    "uw": 50,
+    "tz": null,
+    "fr": null,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": null,
+    "ip": null,
+    "ipText": null,
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": 215,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy Z Fold8 Ultra",
+    "y": 2026,
+    "source": "https://news.samsung.com/my/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living"
+  },
+  {
+    "brand": "Samsung",
+    "rm": 5399,
+    "ram": null,
+    "sb": 256,
+    "sm": 512,
+    "chip": null,
+    "gpuText": null,
+    "cpu": null,
+    "gp": null,
+    "pn": null,
+    "oled": null,
+    "inch": null,
+    "hz": null,
+    "nit": null,
+    "mah": null,
+    "hr": null,
+    "w": null,
+    "ww": null,
+    "cam": 50,
+    "uw": null,
+    "tz": null,
+    "fr": null,
+    "vid": null,
+    "vr": null,
+    "st": null,
+    "stabText": null,
+    "ip": null,
+    "ipText": null,
+    "gl": null,
+    "glassText": null,
+    "fm": null,
+    "g": null,
+    "usb": null,
+    "usbText": null,
+    "cool": null,
+    "ios": null,
+    "n": "Samsung Galaxy Z Flip8",
+    "y": 2026,
+    "source": "https://news.samsung.com/my/samsung-galaxy-z-fold8-ultra-fold8-and-flip8-foldables-perfected-for-every-way-of-living"
+  }
+]);
+SAMSUNG.filter(p => /^Samsung Galaxy S2[01](?: |\+|$)/.test(p.n) && !p.n.includes('FE')).forEach(p => { p.gpuText = null; });
+
+// Semakan silang: harga/varian Malaysia, spesifikasi global dan ujian teknologi.
+const specUpdates = {
+ 'Samsung Galaxy A16 5G':{chip:'Exynos 1330',gpuText:'Mali-G68 MC2',hz:90,sm:256,vid:'1080p 30fps',g:200,extraSource:'https://technave.com/gadget/Samsung-Galaxy-A16-5G-Malaysia-release-6-years-of-software-support-and-50MP-main-camera-at-RM899-40576.html'},
+ 'Samsung Galaxy A31':{rm:1099},
+ 'Samsung Galaxy A32':{ram:8,sb:128,sm:128,chip:'Helio G80',gpuText:'Mali-G52 MC2',extraSource:'https://technave.com/compare-phone/compare-Samsung-Galaxy-A32-vs-Samsung-Galaxy-A32-5G-specs-price-malaysia-c10-23545-22433.html'},
+ 'Samsung Galaxy S20 FE 5G':{ram:8,sb:256,sm:256,extraSource:'https://hitechcentury.com/samsung-galaxy-s20-fe-5g-review'},
+ 'Samsung Galaxy Z Flip4':{rm:4099,ram:8,sb:128,sm:512,extraSource:'https://technave.com/gadget/Samsung-Galaxy-Z-Flip-4-Price-in-Malaysia-Specs-30107.html'},
+ 'Samsung Galaxy A26 5G':{chip:'Exynos 1380',gpuText:'Mali-G68',pn:'Super AMOLED',oled:1,inch:6.7,hz:120,w:25,cam:50,uw:8,tz:0,fr:13,vid:'4K 30fps',stabText:'OIS',g:200,sm:256,extraSource:'https://www.phonearena.com/phones/Samsung-Galaxy-A26-5G_id12639'},
+ 'Samsung Galaxy A36 5G':{gpuText:'Adreno 710',pn:'Super AMOLED',oled:1,inch:6.7,hz:120,nit:1900,cam:50,uw:8,tz:0,fr:12,vid:'4K 30fps',stabText:'OIS',g:195,sm:256,cool:1,extraSource:'https://www.phonearena.com/phones/Samsung-Galaxy-A36-5G_id12433'},
+ 'Samsung Galaxy A56 5G':{gpuText:'Xclipse 540',pn:'Super AMOLED',oled:1,inch:6.7,hz:120,nit:1900,cam:50,uw:12,tz:0,fr:12,vid:'4K 30fps',stabText:'OIS',g:198,sm:256,cool:1,extraSource:'https://www.phonearena.com/phones/Samsung-Galaxy-A56-5G_id12470'},
+ 'Samsung Galaxy A54 5G':{w:25,ww:0,g:202,vid:'4K 30fps',extraSource:'https://www.gsmarena.com/samsung_galaxy_a54-12070.php'},
+ 'Samsung Galaxy A55 5G':{sm:256,extraSource:'https://www.gsmarena.com/samsung_galaxy_a55-review-2684.php'},
+ 'Samsung Galaxy S23':{mah:3900,w:25,ww:15,nit:1750,vid:'8K 30fps, 4K 60fps',stabText:'OIS',ipText:'IP68',g:168,extraSource:'https://www.samsung.com/my/members/whats-new/the-new-galaxy-s23-fe'},
+ 'Samsung Galaxy S24':{mah:4000,w:25,cam:50,vid:'8K 30fps, 4K 60fps',ipText:'IP68',g:167,extraSource:'https://www.samsung.com/my/smartphones/galaxy-s24/specs'},
+ 'Samsung Galaxy S24 Ultra':{ram:12,sm:1024,chip:'Snapdragon 8 Gen 3 for Galaxy',gpuText:'Adreno 750',pn:'Dynamic LTPO AMOLED 2X',oled:1,inch:6.8,hz:120,nit:2600,mah:5000,w:45,ww:15,cam:200,uw:12,tz:5,fr:12,vid:'8K 30fps, 4K 120fps',stabText:'OIS',ipText:'IP68',glassText:'Corning Gorilla Armor',fm:'Titanium',g:232,usbText:'USB Type-C 3.2',ios:'Android 14 ketika dilancarkan',extraSource:'https://technave.com/comparison/compare-phone-specs-price-Malaysia-10.html?gadget1=37271'},
+ 'Samsung Galaxy S24+':{mah:4900,w:45,vid:'8K 30fps, 4K 60fps',ipText:'IP68',g:196,extraSource:'https://technave.com/comparison/compare-phone-specs-price-Malaysia-10.html?gadget1=37093'},
+ 'Samsung Galaxy Z Flip7':{chip:'Exynos 2500',gpuText:'Xclipse 950',mah:4300,w:25,ww:15,cam:50,uw:12,tz:0,fr:10,vid:'4K 60fps',stabText:'OIS',ipText:'IP48',extraSource:'https://www.gsmarena.com/compare.php3?idPhone1=13712&idPhone2=14803'},
+ 'Samsung Galaxy Z Flip7 FE':{chip:'Exynos 2400',gpuText:'Xclipse 940',pn:'Dynamic LTPO AMOLED 2X (skrin utama)',oled:1,inch:6.7,hz:120,nit:2600,mah:4000,w:25,ww:15,cam:50,uw:12,tz:0,fr:10,vid:'4K 60fps',stabText:'OIS',ipText:'IP48',g:187,ios:'Android 16 ketika dilancarkan; sehingga 7 kemas kini utama',extraSource:'https://www.gsmarena.com/samsung_galaxy_z_flip7_fe_5g-13844.php'},
+ 'Samsung Galaxy Z Flip8':{ram:12,chip:'Exynos 2600',gpuText:'Xclipse 960',pn:'Dynamic LTPO AMOLED 2X (skrin utama)',oled:1,inch:6.9,hz:120,nit:3000,mah:4300,w:25,ww:15,uw:12,tz:0,fr:10,vid:'4K 60fps',stabText:'OIS',ipText:'IP48',g:180,ios:'Android 17 ketika dilancarkan; sehingga 7 kemas kini utama',extraSource:'https://www.gsmarena.com/compare.php3?idPhone1=13712&idPhone2=14803'},
+ 'Samsung Galaxy Z Fold8':{ram:12,pn:'Dynamic LTPO AMOLED 2X (skrin utama)',oled:1,inch:7.6,hz:120,nit:3000,w:45,ww:20,tz:0,fr:10,vid:'8K 30fps, 4K 120fps',stabText:'OIS',ipText:'IP48',ios:'Android 17 ketika dilancarkan; sehingga 7 kemas kini utama',extraSource:'https://www.gsmarena.com/samsung_galaxy_z_fold8-review-2984.php'},
+ 'Samsung Galaxy Z Fold8 Ultra':{ram:12,pn:'Dynamic LTPO AMOLED 2X (skrin utama)',oled:1,hz:120,nit:3000,ww:20,tz:3,fr:10,vid:'8K 30fps, 4K 120fps',stabText:'OIS',ipText:'IP48',ios:'Android 17 ketika dilancarkan; sehingga 7 kemas kini utama',extraSource:'https://www.gsmarena.com/samsung_galaxy_z_fold8_ultra-review-2985.php'}
+};
+SAMSUNG.forEach(p => Object.assign(p, specUpdates[p.n] || {}));
+
+PH.push(...SAMSUNG);
+
+// Model OPPO, vivo dan Xiaomi yang dipasarkan di Malaysia.
+const MODEL_MALAYSIA = [{"brand":"OPPO","n":"OPPO Find N2 Flip","y":2023,"rm":3999,"source":"https://www.gsmarena.com/oppo_find_n2_flip-12014.php","extraSource":"https://technave.com/gadget/OPPO-Find-N2-Flip-Malaysia-pre-order-8GB-256GB-model-priced-at-RM3999-33635.html","chip":"Dimensity 9000+","gpuText":"Mali-G710 MC10","g":191,"inch":6.8,"hz":120,"pn":"Foldable AMOLED","oled":1,"ram":8,"sb":256,"sm":256,"cam":50,"uw":8,"fr":32,"mah":4300,"w":44,"vid":"4K@30fps, 1080p@30/60/240fps"},{"brand":"OPPO","n":"OPPO Find N3","y":2023,"rm":7999,"source":"https://www.oppo.com/my/smartphones/series-find-n/find-n3/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 8 Gen 2","gpuText":"Adreno™ 740 @680MHz","g":245,"inch":7.82,"hz":120,"pn":"Main screen: OLED folding screen","oled":1,"ram":16,"sb":512,"sm":512,"cam":48,"uw":48,"fr":20,"stabText":"OIS","glassText":"Main screen: UTG","mah":4805,"w":67,"vid":"4K 60fps, 1080P 60fps, 1080P, 1080P 30fps, 4K 30fps","ios":"ColorOS 13.2"},{"brand":"OPPO","n":"OPPO Find N3 Flip","y":2023,"rm":4399,"source":"https://www.oppo.com/my/smartphones/series-find-n/find-n3-flip/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 9200","gpuText":"ARM Immortalis-G715 MC11 @981MHz","g":198,"inch":6.8,"hz":120,"pn":"AMOLED (flexible)","oled":1,"ram":12,"sb":256,"sm":256,"cam":50,"uw":48,"fr":32,"stabText":"OIS","glassText":"Main screen: SCHOTT UTG®","mah":4300,"w":44,"vid":"4K 60fps, 1080P, 1080P 30fps","ios":"ColorOS 13.2"},{"brand":"OPPO","n":"OPPO Reno10 Pro+ 5G","y":2023,"rm":3499,"source":"https://www.oppo.com/my/smartphones/series-reno/reno10-pro-plus/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 8+ Gen 1","gpuText":"Qualcomm® Adreno™ 730 GPU","g":194,"inch":6.74,"hz":120,"pn":"3D AMOLED (flexible)","oled":1,"ram":12,"sb":256,"sm":256,"cam":50,"uw":8,"fr":32,"stabText":"OIS","glassText":"AGC DT-Star2","mah":4700,"w":100,"vid":"4K 60fps, 1080P 60fps, 1080P 30fps","ios":"ColorOS 13.1","tz":3},{"brand":"OPPO","n":"OPPO Reno10 Pro 5G","y":2023,"rm":2199,"source":"https://www.oppo.com/my/smartphones/series-reno/reno10-pro/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 778G (SDM778G)","gpuText":"Adreno™ GPU 642L","g":185,"inch":6.7,"hz":120,"pn":"3D AMOLED (flexible)","oled":1,"ram":12,"sb":256,"sm":256,"cam":50,"uw":8,"fr":32,"stabText":"OIS","glassText":"AGC DT-Star2","mah":4600,"w":80,"vid":"4K 60fps, 1080P 60fps, 1080P 120fps, 1080P 30fps","ios":"ColorOS 13.1","tz":2},{"brand":"OPPO","n":"OPPO Reno10 5G","y":2023,"rm":1799,"source":"https://www.oppo.com/my/smartphones/series-reno/reno10/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 7050","gpuText":"ARM Mail-G68 MC4","g":185,"inch":6.7,"hz":120,"pn":"3D AMOLED (flexible)","oled":1,"ram":8,"sb":256,"sm":256,"cam":64,"uw":8,"fr":32,"glassText":"AGC DT-Star2","mah":5000,"w":67,"vid":"4K 60fps, 1080P 60fps, 1080P 30fps, 1080P 120fps","ios":"ColorOS 13.1"},{"brand":"OPPO","n":"OPPO Reno8 T 5G","y":2023,"rm":1399,"source":"https://www.oppo.com/my/smartphones/series-reno/reno8-t-5g/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 695 (SDM 695)","gpuText":"Adreno™ 619 @ 840MHz","g":171,"inch":6.7,"hz":120,"pn":"3D flexible AMOLED","oled":1,"ram":8,"sb":256,"sm":256,"cam":108,"uw":0,"fr":32,"glassText":"AGC  DT-Star2","mah":4800,"w":67,"vid":"1080P 30fps","ios":"ColorOS 13","tz":0},{"brand":"OPPO","n":"OPPO Reno8 T","y":2023,"rm":999,"source":"https://www.oppo.com/my/smartphones/series-reno/reno8-t/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Helio G99","gpuText":"ARM Mali-G57 MC2 @ 1.0GHz","g":180,"inch":6.43,"hz":90,"pn":"AMOLED (Rigid screen)","oled":1,"ram":8,"sb":256,"sm":256,"cam":100,"uw":0,"fr":32,"glassText":"Corning Gorilla Glass 5 (GG5)","nit":800,"mah":5000,"vid":"1080P 30fps","ios":"ColorOS 13.0","tz":0},{"brand":"OPPO","n":"OPPO A98 5G","y":2023,"rm":1399,"source":"https://www.oppo.com/my/smartphones/series-a/a98-5g/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 695 (SDM 695)","gpuText":"Adreno™ 619 @840MHz","g":192,"inch":6.72,"hz":120,"pn":"LTPS LCD","oled":0,"ram":8,"sb":256,"sm":256,"cam":64,"uw":0,"fr":32,"glassText":"Panda 1681 secondary tempered glass","mah":5000,"w":67,"vid":"1080P 30fps","ios":"ColorOS 13.1","tz":0},{"brand":"OPPO","n":"OPPO A79 5G","y":2023,"rm":1199,"source":"https://www.gsmarena.com/oppo_a79-12636.php","extraSource":"https://technave.com/gadget/OPPO-A79-5G-Malaysia-release-6-72-inch-90Hz-display-5000mAh-battery-now-priced-at-RM1199-36606.html","chip":"Dimensity 6020","gpuText":"Mali-G57 MC2","g":193,"inch":6.72,"hz":90,"pn":"LCD","oled":0,"ram":8,"sb":256,"sm":256,"cam":50,"fr":8,"mah":5000,"w":33,"ipText":"IP54","vid":"1080p@30fps"},{"brand":"OPPO","n":"OPPO A78 5G","y":2023,"rm":1099,"source":"https://www.oppo.com/my/smartphones/series-a/a78-5g/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 700","gpuText":"Mali-G57 MC2 @950Mhz","g":188,"inch":6.56,"hz":90,"pn":"LCD (A-Si)","oled":0,"ram":8,"sb":128,"sm":128,"cam":50,"uw":0,"fr":8,"glassText":"Panda glass (Reinforced once)/Caihong glass (Reinforced once)","mah":5000,"w":33,"ipText":"IP54","vid":"1080P 30fps","ios":"ColorOS 13","tz":0},{"brand":"OPPO","n":"OPPO A78 4G","y":2023,"rm":999,"source":"https://www.oppo.com/my/smartphones/series-a/a78/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 680","gpuText":"Adreno™ 610 @ 1115MHz","g":180,"inch":6.43,"hz":90,"pn":"AMOLED stiffness","oled":1,"ram":8,"sb":256,"sm":256,"cam":50,"uw":0,"fr":8,"stabText":"OIS","glassText":"Corning Gorilla Glass 5 (GG5)","mah":5000,"w":67,"vid":"1080P 30fps","ios":"ColorOS 13.1","tz":0},{"brand":"OPPO","n":"OPPO A58 4G","y":2023,"rm":699,"source":"https://www.oppo.com/my/smartphones/series-a/a58/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Helio G85","gpuText":"Mali G52 MC2 @1000MHz","g":192,"inch":6.72,"pn":"LCD (LTPS)","oled":0,"ram":6,"sb":128,"sm":128,"cam":50,"uw":0,"fr":8,"mah":5000,"w":33,"vid":"1080P 30fps","ios":"ColorOS 13.1","tz":0},{"brand":"OPPO","n":"OPPO A18","y":2023,"rm":499,"source":"https://www.oppo.com/my/smartphones/series-a/a18/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Helio G85","gpuText":"Mali G52 MC2 @1000MHz","g":188,"inch":6.56,"hz":60,"pn":"LCD","oled":0,"ram":4,"sb":128,"sm":128,"cam":8,"uw":0,"fr":5,"mah":5000,"ipText":"IP54","vid":"1080P 30fps","ios":"ColorOS 13.1","tz":0},{"brand":"OPPO","n":"OPPO Reno12 Pro 5G","y":2024,"rm":2599,"source":"https://www.oppo.com/my/smartphones/series-reno/reno12-pro/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 7300-Energy","gpuText":"Arm Mali-G615","g":180,"inch":6.7,"hz":120,"pn":"Flexible AMOLED with four curved sides of equal height","oled":1,"ram":12,"sb":512,"sm":512,"cam":50,"uw":8,"fr":50,"stabText":"OIS","glassText":"Corning® Gorilla® Glass Victus® 2 (GGV2)","mah":5000,"ipText":"IP65","vid":"4K 60fps, 1080P 30fps","ios":"ColorOS 14.1"},{"brand":"OPPO","n":"OPPO Reno12 5G","y":2024,"rm":2199,"source":"https://www.oppo.com/my/smartphones/series-reno/reno12/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 7300-Energy","gpuText":"Arm Mali-G615","g":177,"inch":6.7,"hz":120,"pn":"3D Flexible AMOLED with two curved edges of equal height","oled":1,"ram":12,"sb":512,"sm":512,"cam":50,"uw":8,"fr":32,"stabText":"OIS","glassText":"Corning","mah":5000,"ipText":"IP65","vid":"4K 60fps","ios":"ColorOS 14.1","tz":0},{"brand":"OPPO","n":"OPPO Reno12 F 5G","y":2024,"rm":1399,"source":"https://www.oppo.com/my/smartphones/series-reno/reno12-f-5g/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 6300","gpuText":"Mali-G57 MC2 1072MHz","g":187,"inch":6.67,"hz":120,"pn":"Flat OLED","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"uw":8,"fr":32,"stabText":"OIS","glassText":"AGC DT-Star2","nit":2100,"mah":5000,"ipText":"IP64","vid":"1080P 60fps","ios":"ColorOS 14.0","tz":0},{"brand":"OPPO","n":"OPPO Reno11 Pro 5G","y":2024,"rm":2499,"source":"https://www.gsmarena.com/oppo_reno11_pro-12790.php","extraSource":"https://technave.com/gadget/OPPO-Reno11-5G-series-Malaysia-release-up-to-16GB-512GB-memory-starting-price-at-RM1899-37200.html","chip":"Dimensity 8200","gpuText":"Mali-G610 MC6","g":181,"inch":6.7,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":512,"sm":512,"cam":50,"uw":8,"fr":32,"stabText":"OIS","mah":4600,"w":80,"vid":"4K@30fps, 1080p@30/60/120/480fps, gyro-EIS, 720p@960fps, HDR"},{"brand":"OPPO","n":"OPPO Reno11 5G","y":2024,"rm":1899,"source":"https://www.gsmarena.com/oppo_reno11-12791.php","extraSource":"https://technave.com/gadget/OPPO-Reno11-5G-series-Malaysia-release-up-to-16GB-512GB-memory-starting-price-at-RM1899-37200.html","chip":"Dimensity 7050","gpuText":"Mali-G68 MC4","g":182,"inch":6.7,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":256,"cam":50,"uw":8,"fr":32,"stabText":"OIS","mah":5000,"w":67,"vid":"4K@30fps, 1080p@30/60/120/480fps, 720p@960fps, gyro-EIS"},{"brand":"OPPO","n":"OPPO Reno11 F 5G","y":2024,"rm":1399,"source":"https://www.gsmarena.com/oppo_reno11_f-12797.php","extraSource":"https://www.oppo.com/my/smartphones/series-reno/reno11-f/","chip":"Dimensity 7050","g":177,"inch":6.7,"hz":120,"pn":"AMOLED","oled":1,"ram":8,"sb":256,"sm":256,"cam":64,"uw":8,"fr":32,"mah":5000,"w":67,"ipText":"IP65","vid":"4K 30fps"},{"brand":"OPPO","n":"OPPO A60","y":2024,"rm":699,"source":"https://www.oppo.com/my/smartphones/series-a/a60/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 680","gpuText":"Adreno™ 610@1115MHz","g":186,"inch":6.67,"hz":60,"pn":"LCD（LTPS/A-Si）","oled":0,"ram":8,"sb":128,"sm":256,"cam":50,"uw":0,"fr":8,"stabText":"OIS","glassText":"KK6","mah":5000,"w":45,"vid":"1080P 30fps","ios":"ColorOS 14.0.1","tz":0},{"brand":"OPPO","n":"OPPO A3 Pro 5G","y":2024,"rm":852,"source":"https://www.oppo.com/my/smartphones/series-a/a3-pro-5g/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 6300","gpuText":"ARM Mali-G57 MC2@1072MHz","g":186,"inch":6.67,"hz":120,"pn":"LCD","oled":0,"ram":6,"sb":128,"sm":256,"cam":50,"uw":0,"fr":8,"glassText":"China Southern Glass (twice-reinforced)","mah":5100,"w":45,"vid":"1080P 60fps","ios":"ColorOS 14.0.1","tz":0},{"brand":"OPPO","n":"OPPO A3 4G","y":2024,"rm":635,"source":"https://www.oppo.com/my/smartphones/series-a/a3/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 6s 4G Gen1","gpuText":"Adreno 610@1050MHz","g":186,"inch":6.67,"hz":90,"pn":"LCD","oled":0,"ram":8,"sb":128,"sm":256,"cam":50,"uw":0,"fr":5,"glassText":"China Southern Glass (twice-reinforced)","mah":5100,"w":45,"ipText":"IP54","vid":"1080P 30fps","ios":"ColorOS 14.0","tz":0},{"brand":"OPPO","n":"OPPO A3x 4G","y":2024,"rm":399,"source":"https://www.oppo.com/my/smartphones/series-a/a3x/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 6s 4G Gen1","gpuText":"Adreno 610@1050MHz","g":186,"inch":6.67,"hz":90,"pn":"LCD","oled":0,"ram":4,"sb":64,"sm":128,"cam":8,"uw":0,"fr":5,"glassText":"China Southern Glass (twice-reinforced)","mah":5100,"w":45,"ipText":"IP54","vid":"1080P 30fps","ios":"ColorOS 14.0","tz":0},{"brand":"OPPO","n":"OPPO Find X8 Pro","y":2024,"rm":4999,"source":"https://www.oppo.com/my/smartphones/series-find-x/find-x8-pro/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 9400","gpuText":"Immortalis G925 MC12","g":215,"inch":6.78,"hz":120,"pn":"AMOLED (Flexible)","oled":1,"ram":16,"sb":512,"sm":512,"cam":50,"uw":50,"fr":32,"stabText":"OIS","glassText":"Corning® Gorilla® Glass 7i","nit":4500,"mah":5910,"w":80,"vid":"4K 60fps, 1080P 60fps, 4K 30fps, 1080P 30fps","ios":"ColorOS 15.0"},{"brand":"OPPO","n":"OPPO Find X8","y":2024,"rm":3699,"source":"https://www.oppo.com/my/smartphones/series-find-x/find-x8/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 9400","gpuText":"Immortalis G925 MC12","g":193,"inch":6.59,"hz":120,"pn":"AMOLED (Flexible)","oled":1,"ram":16,"sb":512,"sm":512,"cam":50,"uw":50,"fr":32,"stabText":"OIS","glassText":"Corning® Gorilla® Glass 7i","nit":4500,"mah":5630,"w":80,"vid":"4K 60fps, 1080P 60fps, 4K 30fps, 1080P 30fps","ios":"ColorOS 15.0"},{"brand":"OPPO","n":"OPPO Find N5","y":2025,"rm":7999,"source":"https://www.oppo.com/my/smartphones/series-find-n/find-n5/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 8 Elite","gpuText":"Adreno™ 830@1100MHz","g":229,"inch":8.12,"hz":120,"pn":"Inner screen: AMOLED","oled":1,"ram":16,"sb":512,"sm":512,"cam":50,"uw":8,"fr":8,"stabText":"OIS","glassText":"Inner screen: Cover glass (PET + UTG)","nit":2100,"mah":5600,"w":80,"vid":"4K 60fps, 1080P 60fps, 1080P 30fps","ios":"ColorOS 15.0.1"},{"brand":"OPPO","n":"OPPO Find X9 Pro","y":2025,"rm":4999,"source":"https://www.oppo.com/my/smartphones/series-find-x/find-x9-pro/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 9500","gpuText":"Arm@Mali Drage MC12","g":224,"inch":6.78,"hz":120,"pn":"AMOLED (Flexible)","oled":1,"ram":16,"sb":512,"sm":512,"cam":50,"uw":50,"fr":50,"stabText":"OIS","glassText":"Corning® Gorilla® Glass Victus® 2","mah":7500,"w":80,"vid":"4K 120fps, 1080P 120fps","ios":"ColorOS 16.0"},{"brand":"OPPO","n":"OPPO Find X9","y":2025,"rm":3699,"source":"https://www.oppo.com/my/smartphones/series-find-x/find-x9/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 9500","gpuText":"Arm@Mali Drage MC12","g":203,"inch":6.59,"hz":120,"pn":"AMOLED (Flexible)","oled":1,"ram":16,"sb":512,"sm":512,"cam":50,"uw":50,"fr":32,"stabText":"OIS","glassText":"Corning® Gorilla® Glass 7i","mah":7025,"w":80,"vid":"4K 120fps, 1080P 120fps","ios":"ColorOS 16.0"},{"brand":"OPPO","n":"OPPO Reno14 Pro 5G","y":2025,"rm":2999,"source":"https://www.oppo.com/my/smartphones/series-reno/reno14-pro/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 8450","gpuText":"ARM G720 MC7@1300MHz","g":201,"inch":6.83,"hz":120,"pn":"AMOLED (Flexible)","oled":1,"ram":12,"sb":512,"sm":512,"cam":50,"uw":50,"fr":50,"stabText":"OIS","glassText":"Corning® Gorilla® Glass 7i","mah":6200,"w":80,"vid":"4K 60fps, 4K 30fps","ios":"ColorOS 15.0"},{"brand":"OPPO","n":"OPPO Reno14 5G","y":2025,"rm":2199,"source":"https://www.oppo.com/my/smartphones/series-reno/reno14/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 8350","gpuText":"ARM G615 MC6@1400MHz","g":187,"inch":6.59,"hz":120,"pn":"AMOLED (Flexible screen)","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"uw":8,"fr":50,"stabText":"OIS","glassText":"Corning® Gorilla® Glass 7i","mah":6000,"w":80,"vid":"4K 60fps, 1080P 60fps","ios":"ColorOS 15.0"},{"brand":"OPPO","n":"OPPO Reno14 F 5G","y":2025,"rm":1399,"source":"https://www.oppo.com/my/smartphones/series-reno/reno14-f-5g/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 6 Gen 1","gpuText":"Adreno™ 710@676MHz","g":180,"inch":6.57,"hz":120,"pn":"AMOLED (Flexible screen)","oled":1,"ram":8,"sb":256,"sm":512,"cam":50,"uw":8,"fr":32,"stabText":"OIS","glassText":"AGC Dragontrail  DT-STAR D+","mah":6000,"w":45,"vid":"4K 60fps","ios":"ColorOS 15.0","tz":0},{"brand":"OPPO","n":"OPPO Reno13 Pro 5G","y":2025,"rm":2999,"source":"https://www.oppo.com/my/smartphones/series-reno/reno13-pro/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 8350","gpuText":"ARM G615-MC6, 1303MHz","g":195,"inch":6.83,"hz":120,"pn":"AMOLED (Flexible)","oled":1,"ram":12,"sb":512,"sm":512,"cam":50,"uw":8,"fr":50,"stabText":"OIS","glassText":"Corning® Gorilla® Glass 7i","mah":5800,"vid":"4K 60fps, 1080P 30fps","ios":"ColorOS 15.0"},{"brand":"OPPO","n":"OPPO Reno13 5G","y":2025,"rm":2299,"source":"https://www.oppo.com/my/smartphones/series-reno/reno13/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 8350","gpuText":"ARM Turse G615","g":181,"inch":6.59,"hz":120,"pn":"AMOLED (Flexible)","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"uw":8,"fr":50,"stabText":"OIS","glassText":"Corning® Gorilla® Glass 7i","mah":5600,"vid":"4K 60fps, 1080P 30fps","ios":"ColorOS 15.0","tz":0},{"brand":"OPPO","n":"OPPO Reno13 F 5G","y":2025,"rm":1399,"source":"https://www.oppo.com/my/smartphones/series-reno/reno13-f-5g/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 6 Gen 1","gpuText":"Adreno™ 710@676MHz","g":192,"inch":6.67,"hz":120,"pn":"Rigid AMOLED","oled":1,"ram":8,"sb":256,"sm":512,"cam":50,"uw":8,"fr":32,"stabText":"OIS","glassText":"AGC DT STAR2","mah":5800,"w":45,"vid":"4K 60fps, 1080P 60fps, 1080P 30fps","ios":"ColorOS 15.0","tz":0},{"brand":"OPPO","n":"OPPO A6 Pro 5G","y":2025,"rm":1199,"source":"https://www.oppo.com/my/smartphones/series-a/a6-pro-5g/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 6300","gpuText":"Mali-G57 MC2@1072MHz","g":185,"inch":6.57,"hz":120,"pn":"AMOLED (Flexible)","oled":1,"ram":8,"sb":256,"sm":256,"cam":50,"uw":0,"fr":16,"glassText":"AGC DT-Star D+","mah":6500,"w":80,"vid":"1080P 60fps","ios":"ColorOS 15.0","tz":0},{"brand":"OPPO","n":"OPPO A5 5G","y":2025,"rm":1099,"source":"https://www.oppo.com/my/smartphones/series-a/a5-5g/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 6300","gpuText":"ARM Mali-G57 MC2@1072MHz","g":194,"inch":6.67,"hz":120,"pn":"LCD","oled":0,"ram":8,"sb":256,"sm":256,"cam":50,"uw":0,"fr":8,"mah":6000,"w":45,"vid":"1080P 60fps","ios":"ColorOS 15.0","tz":0},{"brand":"OPPO","n":"OPPO A5 Pro 5G","y":2025,"rm":1099,"source":"https://www.oppo.com/my/smartphones/series-a/a5-pro-5g/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 6300","gpuText":"ARM Mali-G57 MC2@1072MHz","g":194,"inch":6.67,"hz":120,"pn":"LCD","oled":0,"ram":8,"sb":256,"sm":256,"cam":50,"uw":0,"fr":8,"glassText":"Corning® Gorilla® Glass 7i","mah":5800,"w":45,"vid":"1080P 60fps","ios":"ColorOS 15.0","tz":0},{"brand":"OPPO","n":"OPPO A5 Pro 4G","y":2025,"rm":899,"source":"https://www.oppo.com/my/smartphones/series-a/a5-pro/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 6s 4G Gen1","gpuText":"Adreno™ 610@1050MHz","g":194,"inch":6.67,"hz":90,"pn":"LCD","oled":0,"ram":8,"sb":256,"sm":256,"cam":50,"uw":0,"fr":8,"glassText":"AGC DT-Star D+, Corning® Gorilla® Glass 7i","mah":5800,"w":45,"vid":"1080P 30fps","ios":"ColorOS 15.0","tz":0},{"brand":"OPPO","n":"OPPO Find X10 Pro Max","y":2026,"rm":6999,"source":"https://www.oppo.com/my/smartphones/series-find-x/find-x10-pro-max/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 9600 Pro","gpuText":"ARM Mali G2-ultra@1.8GHz","g":233,"inch":6.78,"hz":144,"pn":"AMOLED flexible screen","oled":1,"ram":16,"sb":512,"sm":512,"cam":200,"uw":200,"fr":50,"stabText":"OIS","glassText":"Crystal Guard","mah":8000,"w":80,"vid":"8K 30fps, 4K 120fps, 1080P 120fps, 4K 60fps, 1080P 60fps","ios":"ColorOS 17.0"},{"brand":"OPPO","n":"OPPO Find X10","y":2026,"rm":4599,"source":"https://www.oppo.com/my/smartphones/series-find-x/find-x10/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 9600M","gpuText":"ARM@Mali Drage MC12","g":216,"inch":6.59,"hz":144,"pn":"AMOLED flexible screen","oled":1,"ram":12,"sb":256,"sm":512,"cam":200,"uw":50,"fr":50,"stabText":"OIS","glassText":"Crystal Guard","mah":8000,"w":80,"vid":"8K 30fps, 4K 120fps, 1080P 120fps, 4K 60fps, 1080P 60fps","ios":"ColorOS 17.0"},{"brand":"OPPO","n":"OPPO Find X9 Ultra","y":2026,"rm":6799,"source":"https://www.oppo.com/my/smartphones/series-find-x/find-x9-ultra/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 8 Elite Gen 5","gpuText":"Adreno™ 840@1200MHz","g":235,"inch":6.82,"hz":144,"pn":"AMOLED display","oled":1,"ram":12,"sb":512,"sm":1024,"cam":200,"uw":50,"fr":50,"stabText":"OIS","glassText":"Corning® Gorilla® Glass Victus® 2","mah":7050,"w":100,"vid":"8K 30fps, 4K 120fps, 1080P 120fps, 4K 60fps, 1080P 60fps","ios":"ColorOS 16.0"},{"brand":"OPPO","n":"OPPO Find X9s","y":2026,"rm":3899,"source":"https://www.oppo.com/my/smartphones/series-find-x/find-x9s/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 9500s","gpuText":"Immortalis G925 MC12@1612 MHz","g":202,"inch":6.59,"hz":120,"pn":"AMOLED display","oled":1,"ram":12,"sb":512,"sm":512,"cam":50,"uw":50,"fr":32,"stabText":"OIS","glassText":"Corning® Gorilla® Glass 7i","mah":7025,"w":80,"vid":"4K 60fps, 1080P 60fps","ios":"ColorOS 16.0"},{"brand":"OPPO","n":"OPPO Find N6","y":2026,"rm":8699,"source":"https://www.oppo.com/my/smartphones/series-find-n/find-n6/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 8 Elite Gen 5","gpuText":"Adreno™ 840@1200MHz","g":225,"inch":8.12,"hz":120,"pn":"Inner display: AMOLED (SDC E7+COE)","oled":1,"ram":16,"sb":512,"sm":512,"cam":200,"uw":50,"fr":20,"stabText":"OIS","glassText":"Inner display: Cover Glass (PET & UTG)","mah":6000,"w":80,"vid":"4K 120fps, 1080P 120fps, 4K 60fps, 1080P 60fps","ios":"ColorOS 16.0"},{"brand":"OPPO","n":"OPPO Reno16 Pro 5G","y":2026,"rm":3699,"source":"https://www.oppo.com/my/smartphones/series-reno/reno16-pro/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 8550 SUPER","gpuText":"ARM G720 MC8@1500MHz","g":191,"inch":6.32,"hz":144,"pn":"Crystal Guard+AMOLED","oled":1,"ram":12,"sb":256,"sm":256,"cam":200,"uw":50,"fr":50,"stabText":"OIS","glassText":"Crystal Guard","mah":6700,"w":80,"vid":"4K 60fps, 1080P 60fps, 4K 30fps","ios":"ColorOS 16.0"},{"brand":"OPPO","n":"OPPO Reno16 5G","y":2026,"rm":2699,"source":"https://www.oppo.com/my/smartphones/series-reno/reno16/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 7 Gen 4","gpuText":"Adreno™ 722@1150MHz","g":193,"inch":6.32,"hz":120,"pn":"Crystal Guard+AMOLED","oled":1,"ram":8,"sb":256,"sm":512,"cam":50,"uw":50,"fr":50,"stabText":"OIS","glassText":"Crystal Guard","mah":6700,"w":80,"vid":"4K 60fps, 1080P 60fps","ios":"ColorOS 16.0"},{"brand":"OPPO","n":"OPPO Reno16 F 5G","y":2026,"rm":1999,"source":"https://www.oppo.com/my/smartphones/series-reno/reno16-f/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 7300-Energy","gpuText":"Arm Mali-G615@1.047GHz","g":197,"inch":6.57,"hz":120,"pn":"Crystal Guard+AMOLED","oled":1,"ram":8,"sb":128,"sm":256,"cam":50,"uw":8,"fr":50,"stabText":"OIS","glassText":"Crystal Guard","mah":7000,"w":80,"vid":"4K 30fps, 1080P 60fps","ios":"ColorOS 16.0"},{"brand":"OPPO","n":"OPPO Reno15 Pro 5G","y":2026,"rm":2999,"source":"https://www.oppo.com/my/smartphones/series-reno/reno15-pro/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 8450","gpuText":"ARM G720 MC7@1300MHz","g":187,"inch":6.32,"hz":120,"pn":"Corning® Gorilla® Glass 7i+AMOLED","oled":1,"ram":12,"sb":512,"sm":512,"cam":200,"uw":50,"fr":50,"stabText":"OIS","glassText":"Corning® Gorilla® Glass 7i","mah":6200,"w":80,"vid":"4K 60fps, 1080P 60fps, 4K 30fps","ios":"ColorOS 16.0"},{"brand":"OPPO","n":"OPPO Reno15 5G","y":2026,"rm":1999,"source":"https://www.oppo.com/my/smartphones/series-reno/reno15/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 7 Gen 4","gpuText":"Adreno™ 722@1150MHz","g":197,"inch":6.59,"hz":120,"pn":"Corning® Gorilla® GG7i Glass+AMOLED","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"uw":8,"fr":50,"stabText":"OIS","glassText":"Corning® Gorilla® Glass 7i","mah":6500,"w":80,"vid":"4K 60fps, 1080P 60fps","ios":"ColorOS 16.0"},{"brand":"OPPO","n":"OPPO Reno15 F 5G","y":2026,"rm":1499,"source":"https://www.oppo.com/my/smartphones/series-reno/reno15-f/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon 6 Gen 1","gpuText":"Adreno™ 710@676MHz","g":195,"inch":6.57,"hz":120,"pn":"Corning® Gorilla® Glass+AMOLED","oled":1,"ram":8,"sb":256,"sm":256,"cam":50,"uw":8,"fr":50,"stabText":"OIS","glassText":"AGC DT-STAR D+","mah":7000,"w":80,"vid":"4K 30fps, 1080P 60fps","ios":"ColorOS 16.0","tz":0},{"brand":"OPPO","n":"OPPO A7 Pro Max 5G","y":2026,"rm":2499,"source":"https://www.oppo.com/my/smartphones/series-a/a7-pro-max-5g/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Snapdragon4 Gen 5","gpuText":"Adreno™ 629 MC1@840MHz","g":226,"inch":6.78,"hz":120,"pn":"AMOLED Flexible Screen","oled":1,"ram":8,"sb":256,"sm":256,"cam":50,"uw":0,"fr":50,"stabText":"OIS","glassText":"Crystal Guard","mah":10000,"w":80,"vid":"1080P 30fps","ios":"ColorOS 16.0","tz":0},{"brand":"OPPO","n":"OPPO A7 Pro 5G","y":2026,"rm":1699,"source":"https://www.oppo.com/my/smartphones/series-a/a7-pro-5g/specs/","extraSource":"https://technave.com/gadgets/Oppo-Mobile-Phone-Price-Malaysia-84.html","chip":"Dimensity 6360 MAX","gpuText":"ARM Mali-G57 MC2@1072MHz","g":205,"inch":6.57,"hz":120,"pn":"AMOLED flexible screen","oled":1,"ram":6,"sb":256,"sm":256,"cam":50,"uw":0,"fr":50,"glassText":"Crystal Guard","mah":8000,"w":45,"vid":"1080P 60fps, 1080P 30fps","ios":"ColorOS 16.0","tz":0},{"brand":"vivo","n":"vivo X90 Pro","y":2023,"rm":4999,"source":"https://www.vivo.com/my/products/param/x90-pro","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 9200 5G","g":214.85,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":256,"cam":50,"fr":32,"mah":4870,"w":120,"ios":"Funtouch OS 13 (Based on Android 13.0)"},{"brand":"vivo","n":"vivo X90","y":2023,"rm":3699,"source":"https://www.vivo.com/my/products/param/x90","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 9200 5G","g":200,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":256,"cam":50,"fr":32,"mah":4810,"w":120,"ios":"Funtouch OS 13 (Based on Android 13.0)"},{"brand":"vivo","n":"vivo V27 5G","y":2023,"rm":1799,"source":"https://www.vivo.com/my/products/param/v27","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 7200","g":180,"pn":"AMOLED","oled":1,"ram":8,"sb":256,"sm":256,"cam":50,"fr":50,"stabText":"OIS","mah":4600,"w":66,"ios":"Funtouch OS 13 Global"},{"brand":"vivo","n":"vivo V27e","y":2023,"rm":1299,"source":"https://www.vivo.com/my/products/param/v27e","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Helio G99","g":185,"hz":120,"pn":"AMOLED","oled":1,"ram":8,"sb":256,"sm":256,"cam":64,"fr":32,"stabText":"OIS","mah":4600,"w":66,"ios":"Funtouch OS 13 Global"},{"brand":"vivo","n":"vivo V29 5G","y":2023,"rm":1899,"source":"https://www.vivo.com/my/products/param/v29","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Snapdragon 778G","g":186,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"fr":50,"stabText":"OIS","mah":4600,"w":80,"ios":"Funtouch OS 13 Global"},{"brand":"vivo","n":"vivo Y78 5G","y":2023,"rm":1399,"source":"https://www.vivo.com/my/products/param/y78-5g","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Snapdragon 695","g":177,"pn":"AMOLED","oled":1,"ram":8,"sb":256,"sm":256,"cam":64,"fr":16,"stabText":"OIS","mah":5000,"w":44,"ios":"Funtouch OS 13 (Based on Android 13)"},{"brand":"vivo","n":"vivo Y36 5G","y":2023,"rm":1099,"source":"https://www.vivo.com/my/products/param/y36-5g","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 6020","g":190,"pn":"LCD","oled":0,"ram":8,"sb":256,"sm":256,"cam":50,"fr":16,"mah":5000,"w":44,"ios":"Funtouch OS 13 (Based on Android 13)"},{"brand":"vivo","n":"vivo Y27s","y":2023,"rm":799,"source":"https://www.vivo.com/my/products/param/y27s","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Snapdragon 680","g":192,"inch":6.64,"hz":90,"pn":"LCD","oled":0,"ram":8,"sb":256,"sm":256,"cam":50,"fr":8,"ipText":"IP54","nit":650,"mah":5000,"w":44,"ios":"Android 13"},{"brand":"vivo","n":"vivo Y17s","y":2023,"rm":523,"source":"https://www.vivo.com/my/products/param/y17s","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Helio G85","g":186,"hz":90,"pn":"LCD","oled":0,"ram":6,"sb":128,"sm":128,"cam":50,"fr":8,"ipText":"IP54","mah":5000,"w":15,"ios":"Android 13"},{"brand":"vivo","n":"vivo Y02t","y":2023,"rm":371,"source":"https://www.vivo.com/my/products/param/y02t","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Helio P35","g":186,"inch":6.51,"pn":"LCD (IPS)","oled":0,"ram":4,"sb":128,"sm":128,"cam":8,"fr":5,"mah":5000,"w":10,"ios":"Funtouch OS 13 (Android 13 edition)"},{"brand":"vivo","n":"vivo X100 Pro","y":2024,"rm":4599,"source":"https://www.vivo.com/my/products/param/x100pro","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 9300","g":225,"inch":6.78,"hz":120,"pn":"AMOLED","oled":1,"ram":16,"sb":512,"sm":512,"cam":50,"fr":32,"ipText":"IP68","nit":3000,"mah":5400,"w":100,"ww":50,"ios":"Android 14"},{"brand":"vivo","n":"vivo X100","y":2024,"rm":3499,"source":"https://www.vivo.com/my/products/param/x100","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 9300","g":206,"inch":6.78,"hz":120,"pn":"AMOLED","oled":1,"ram":16,"sb":512,"sm":512,"cam":50,"fr":32,"ipText":"IP68","nit":3000,"mah":5000,"w":120,"ios":"Android 14"},{"brand":"vivo","n":"vivo X200 Pro","y":2024,"rm":4699,"source":"https://www.vivo.com/my/products/param/x200-pro","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 9400","g":223,"inch":6.78,"hz":120,"pn":"AMOLED","oled":1,"ram":16,"sb":512,"sm":512,"cam":50,"fr":32,"ipText":"IP68 & IP69","nit":4500,"mah":6000,"w":90,"ww":30,"ios":"Android 15"},{"brand":"vivo","n":"vivo X200","y":2024,"rm":3599,"source":"https://www.vivo.com/my/products/param/x200","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 9400","g":197,"inch":6.67,"hz":120,"pn":"AMOLED","oled":1,"ram":16,"sb":512,"sm":512,"cam":50,"fr":32,"ipText":"IP68 & IP69","mah":5800,"w":90,"ios":"Android 15"},{"brand":"vivo","n":"vivo V40 Pro","y":2024,"rm":3299,"source":"https://www.vivo.com/my/products/param/v40-pro","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 9200+","g":192,"inch":6.78,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":512,"sm":512,"cam":50,"uw":50,"fr":50,"stabText":"OIS","ipText":"IP68 & IP69","nit":4500,"mah":5500,"w":80,"ios":"Android 14"},{"brand":"vivo","n":"vivo V40","y":2024,"rm":1999,"source":"https://www.vivo.com/my/products/param/v40","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Snapdragon 7 Gen 3","g":190,"inch":6.78,"hz":120,"pn":"AMOLED","oled":1,"ram":8,"sb":256,"sm":512,"cam":50,"uw":50,"fr":50,"stabText":"OIS","ipText":"IP68 & IP69","nit":4500,"mah":5500,"w":80,"ios":"Android 14"},{"brand":"vivo","n":"vivo V40 Lite 5G","y":2024,"rm":1299,"source":"https://www.vivo.com/my/products/param/v40-lite","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Snapdragon 4 Gen 2","g":188,"inch":6.67,"hz":120,"pn":"AMOLED","oled":1,"ram":8,"sb":256,"sm":512,"cam":50,"fr":32,"ipText":"IP64","nit":1800,"mah":5000,"w":80,"ios":"Android 14"},{"brand":"vivo","n":"vivo V30 Pro","y":2024,"rm":2999,"source":"https://www.vivo.com/my/products/param/v30pro","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 8200","g":188,"inch":6.78,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":512,"sm":512,"cam":50,"uw":50,"fr":50,"stabText":"OIS","ipText":"IP54","nit":2800,"mah":5000,"w":80,"vid":"4K","ios":"Android 14"},{"brand":"vivo","n":"vivo V30","y":2024,"rm":1999,"source":"https://www.vivo.com/my/products/param/v30","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Snapdragon 7 Gen 3","g":186,"inch":6.78,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"uw":50,"fr":50,"stabText":"OIS","ipText":"IP54","nit":2800,"mah":5000,"w":80,"vid":"4K","ios":"Android 14"},{"brand":"vivo","n":"vivo V30e","y":2024,"rm":1399,"source":"https://www.vivo.com/my/products/param/v30e","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Snapdragon 6 Gen 1","g":188,"inch":6.78,"hz":120,"pn":"AMOLED","oled":1,"ram":8,"sb":256,"sm":256,"cam":50,"fr":32,"ipText":"IP64","nit":1300,"mah":5500,"w":44,"vid":"1080P, 4K","ios":"Android 14"},{"brand":"vivo","n":"vivo Y100 5G","y":2024,"rm":1199,"source":"https://www.vivo.com/my/products/param/y100-5g","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Snapdragon 4 Gen 2","g":185.5,"inch":6.67,"hz":120,"pn":"AMOLED","oled":1,"ram":8,"sb":256,"sm":256,"cam":50,"fr":8,"ipText":"IP54","nit":1800,"mah":5000,"w":80,"ios":"Android 14"},{"brand":"vivo","n":"vivo Y28s 5G","y":2024,"rm":799,"source":"https://www.vivo.com/my/products/param/y28s-5g","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 6300","g":185,"inch":6.56,"hz":90,"pn":"LCD","oled":0,"ram":6,"sb":128,"sm":256,"cam":50,"fr":8,"ipText":"IP64","mah":5000,"w":15,"ios":"Android 14"},{"brand":"vivo","n":"vivo Y18","y":2024,"rm":599,"source":"https://www.vivo.com/my/products/param/y18","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Helio G85","g":185,"inch":6.56,"hz":90,"pn":"LCD","oled":0,"ram":6,"sb":128,"sm":128,"cam":50,"fr":8,"ipText":"IP54","mah":5000,"w":15,"ios":"Android 14"},{"brand":"vivo","n":"vivo Y03","y":2024,"rm":399,"source":"https://www.vivo.com/my/products/param/y03","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Helio G85","g":185,"inch":6.56,"hz":90,"pn":"LCD","oled":0,"ram":4,"sb":128,"sm":128,"cam":13,"fr":5,"ipText":"IP54","mah":5000,"w":15,"ios":"Android 14"},{"brand":"vivo","n":"vivo Y03t","y":2024,"rm":355,"source":"https://www.vivo.com/my/products/param/y03t","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"T612","g":185,"inch":6.56,"hz":90,"pn":"LCD","oled":0,"ram":4,"sb":128,"sm":128,"cam":13,"fr":5,"ipText":"IP54","mah":5000,"w":15,"ios":"Android 14"},{"brand":"vivo","n":"vivo Y19s","y":2024,"rm":444,"source":"https://www.vivo.com/my/products/param/y19s","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"T612","g":198,"inch":6.68,"hz":90,"pn":"LCD","oled":0,"ram":6,"sb":128,"sm":256,"cam":50,"fr":5,"ipText":"IP64","mah":5500,"w":15,"ios":"Android 14"},{"brand":"vivo","n":"vivo X Fold5","y":2025,"rm":6999,"source":"https://www.vivo.com/my/products/param/x-fold5","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Snapdragon 8 Gen 3","g":217,"inch":8.03,"hz":120,"pn":"AMOLED","oled":1,"ram":16,"sb":512,"sm":512,"cam":50,"uw":50,"fr":20,"ipText":"IP5X&IPX8&IPX9","nit":4500,"mah":6000,"w":80,"ww":40,"ios":"Android 15"},{"brand":"vivo","n":"vivo X300 Pro","y":2025,"rm":4699,"source":"https://www.vivo.com/my/products/param/x300-pro","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 9500","g":226,"inch":6.78,"hz":120,"pn":"AMOLED","oled":1,"ram":16,"sb":512,"sm":1024,"cam":50,"fr":50,"nit":4500,"mah":6510,"w":90,"ww":40},{"brand":"vivo","n":"vivo X300","y":2025,"rm":3599,"source":"https://www.vivo.com/my/products/param/x300","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 9500","g":190,"inch":6.31,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":512,"cam":200,"fr":50,"nit":4500,"mah":6040,"w":90,"ww":40,"ios":"Android 16"},{"brand":"vivo","n":"vivo X200 FE","y":2025,"rm":3199,"source":"https://www.vivo.com/my/products/param/x200-fe","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 9300+","g":186,"inch":6.31,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":512,"sm":512,"cam":50,"fr":50,"ipText":"IP68 & IP69","nit":5000,"mah":6500,"w":90,"ios":"Android 15"},{"brand":"vivo","n":"vivo V60","y":2025,"rm":1899,"source":"https://www.vivo.com/my/products/param/v60","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Snapdragon 7 Gen 4","g":192,"inch":6.77,"hz":120,"pn":"AMOLED","oled":1,"ram":8,"sb":256,"sm":512,"cam":50,"uw":8,"fr":50,"stabText":"OIS","ipText":"IP68 & IP69","nit":5000,"mah":6500,"w":90,"vid":"4K","ios":"Android 15"},{"brand":"vivo","n":"vivo V60 Lite","y":2025,"rm":1399,"source":"https://www.vivo.com/my/products/param/v60-lite-5g","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 7360-Turbo","g":194,"inch":6.77,"hz":120,"pn":"AMOLED","oled":1,"ram":8,"sb":256,"sm":512,"cam":50,"fr":32,"ipText":"IP65","nit":3000,"mah":6500,"w":90,"vid":"4K","ios":"Android 15"},{"brand":"vivo","n":"vivo V50","y":2025,"rm":1899,"source":"https://www.vivo.com/my/products/param/v50","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Snapdragon 7 Gen3","g":189,"inch":6.77,"hz":120,"pn":"AMOLED","oled":1,"ram":8,"sb":256,"sm":512,"cam":50,"uw":50,"fr":50,"stabText":"OIS","ipText":"IP68; IP69","nit":4500,"mah":6000,"w":90,"vid":"4K","ios":"Android 15"},{"brand":"vivo","n":"vivo V50 Lite 5G","y":2025,"rm":1299,"source":"https://www.vivo.com/my/products/param/v50-lite-5g","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 6300","g":197,"inch":6.77,"hz":120,"pn":"AMOLED","oled":1,"ram":8,"sb":256,"sm":512,"cam":50,"fr":32,"ipText":"IP65","nit":1800,"mah":6500,"w":90,"ios":"Android 15"},{"brand":"vivo","n":"vivo Y39 5G","y":2025,"rm":963,"source":"https://www.vivo.com/my/products/param/y39-5g","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Snapdragon 4 Gen 2","g":206,"inch":6.68,"hz":120,"pn":"LCD","oled":0,"ram":8,"sb":256,"sm":256,"cam":50,"fr":8,"ipText":"IP64","mah":6500,"w":44,"ios":"Android 15"},{"brand":"vivo","n":"vivo Y29 4G","y":2025,"rm":789,"source":"https://www.vivo.com/my/products/param/y29-4g","extraSource":"https://shop.vivo.com/my/product/2494","chip":"Snapdragon 685","g":204,"inch":6.68,"hz":120,"pn":"LCD","oled":0,"ram":8,"sb":256,"sm":256,"cam":50,"fr":8,"ipText":"IP64","mah":6500,"w":44,"vid":"1080p 30fps"},{"brand":"vivo","n":"vivo Y04","y":2025,"rm":399,"source":"https://www.vivo.com/my/products/param/y04","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"T7225","g":199,"inch":6.74,"hz":90,"pn":"LCD","oled":0,"ram":4,"sb":128,"sm":128,"cam":13,"fr":5,"ipText":"IP64","mah":5500,"w":15,"ios":"Android 14"},{"brand":"vivo","n":"vivo X Fold6","y":2026,"rm":8299,"source":"https://www.vivo.com/my/products/param/x-fold6","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 9500 Super Edition","g":228,"inch":8.02,"hz":120,"pn":"Main screen: AMOLED","oled":1,"ram":12,"sb":512,"sm":512,"cam":200,"fr":20,"ipText":"IP58, IP59, IPX8, IPX9","mah":6900,"w":80,"ww":40,"vid":"1080P, 8K, 4K","ios":"Android 17"},{"brand":"vivo","n":"vivo X500 Pro Max","y":2026,"rm":6399,"source":"https://www.vivo.com/my/products/param/x500-pro-max","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 9600 Pro","g":225,"inch":6.85,"hz":144,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":1024,"cam":50,"fr":50,"ipText":"IP68, IP69","nit":4400,"mah":7800,"w":90,"ww":40,"vid":"8K","ios":"Android 17"},{"brand":"vivo","n":"vivo X500 Pro","y":2026,"rm":5999,"source":"https://www.vivo.com/my/products/param/x500-pro","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 9600 Pro","g":197,"inch":6.36,"hz":144,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":256,"cam":50,"fr":50,"ipText":"IP68, IP69","nit":4500,"mah":6510,"w":90,"ww":40,"vid":"8K","ios":"Android 17"},{"brand":"vivo","n":"vivo X500","y":2026,"rm":4699,"source":"https://www.vivo.com/my/products/param/x500","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 9600M","g":211,"inch":6.59,"hz":144,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"fr":50,"ipText":"IP68, IP69","nit":4000,"mah":7500,"w":90,"ww":40,"vid":"8K","ios":"Android 17"},{"brand":"vivo","n":"vivo X300 Ultra","y":2026,"rm":6799,"source":"https://www.vivo.com/my/products/param/x300-ultra","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Snapdragon 8 Elite Gen 5","g":232,"inch":6.82,"hz":144,"pn":"AMOLED","oled":1,"ram":16,"sb":512,"sm":1024,"cam":200,"fr":50,"ipText":"IP68, IP69","nit":4500,"mah":6600,"w":100,"ww":40,"ios":"Android 16"},{"brand":"vivo","n":"vivo X300 FE","y":2026,"rm":3299,"source":"https://www.vivo.com/my/products/param/x300-fe","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Snapdragon 8 Gen 5","g":191,"inch":6.31,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"fr":50,"ipText":"IP68 & IP69","nit":5000,"mah":6500,"w":90,"ww":40,"vid":"4K","ios":"Android 16"},{"brand":"vivo","n":"vivo V70","y":2026,"rm":1999,"source":"https://www.vivo.com/my/products/param/v70","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Snapdragon 7 Gen 4","g":187,"inch":6.59,"hz":120,"pn":"AMOLED","oled":1,"ram":8,"sb":256,"sm":512,"cam":50,"uw":8,"fr":50,"stabText":"OIS","ipText":"IP68 & IP69","nit":5000,"mah":6500,"w":90,"vid":"4K","ios":"Android 16"},{"brand":"vivo","n":"vivo V70 FE","y":2026,"rm":1599,"source":"https://www.vivo.com/my/products/param/v70-fe","extraSource":"https://technave.com/gadgets/vivo-Mobile-Phone-Price-Malaysia-90.html","chip":"Dimensity 7360-Turbo","g":200,"inch":6.83,"hz":120,"pn":"AMOLED","oled":1,"ram":8,"sb":256,"sm":512,"cam":200,"fr":32,"stabText":"OIS","ipText":"IP68; IP69","nit":1900,"mah":7000,"w":90,"vid":"4K","ios":"Android 16"},{"brand":"vivo","n":"vivo V80 Lite","y":2026,"rm":1499,"source":"https://www.vivo.com/my/products/param/v80-lite-5g","extraSource":"https://shop.vivo.com/my/product/2730","chip":"Dimensity 7300e","g":224,"inch":6.83,"hz":120,"pn":"AMOLED","oled":1,"ram":6,"sb":128,"sm":256,"cam":50,"fr":32,"ipText":"IP68/IP69","mah":10000,"w":44,"ios":"Android 16"},{"brand":"Xiaomi","n":"Xiaomi 13 Ultra","y":2023,"rm":5199,"source":"https://www.mi.com/my/product/xiaomi-13-ultra/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Snapdragon 8 Gen 2","g":227,"inch":6.73,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":512,"sm":512,"cam":50,"uw":50,"fr":32,"stabText":"OIS","ipText":"IP68","nit":2600,"mah":5000,"w":90,"ww":50,"vid":"4K 60fps, 8K 24fps, 1080P 60fps, 4K 24fps","ios":"MIUI 14 based on Android 13"},{"brand":"Xiaomi","n":"Xiaomi 13 Pro","y":2023,"rm":4599,"source":"https://www.mi.com/my/product/xiaomi-13-pro/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Snapdragon 8 Gen 2","g":229,"inch":6.73,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"uw":50,"fr":32,"stabText":"OIS","ipText":"IP68","mah":4820,"w":120,"ww":50,"vid":"4K 60fps, 8K 24fps, 1080P 60fps, 4K 24fps","ios":"MIUI 14, android 13"},{"brand":"Xiaomi","n":"Xiaomi 13","y":2023,"rm":3499,"source":"https://www.mi.com/my/product/xiaomi-13/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Snapdragon 8 Gen 2","gpuText":"Rear Camera","g":189,"inch":6.36,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":256,"cam":50,"uw":12,"fr":32,"stabText":"OIS","ipText":"IP68","mah":4500,"w":67,"ww":50,"vid":"4K 60fps, 8K 24fps, 1080P 60fps, 4K 24fps","ios":"MIUI 14, android 13"},{"brand":"Xiaomi","n":"Xiaomi 13T Pro","y":2023,"rm":2499,"source":"https://www.mi.com/my/product/xiaomi-13t-pro-leica/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Dimensity 9200+","inch":6.67,"hz":144,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":1024,"cam":50,"uw":12,"fr":20,"stabText":"OIS","ipText":"IP68","mah":5000,"w":120,"vid":"4K 30fps, 8K 24fps, 4K 60fps, 1080P 60fps","ios":"MIUI 14, android 13"},{"brand":"Xiaomi","n":"Xiaomi 13T","y":2023,"rm":1799,"source":"https://www.mi.com/my/product/xiaomi-13t-leica/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Dimensity 8200-Ultra","inch":6.67,"hz":144,"pn":"AMOLED","oled":1,"ram":8,"sb":256,"sm":256,"cam":50,"uw":12,"fr":20,"stabText":"OIS","ipText":"IP68","mah":5000,"w":67,"vid":"4K 30fps, 1080P 30fps","ios":"MIUI 14, android 13"},{"brand":"Xiaomi","n":"Xiaomi 14 Ultra","y":2024,"rm":5199,"source":"https://www.mi.com/my/product/xiaomi-14-ultra/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Snapdragon 8 Gen 3","g":219.8,"inch":6.73,"hz":120,"pn":"AMOLED","oled":1,"ram":16,"sb":512,"sm":512,"cam":50,"uw":50,"fr":32,"stabText":"OIS","mah":5000,"w":90,"ww":80,"vid":"4K 60fps, 4K 30fps, 8K 30fps, 1080P 60fps, 4K 24fps, 1080P 120fps","ios":"Xiaomi HyperOS"},{"brand":"Xiaomi","n":"Xiaomi 14","y":2024,"rm":3499,"source":"https://www.mi.com/my/product/xiaomi-14/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Snapdragon 8 Gen 3","g":193,"inch":6.36,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"uw":50,"fr":32,"stabText":"OIS","ipText":"IP68","mah":4610,"w":90,"ww":50,"vid":"4K 60fps, 4K 30fps, 8K 24fps, 1080P 60fps, 4K 24fps, 1080P 120fps","ios":"Xiaomi HyperOS"},{"brand":"Xiaomi","n":"Xiaomi 14T Pro","y":2024,"rm":2599,"source":"https://www.mi.com/my/product/xiaomi-14t-pro/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Dimensity 9300+","gpuText":"Immortalis-G720 MC12","g":209,"inch":6.67,"hz":144,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"uw":12,"fr":32,"stabText":"OIS","ipText":"IP68","nit":4000,"mah":5000,"w":120,"ww":50,"vid":"8K 30fps, 4K 60fps, 1080P 60fps, 1080P 120fps","ios":"Xiaomi HyperOS"},{"brand":"Xiaomi","n":"Xiaomi 14T","y":2024,"rm":1899,"source":"https://www.mi.com/my/product/xiaomi-14t/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Dimensity 8300-Ultra","gpuText":"Arm Mali-G615 MC6","g":195,"inch":6.67,"hz":144,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"uw":12,"fr":32,"stabText":"OIS","ipText":"IP68","nit":4000,"mah":5000,"w":67,"vid":"4K 60fps, 1080P 60fps, 1080P 120fps","ios":"Xiaomi HyperOS"},{"brand":"Xiaomi","n":"Xiaomi Mix Flip","y":2024,"rm":4999,"source":"https://www.mi.com/my/product/xiaomi-mix-flip/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Snapdragon 8 Gen 3","gpuText":"AI: Qualcomm® AI Engine","g":192,"inch":6.86,"hz":120,"pn":"Foldable AMOLED","oled":1,"ram":12,"sb":512,"sm":512,"cam":50,"uw":0,"fr":32,"stabText":"OIS","nit":3000,"mah":4780,"w":67,"vid":"8K 24fps, 4K 60fps, 1080P 60fps, 1080P 120fps","ios":"Xiaomi HyperOS"},{"brand":"Xiaomi","n":"Xiaomi 15 Ultra","y":2025,"rm":5199,"source":"https://www.mi.com/my/product/xiaomi-15-ultra/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Snapdragon 8 Elite","gpuText":"Adreno™ GPU","g":226,"inch":6.73,"hz":120,"pn":"AMOLED","oled":1,"ram":16,"sb":512,"sm":1024,"cam":50,"uw":50,"fr":32,"stabText":"OIS","ipText":"IP68","mah":5410,"w":90,"ww":80,"vid":"8K 30fps, 4K 120fps, 1080P 60fps, 1080P 120fps","ios":"Xiaomi HyperOS 2"},{"brand":"Xiaomi","n":"Xiaomi 15","y":2025,"rm":3499,"source":"https://www.mi.com/my/product/xiaomi-15/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Snapdragon 8 Elite","gpuText":"Adreno™ GPU","g":191,"inch":6.36,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"uw":50,"fr":32,"stabText":"OIS","ipText":"IP68","nit":3200,"mah":5240,"w":90,"ww":50,"vid":"8K 30fps, 4K 60fps, 1080P 60fps, 1080P 120fps","ios":"Xiaomi HyperOS 2"},{"brand":"Xiaomi","n":"Xiaomi 15T Pro","y":2025,"rm":2699,"source":"https://www.mi.com/my/product/xiaomi-15t-pro/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Dimensity 9400+","gpuText":"Immortalis-G925 MC12","g":210,"inch":6.83,"hz":144,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"uw":12,"fr":32,"stabText":"OIS","ipText":"IP68","nit":3200,"mah":5500,"w":90,"ww":50,"vid":"8K 30fps, 4K 120fps, 1080P 60fps, 1080P 120fps","ios":"Xiaomi HyperOS 2"},{"brand":"Xiaomi","n":"Xiaomi 15T","y":2025,"rm":1899,"source":"https://www.mi.com/my/product/xiaomi-15t/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Dimensity 8400-Ultra","gpuText":"Mali-G720","g":194,"inch":6.83,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"uw":12,"fr":32,"stabText":"OIS","ipText":"IP68","nit":3200,"mah":5500,"w":67,"vid":"4K 60fps, 1080P 60fps, 1080P 120fps","ios":"Xiaomi HyperOS 2"},{"brand":"Xiaomi","n":"Xiaomi 17 Ultra","y":2026,"rm":5499,"source":"https://www.mi.com/my/product/xiaomi-17-ultra/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Snapdragon 8 Elite Gen 5","gpuText":"Adreno™ GPU","g":218.4,"inch":6.9,"hz":120,"pn":"AMOLED","oled":1,"ram":16,"sb":512,"sm":1024,"cam":50,"uw":50,"fr":50,"stabText":"OIS","ipText":"IP68","mah":6000,"w":90,"ww":50,"vid":"8K 30fps, 4K 60fps, 1080P 60fps, 4K 120fps, 8K 60fps, 4K 24fps","ios":"Xiaomi HyperOS 3"},{"brand":"Xiaomi","n":"Xiaomi 17","y":2026,"rm":3499,"source":"https://www.mi.com/my/product/xiaomi-17/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Snapdragon 8 Elite Gen 5","gpuText":"Adreno™ GPU","g":191,"inch":6.3,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"uw":50,"fr":50,"stabText":"OIS","ipText":"IP68","mah":6330,"w":100,"ww":50,"vid":"8K 30fps, 4K 60fps, 1080P 60fps, 4K 24fps","ios":"Xiaomi HyperOS 3"},{"brand":"Xiaomi","n":"Xiaomi 17T Pro","y":2026,"rm":2899,"source":"https://www.mi.com/my/product/xiaomi-17t-pro/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Dimensity 9500","g":219,"inch":6.83,"hz":144,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":1024,"cam":50,"uw":12,"fr":32,"stabText":"OIS","ipText":"IP68","nit":3500,"mah":7000,"w":100,"ww":50,"vid":"8K 30fps, 4K 120fps, 4K 60fps, 1080P 60fps, 1080P 120fps, 4K 24fps","ios":"Xiaomi HyperOS 3"},{"brand":"Xiaomi","n":"Xiaomi 17T","y":2026,"rm":2399,"source":"https://www.mi.com/my/product/xiaomi-17t/specs/","extraSource":"https://technave.com/gadgets/Xiaomi-Mobile-Phone-Price-Malaysia-85.html","chip":"Dimensity 8500-Ultra","gpuText":"Mali-G720 MC8","g":200,"inch":6.59,"hz":120,"pn":"AMOLED","oled":1,"ram":12,"sb":256,"sm":512,"cam":50,"uw":12,"fr":32,"stabText":"OIS","ipText":"IP68","nit":3500,"mah":6500,"w":67,"vid":"4K 60fps, 1080P 60fps, 1080P 120fps, 4K 24fps","ios":"Xiaomi HyperOS 3"}];
+PH.push(...MODEL_MALAYSIA);
+
 const slug = s => s
   .toLowerCase()
+  .replace(/\+/g, '-plus')
   .replace(/[^a-z0-9]+/g, '-')
   .replace(/^-|-$/g, '');
 
 const norm = s => s
   .toLowerCase()
+  .replace(/\+/g, 'plus')
   .replace(/[^a-z0-9]/g, '');
 
 PH.forEach(p => {
+  if (!p.brand) { p.brand = 'Apple'; p.n = p.n.replace(/^iPhone/i, 'Apple iPhone'); }
   p.id = slug(p.n);
-  p.cpu = CPU[p.chip];
 });
 
-PH.sort((a, b) => b.y - a.y || b.rm - a.rm);
+PH.sort((a, b) => a.brand.localeCompare(b.brand, 'en', {sensitivity:'base'}) || b.y - a.y || (b.rm ?? -1) - (a.rm ?? -1) || a.n.localeCompare(b.n, 'en', {numeric:true, sensitivity:'base'}));
 
-const BY = Object.fromEntries(PH.map(p => [p.id, p]));
+const BY = Object.assign(Object.create(null), Object.fromEntries(PH.map(p => [p.id, p])));
+PH.filter(p=>p.brand==='Apple').forEach(p=>{BY[p.id.replace(/^apple-/, '')]=p; BY[p.id.replace(/^apple-iphone-/, 'phone-')]=p});
 
 /* =====================================================================
    2) METRIK, CARA PENGGUNAAN DAN LOGIK SKOR
@@ -2205,8 +4505,7 @@ const clamp = (v, a = 0, b = 100) =>
 const pct = (v, a, b) =>
   clamp((v - a) / (b - a) * 100);
 
-const rm = n =>
-  'RM ' + n.toLocaleString('en-MY');
+const rm = n => n == null ? 'Harga tidak disahkan' : 'RM ' + n.toLocaleString('en-MY');
 
 const gb = n =>
   n >= 1024 ? (n / 1024) + ' TB' : n + ' GB';
@@ -2262,7 +4561,7 @@ const M = {
   },
 
   hz: {
-    l: 'Kadar Segar Skrin',
+    l: 'Kadar segar skrin',
     v: p => p.hz + ' Hz',
     s: p => pct(p.hz, 60, 120)
   },
@@ -2300,7 +4599,7 @@ const M = {
   },
 
   ios: {
-    l: 'Sokongan iOS',
+    l: 'sokongan OS',
     v: p => {
       if (p.ended) {
         return `${p.ios} (dah tamat sokongan)`;
@@ -2369,7 +4668,7 @@ const M = {
   },
 
   harga: {
-    l: 'Harga Lancar',
+    l: 'Harga (rujukan pelancaran)',
     v: p => rm(p.rm),
     s: p => 100 - pct(p.rm, 1500, 6500)
   },
@@ -2409,6 +4708,118 @@ const M = {
   }
 };
 
+/* Samsung mempunyai spesifikasi dan sokongan OS berbeza daripada iPhone.
+   Jangan mengira angka yang belum disahkan atau membandingkan ukuran yang
+   tidak sepadan. Rujukan individu disenaraikan pada jadual perbandingan. */
+const missing = 'Tidak disahkan';
+for (const [key, field] of Object.entries({ram:'ram',stanA:'sb',stanM:'sm',panel:'oled',size:'inch',hz:'hz',nit:'nit',bateriJam:'hr',bateriMah:'mah',casWayar:'w',casWayarles:'ww',camMain:'cam',uw:'uw',tele:'tz',front:'fr',vid:'vr',stab:'st',cool:'cool',usb:'usb',harga:'rm',ip:'ip',glass:'gl',berat:'g'})) {
+  const metric=M[key], originalScore=metric.s, originalValue=metric.v;
+  if(originalScore) metric.s=p=>p[field]==null?null:originalScore(p);
+  if(!['casWayar','vid','stab','usb','ip','glass','cool'].includes(key)) metric.v=p=>p[field]==null?missing:originalValue(p);
+}
+M.cip.v=p=>p.chip||missing;
+M.cip.s=p=>p.cpu==null?null:p.cpu/1.1;
+M.gpu.v=p=>p.brand==='Samsung'?(p.gpuText||missing):`GPU ${p.gc}-teras`;
+M.gpu.s=p=>p.gp==null?null:p.gp/1.2;
+M.ios.l='Sistem operasi / sokongan';
+M.ios.v=p=>p.ios ? `${p.ios} (semak sokongan semasa dengan pengeluar)` : missing;
+M.ios.s=()=>null;
+M.bateriJam.l='Hayat bateri (video, dakwaan pengeluar)';
+M.vid.v=p=>p.vid||missing;
+M.stab.v=p=>p.brand!=='Apple'?(p.stabText||missing):['Tiada','OIS','Sensor-shift OIS'][p.st];
+M.ip.l='Tahan air & habuk (skor air sahaja)';
+M.ip.v=p=>p.brand!=='Apple'?(p.ipText||missing):['','IP67','IP68 (2m)','IP68 (4m)','IP68 (6m)'][p.ip];
+M.glass.v=p=>p.brand!=='Apple'?(p.glassText||missing):['','Kaca biasa','Ceramic Shield','Ceramic Shield 2'][p.gl];
+M.usb.v=p=>p.brand!=='Apple'?(p.usbText||missing):['','Lightning (USB 2, 480 Mbps)','USB-C (USB 2, 480 Mbps)','USB-C (USB 3, 10 Gbps)'][p.usb];
+M.cool.v=p=>p.cool==null?missing:(p.cool?'Vapor Chamber':'Biasa');
+M.frame.v=p=>p.fm||missing;
+M.casWayar.s=p=>p.w==null?null:pct(p.w,15,60);
+
+/* Indeks relatif 0–100: anggaran rentas jenama, bukan markah Geekbench/3DMark.
+   Penentukuran berpandukan ujian PhoneArena: A53/A54, A36/A56, S23/S24,
+   S25/iPhone16, S26/17 dan Flip7. Model lain dianggar berdasarkan keluarga cip;
+   keputusan berbeza mengikut model, suhu, sistem dan varian serantau. */
+const CHIP_INDEX = [
+ [/Snapdragon\s*8\s*Gen\s*5/i, 86,78], [/Snapdragon\s*7\s*Gen\s*4/i, 50,30], [/Snapdragon\s*7\s*Gen\s*3/i, 36,20],
+ [/Snapdragon\s*6s\s*4G\s*Gen\s*1/i, 15,6], [/Snapdragon\s*6\s*Gen\s*1/i, 25,10],
+ [/Snapdragon\s*4\s*Gen\s*5/i, 34,15], [/Snapdragon\s*4\s*Gen\s*2/i, 21,8], [/Snapdragon\s*695/i, 21,8], [/Snapdragon\s*685/i, 17,6], [/Snapdragon\s*680/i, 16,6],
+ [/Dimensity 9600/i, 97,90], [/Dimensity 9500/i, 89,81], [/Dimensity 9400\+/i, 80,73], [/Dimensity 9400/i, 77,68],
+ [/Dimensity 9300\+/i, 68,61], [/Dimensity 9300/i, 64,56], [/Dimensity 9200\+/i, 57,48], [/Dimensity 9200/i, 53,44], [/Dimensity 9000\+/i, 46,35],
+ [/Dimensity 8550/i, 65,43], [/Dimensity 8500/i, 62,40], [/Dimensity 8450/i, 58,36], [/Dimensity 8400/i, 55,34], [/Dimensity 8350/i, 49,30], [/Dimensity 8300/i, 48,29], [/Dimensity 8200/i, 38,21],
+ [/Dimensity 7360/i, 36,14], [/Dimensity 7300/i, 32,13], [/Dimensity 7200/i, 31,13], [/Dimensity 7050/i, 25,10],
+ [/Dimensity 6360/i, 25,10], [/Dimensity 6300/i, 20,8], [/Dimensity 6020/i, 18,7], [/Dimensity 700/i, 17,7],
+ [/Helio G99/i, 20,8], [/Helio G85/i, 15,5], [/Helio P35/i, 9,3], [/(?:Unisoc\s*)?T612/i, 12,4], [/(?:Unisoc\s*)?T7225/i, 14,5],
+ [/A11 Bionic/i, 27,11], [/A12 Bionic/i, 34,15], [/A13 Bionic/i, 41,20],
+ [/A14 Bionic/i, 48,25], [/A15 Bionic/i, 54,31], [/A16 Bionic/i, 61,41],
+ [/A17 Pro/i, 69,44], [/A18 Pro/i, 76,55], [/^A18$/i, 75,49],
+ [/A19 Pro/i, 87,70], [/^A19$/i, 83,62], [/A20 Pro/i, 100,100],
+ [/Exynos 9611/i, 14,4], [/Helio P65/i, 13,4], [/Helio G80|MT6769V/i, 14,5],
+ [/Snapdragon 730/i, 17,6], [/Snapdragon 720G/i, 18,6], [/Exynos 990/i, 29,15],
+ [/Snapdragon 865/i, 34,16], [/Exynos 2100/i, 36,21], [/Snapdragon 888/i, 39,23],
+ [/Exynos 1330/i, 17,8], [/Exynos 1280/i, 16,8], [/Snapdragon 778G/i, 24,11], [/Dimensity 1080/i, 24,10],
+ [/Exynos 1380/i, 25,10], [/Snapdragon 6 Gen 3/i, 26,11], [/Exynos 1480/i, 29,11],
+ [/Exynos 1580/i, 34,16], [/Snapdragon 8\+ Gen 1/i, 44,32], [/Snapdragon 8 Gen 1/i, 37,26],
+ [/Snapdragon 8 Gen 2/i, 49,47], [/Snapdragon 8 Gen 3/i, 57,60],
+ [/Exynos 2400/i, 56,52], [/Exynos 2500/i, 60,51], [/Exynos 2600/i, 88,81],
+ [/Snapdragon 8 Elite Gen 5/i, 96,85], [/Snapdragon 8 Elite/i, 81,73]
+];
+for (const p of PH) {
+ const v=CHIP_INDEX.find(([rx])=>rx.test(p.chip||''));
+ if(v){p.cpu=v[1];p.gp=v[2];}
+}
+
+/* =====================================================================
+   Skor kamera DXOMARK (Camera overall [foto, video]). Sumber: dxomark.com
+   Phone yang belum diuji tiada dalam senarai: dikira dari MP, lensa, OIS
+   dan tahun. Model Pro Max guna skor model Pro (sistem kamera sama).
+   ===================================================================== */
+const DXO = {
+ 'Apple iPhone 8':[92,93,90],'Apple iPhone 8 Plus':[94,96,89],'Apple iPhone X':[97,101,89],'Apple iPhone XR':[101,103],
+ 'Apple iPhone XS':[105],'Apple iPhone XS Max':[105],'Apple iPhone SE (2020)':[101,103,98],'Apple iPhone 11 Pro Max':[124,132],
+ 'Apple iPhone 12 Pro Max':[131],'Apple iPhone 12 Pro':[128],'Apple iPhone 13 Pro Max':[137],'Apple iPhone 13 Pro':[137],
+ 'Apple iPhone 13':[130],'Apple iPhone 13 mini':[130],'Apple iPhone 14 Pro Max':[146],'Apple iPhone 14 Pro':[146],
+ 'Apple iPhone 14 Plus':[133],'Apple iPhone 14':[133],'Apple iPhone 15 Pro Max':[154,154,156],'Apple iPhone 15 Pro':[154],
+ 'Apple iPhone 15 Plus':[145],'Apple iPhone 15':[145],'Apple iPhone 16 Pro Max':[157],'Apple iPhone 16 Pro':[157],
+ 'Apple iPhone 16 Plus':[147],'Apple iPhone 16':[147],'Apple iPhone 17':[157],'Apple iPhone 17 Pro Max':[168,166,171],
+ 'Apple iPhone 17 Pro':[168,166,171],'Apple iPhone 18 Pro Max':[172],'Apple iPhone 18 Pro':[172],
+ 'Samsung Galaxy S26 Ultra':[157],'Samsung Galaxy S25 Ultra':[146],'Samsung Galaxy S24 Ultra':[144],'Samsung Galaxy S23 Ultra':[140],
+ 'Samsung Galaxy S22 Ultra 5G':[131],'Samsung Galaxy S24+':[133],'Samsung Galaxy S24':[133],'Samsung Galaxy S23+':[133],
+ 'Samsung Galaxy S23':[133],'Samsung Galaxy S22+ 5G':[126],'Samsung Galaxy S22 5G':[126],'Samsung Galaxy Z Fold6':[133],
+ 'Samsung Galaxy Z Flip6':[132],'Samsung Galaxy Z Fold5':[128],'Samsung Galaxy Z Flip5':[127],
+ 'OPPO Find X9 Ultra':[170],'OPPO Find X9 Pro':[166,169,159],'OPPO Find X8 Pro':[157],
+ 'vivo X300 Pro':[171],'vivo X300 Ultra':[170],'vivo X100 Pro':[150],'vivo X90 Pro':[136],
+ 'Xiaomi 17 Ultra':[166,170,157],'Xiaomi 15 Ultra':[153],'Xiaomi 14 Ultra':[149],'Xiaomi 13 Ultra':[140],'Xiaomi 15':[147],
+ 'Xiaomi 14':[138],'Xiaomi 13 Pro':[136],'Xiaomi 13':[130],'Xiaomi 14T Pro':[135],'Xiaomi 14T':[134],'Xiaomi 13T Pro':[131]
+};
+const DXO_N = Object.fromEntries(Object.entries(DXO).map(([k, v]) => [norm(k), v]));
+PH.forEach(p => {
+  const d = DXO_N[norm(p.n)];
+  if (d) { p.dxo = d[0]; p.dxoP = d[1] || d[0]; p.dxoV = d[2] || d[0]; }
+});
+
+M.cip.l='Cip · indeks prestasi anggaran';
+M.cip.v=p=>p.chip ? `${p.chip} · ${p.cpu ?? '—'}/100 (anggaran)` : 'Tidak disahkan';
+M.cip.s=p=>Number.isFinite(p.cpu)?p.cpu:null;
+M.gpu.l='GPU · indeks prestasi anggaran';
+M.gpu.v=p=>`${p.brand==='Apple'?`GPU ${p.gc}-teras`:(p.gpuText||'GPU tidak disahkan')} · ${p.gp ?? '—'}/100 (anggaran)`;
+M.gpu.s=p=>Number.isFinite(p.gp)?p.gp:null;
+// A 5-core A15 is estimated slightly ahead of the 4-core version.
+PH.filter(p=>p.chip==='A15 Bionic' && p.gc===5).forEach(p=>p.gp=34);
+// These metrics are capability indicators, not measured image quality.
+/* Kamera: MP lebih besar = skor lebih tinggi, ditambah skor DXOMARK jika ada. */
+M.camMain.l='Kamera utama (MP)';
+M.camMain.s=p=>p.cam==null?null:10+0.9*pct(Math.log2(Math.max(8,p.cam)/12),0,Math.log2(200/12));
+M.uw.s=p=>p.uw==null?null:(p.uw?50+pct(p.uw,12,50)*.5:0);
+M.front.s=p=>p.fr==null?null:20+pct(p.fr,7,50)*.8;
+M.camGen={l:'Generasi kamera (tahun pelancaran)',v:p=>String(p.y),s:p=>p.y==null?null:pct(p.y,2017,2026)};
+M.dxoFoto={l:'Skor kamera DXOMARK (foto)',v:p=>p.dxo?`${p.dxoP} mata`:'Belum diuji DXOMARK',s:p=>p.dxo?pct(p.dxoP,80,175):null};
+M.dxoVideo={l:'Skor kamera DXOMARK (video)',v:p=>p.dxo?`${p.dxoV} mata`:'Belum diuji DXOMARK',s:p=>p.dxo?pct(p.dxoV,80,175):null};
+M.stab.s=p=>p.brand==='Apple' ? (p.st==null?null:p.st?70:0) : /ois/i.test(p.stabText||'')?70:null;
+M.vid.s=p=>{const v=p.vid||'';if(/8k/i.test(v))return 100;const k=v.match(/4k[^,;]*/gi);if(k){if(k.some(s=>/120/.test(s)))return 92;if(k.some(s=>/60/.test(s)))return 85;return 70;}if(/1080/i.test(v))return 40;return null;};
+M.ip.s=p=>{if(p.brand==='Apple')return p.ip==null?null:p.ip>=2?85:70;const m=(p.ipText||'').match(/IP[0-9X]([0-9X])/i);if(!m||m[1]==='X')return null;return +m[1]>=8?85:+m[1]>=7?70:+m[1]>=4?30:0;};
+// Klaim video Apple tidak setara dengan ujian bateri Samsung.
+M.bateriJam.s=()=>null;
+
 /*
   rows: [metrik, berat]
   Berat 0 = dipaparkan sahaja, tidak masuk kiraan skor.
@@ -2442,12 +4853,15 @@ const USAGES = [
     d: 'Gambar cantik & zoom jauh',
     pw: 1,
     rows: [
+      ['dxoFoto', 6],
       ['camMain', 3],
       ['uw', 1.5],
       ['tele', 2],
       ['front', 1],
       ['stab', 1.5],
-      ['vid', .5]
+      ['camGen', 1.5],
+      ['vid', .5],
+      ['cip', .5]
     ]
   },
 
@@ -2458,12 +4872,15 @@ const USAGES = [
     d: 'Rakaman video & stabilisasi',
     pw: 1,
     rows: [
+      ['dxoVideo', 6],
       ['vid', 3],
       ['stab', 2.5],
       ['camMain', 2],
       ['tele', 1],
       ['uw', 1],
-      ['front', 1]
+      ['front', 1],
+      ['camGen', 1.5],
+      ['cip', .5]
     ]
   },
 
@@ -2500,7 +4917,7 @@ const USAGES = [
     id: 'edit',
     l: 'Edit Video/Foto',
     i: '✂️',
-    d: 'Edit terus atas telefon',
+    d: 'Edit terus atas phone',
     pw: 1,
     rows: [
       ['cip', 2.5],
@@ -2516,7 +4933,7 @@ const USAGES = [
 
   {
     id: 'kedua',
-    l: 'Telefon Kedua',
+    l: 'Phone kedua',
     i: '📞',
     d: 'Jimat duit, janji berfungsi',
     pw: 1.8,
@@ -2526,7 +4943,7 @@ const USAGES = [
       ['glass', 1],
       ['frame', 0],
       ['bateriJam', 2.5],
-      ['bateriMah', 0],
+      ['bateriMah', 1.5],
       ['berat', 1],
       ['size', 0]
     ]
@@ -2534,7 +4951,7 @@ const USAGES = [
 
   {
     id: 'anak',
-    l: 'Telefon Anak',
+    l: 'Phone anak',
     i: '🧒',
     d: 'Tahan lasak & berpatutan',
     pw: 2.5,
@@ -2544,7 +4961,7 @@ const USAGES = [
       ['glass', 2],
       ['frame', 0],
       ['bateriJam', 2],
-      ['bateriMah', 0],
+      ['bateriMah', 1.5],
       ['berat', 1.5],
       ['size', 0]
     ]
@@ -2552,49 +4969,26 @@ const USAGES = [
 ];
 
 const TIERS = [
-  {
-    max: 20,
-    t: 'Jangan sesekali tukar',
-    tag: 'Simpan duit awak. Memang tak berbaloi langsung. 💸',
-    c: '#f87171'
-  },
-  {
-    max: 40,
-    t: 'Takyah tukar',
-    tag: 'Telefon sekarang masih power. Takyah bazir duit!',
-    c: '#fb923c'
-  },
-  {
-    max: 60,
-    t: 'Boleh tukar',
-    tag: 'Kalau ada bajet lebih, boleh la. Tapi bukan wajib.',
-    c: '#facc15'
-  },
-  {
-    max: 80,
-    t: 'Digalakkan tukar',
-    tag: 'Banyak peningkatan yang berbaloi. Patut dipertimbangkan!',
-    c: '#a3e635'
-  },
-  {
-    max: 100,
-    t: 'Tukar sekarang',
-    tag: 'Beza jauh gila! Memang patut upgrade. 🔥',
-    c: '#4ade80'
-  }
+  {max:20,t:'Jangan sesekali tukar',tag:'Phone baru lebih lemah dalam ciri yang dibandingkan.',c:'#f87171'},
+  {max:40,t:'Takyah tukar',tag:'Beza kecil. Semak ciri yang paling penting untuk awak.',c:'#fb923c'},
+  {max:60,t:'Boleh tukar',tag:'Hampir seimbang. Timbang keperluan dan harga semasa.',c:'#facc15'},
+  {max:80,t:'Digalakkan tukar',tag:'Phone baru ada kelebihan yang jelas.',c:'#a3e635'},
+  {max:100,t:'Tukar sekarang',tag:'Phone baru jauh lebih baik dalam ciri yang dibandingkan.',c:'#4ade80'}
 ];
 
 const tierOf = s =>
   TIERS.findIndex(t => s <= t.max);
 
-/* Beza berwajaran antara dua telefon */
+/* Beza berwajaran antara dua phone */
 function core(o, n, u) {
   let sw = 0;
   let sd = 0;
+  let total = 0;
   const rows = [];
 
   for (const [id, w] of u.rows) {
     const m = M[id];
+    if (m.s && w > 0) total += w;
 
     const so = m.s ? m.s(o) : null;
     const sn = m.s ? m.s(n) : null;
@@ -2614,180 +5008,29 @@ function core(o, n, u) {
 
   return {
     rows,
-    D: sw ? sd / sw : 0
+    D: sw ? sd / sw : 0,
+    coverage: total ? sw / total : 0
   };
 }
 
 /* Skor akhir */
 function evaluate(o, n, u) {
-  const { rows, D } = core(o, n, u);
-
-  const B = clamp(D * 1.5);
-
-  /* Bonus hanya jika telefon baru memang lebih baik */
-  const f = clamp(D / 12, 0, 1);
-
-  const age = NOW - o.y;
-
-  const bonus =
-    (clamp((age - 3) * 3, 0, 15) + (o.ended ? 12 : 0)) * f;
-
-  const pen = D > 0
-    ? clamp(n.rm / 1000 * (1 - B / 100) * 2.5 * u.pw, 0, 15 * u.pw)
-    : 0;
-
-  const raw = D <= 0 ? 0 : B + bonus - pen;
-
-  return {
-    rows,
-    D,
-    B,
-    bonus,
-    pen,
-    score: Math.round(clamp(raw))
-  };
-}
-
-function findAlt(o, n, u, D) {
-  let best = null;
-
-  for (const p of PH) {
-    if (
-      p.id === o.id ||
-      p.id === n.id ||
-      p.rm > n.rm
-    ) {
-      continue;
-    }
-
-    const r = core(o, p, u).D;
-
-    if (r >= D + 8 && (!best || r > best.D)) {
-      best = { p, D: r };
-    }
-  }
-
-  return best;
+  const { rows, D, coverage } = core(o, n, u);
+  return { rows, D, coverage, score: coverage > 0 ? Math.round(clamp(50 + D * 0.6)) : null };
 }
 
 function reasons(o, n, u, ev) {
   const out = [];
-  const add = (k, x) => out.push({ k, x });
-
-  const { D, rows, pen, B } = ev;
-  const use = u.l;
-
-  if (n.y < o.y) {
-    add(
-      'bad',
-      `${n.n} keluar tahun ${n.y}, lebih awal daripada ${o.n} (${o.y}). Memang takde sebab nak tukar.`
-    );
-  }
-
-  if (D <= 0) {
-    add(
-      'bad',
-      `Untuk ${use}, ${n.n} langsung tak lebih baik daripada ${o.n}. Rugi je kalau tukar.`
-    );
-  } else if (D < 8) {
-    add(
-      'bad',
-      `Perbezaan untuk ${use} sangat kecil. Awak hampir tak perasan beza dalam penggunaan sebenar.`
-    );
-  } else if (D < 20) {
-    add(
-      'warn',
-      `Ada peningkatan untuk ${use}, tapi sederhana je.`
-    );
-  } else if (D < 35) {
-    add(
-      'good',
-      `Peningkatan untuk ${use} agak ketara. Awak akan rasa bezanya.`
-    );
-  } else {
-    add(
-      'good',
-      `Peningkatan untuk ${use} memang besar. Terasa sangat bezanya!`
-    );
-  }
-
-  rows
-    .filter(r => r.m.s && r.w > 0 && r.d >= 15)
-    .sort((a, b) => b.w * b.d - a.w * a.d)
-    .slice(0, 2)
-    .forEach(r => {
-      add(
-        'good',
-        `${r.m.l} naik taraf: ${r.m.v(o)} → ${r.m.v(n)}.`
-      );
-    });
-
-  rows
-    .filter(r => r.m.s && r.w > 0 && r.d <= -10)
-    .sort((a, b) => a.w * a.d - b.w * b.d)
-    .slice(0, 2)
-    .forEach(r => {
-      add(
-        'warn',
-        `${r.m.l} sebenarnya lebih rendah: ${r.m.v(o)} → ${r.m.v(n)}.`
-      );
-    });
-
-  if (D > 0) {
-    if (pen >= 6) {
-      add(
-        'bad',
-        `Harga ${rm(n.rm)} terlalu mahal untuk perubahan yang awak dapat. Tak berbaloi.`
-      );
-    } else if (n.rm >= 3500 && B < 35) {
-      add(
-        'warn',
-        `${rm(n.rm)} bukan sikit. Duit tu boleh guna untuk benda lain.`
-      );
-    } else if (B >= 55 && n.rm <= 3500) {
-      add(
-        'good',
-        `Harga ${rm(n.rm)} berbaloi dengan peningkatan yang awak dapat.`
-      );
-    }
-  }
-
-  if (u.pw > 1 && n.rm > 3000) {
-    add(
-      'bad',
-      `${rm(n.rm)} terlalu mahal untuk ${use.toLowerCase()}. Ada pilihan lebih murah.`
-    );
-  }
-
-  const age = NOW - o.y;
-
-  if (o.ended) {
-    add(
-      D > 0 ? 'good' : 'warn',
-      `${o.n} dah tak dapat kemas kini iOS. Ada risiko keselamatan dan app baru mungkin tak support.`
-    );
-  } else if (age >= 5) {
-    add(
-      D > 0 ? 'good' : 'warn',
-      `${o.n} dah ${age} tahun. Bateri biasanya dah mengendur.`
-    );
-  } else if (age <= 2 && D < 20) {
-    add(
-      'bad',
-      `${o.n} masih baru (${o.y}). Takde sebab nak tergesa-gesa tukar.`
-    );
-  }
-
-  const alt = findAlt(o, n, u, D);
-
-  if (alt) {
-    add(
-      'warn',
-      `Dengan harga lancar sama atau lebih murah, ${alt.p.n} (${rm(alt.p.rm)}) lebih bagus untuk ${use}.`
-    );
-  }
-
-  return out.slice(0, 7);
+  const comparable = ev.rows.filter(r => r.w > 0 && Number.isFinite(r.d));
+  const up = comparable.filter(r=>r.d>2).sort((a,b)=>b.w*b.d-a.w*a.d).slice(0,2);
+  const down = comparable.filter(r=>r.d< -2).sort((a,b)=>a.w*a.d-b.w*b.d).slice(0,2);
+  for(const r of up) out.push({k:'good',x:`${r.m.l}: ${r.m.v(o)} → ${r.m.v(n)}.`});
+  for(const r of down) out.push({k:'warn',x:`${r.m.l}: ${r.m.v(o)} → ${r.m.v(n)}.`});
+  if(!up.length&&!down.length) out.push({k:'warn',x:'Metrik yang boleh dibandingkan menunjukkan perbezaan kecil.'});
+  if (['foto','video'].includes(u.id) && !(o.dxo && n.dxo)) out.push({k:'warn',x:'Salah satu phone belum diuji DXOMARK, jadi kamera dikira dari MP, lensa, OIS dan tahun pelancaran.'});
+  out.push({k:'warn',x:`Skor ini berdasarkan ${comparable.length} ciri yang boleh dibandingkan (${Math.round(ev.coverage*100)}% berat). ${ev.coverage < .5 ? 'Keyakinan rendah: rujuk jadual dan ulasan sebelum membuat keputusan.' : ''}`});
+  out.push({k:'warn',x:'Harga tidak masuk dalam skor. Semak harga semasa dan ulasan sebenar sebelum membeli.'});
+  return out;
 }
 
 /* =====================================================================
@@ -2866,7 +5109,9 @@ function makeCombo(inputId, listId) {
       return;
     }
 
+    let lastBrand = '';
     shown.forEach((p, i) => {
+      if (p.brand !== lastBrand) { const heading = document.createElement('li'); heading.setAttribute('role','presentation'); heading.className = 'empty'; heading.textContent = p.brand; list.appendChild(heading); lastBrand=p.brand; }
       const li = document.createElement('li');
 
       li.id = `${listId}-${i}`;
@@ -2931,7 +5176,7 @@ function makeCombo(inputId, listId) {
 
     if (!q) return null;
 
-    return PH.find(p => norm(p.n) === q) || null;
+    return PH.find(p => norm(p.n) === q || (p.brand === 'Apple' && norm(p.n.replace(/^Apple\s+/i,'')) === q)) || null;
   };
 
   input.addEventListener('input', () => {
@@ -3035,8 +5280,7 @@ function countTo(el, to) {
   raf = requestAnimationFrame(step);
 }
 
-const meta = p =>
-  `${p.y} · ${p.chip} · ${rm(p.rm)}`;
+const meta = p => `${p.y} · ${p.chip || 'Cip tidak disahkan'} · ${rm(p.rm)} (harga rujukan)`;
 
 const ICON = {
   good: '✅',
@@ -3075,6 +5319,8 @@ function renderSpecs(o, n, u, ev) {
   }).join('');
 
   $('#specH').textContent = `Spesifikasi untuk ${u.l}`;
+  const sourceBox=$('#modelSources');
+  sourceBox.innerHTML=[o,n].flatMap(p=>[p.source,p.extraSource].filter(Boolean).map((url,i)=>`<a href="${url.replace(/&/g,'&amp;')}" target="_blank" rel="noopener noreferrer">${i?'Spesifikasi tambahan':'Sumber'} ${p.n}</a>`)).join(' · ');
 
   $('#specSum').innerHTML = `
     <span class="${wo > wn ? 'g' : ''}">${o.n} menang: ${wo}</span>
@@ -3101,8 +5347,8 @@ function renderAll(scroll) {
   const { o, n } = state;
   const u = curUsage();
   const ev = evaluate(o, n, u);
-  const ti = tierOf(ev.score);
-  const T = TIERS[ti];
+  const ti = ev.score == null ? 2 : tierOf(ev.score);
+  const T = ev.score == null ? {t:'', tag:'Tiada metrik setara untuk kategori ini.', c:'#aab0d6'} : TIERS[ti];
 
   last = { o, n, u, ev, T };
 
@@ -3122,20 +5368,24 @@ function renderAll(scroll) {
     void pin.offsetWidth;
   }
 
-  pin.style.left = ev.score + '%';
+  pin.hidden = ev.score == null;
+  $('#meter').hidden = ev.score == null;
+  $('#shareBtn').disabled = ev.score == null;
+  pin.style.left = (ev.score == null ? 0 : ev.score) + '%';
 
-  $('#meter').setAttribute('aria-valuenow', ev.score);
+  $('#meter').setAttribute('aria-valuenow', ev.score == null ? 0 : ev.score);
   $('#meter').setAttribute(
     'aria-valuetext',
-    `${ev.score} daripada 100: ${T.t}`
+    ev.score == null ? 'Tiada skor' : `${ev.score} daripada 100: ${T.t}`
   );
 
-  countTo($('#scoreNum'), ev.score);
+  if(ev.score == null){cancelAnimationFrame(raf);$('#scoreNum').textContent='—';$('#scoreNum').dataset.v=0;}
+  else countTo($('#scoreNum'), ev.score);
 
   $('#verdict').textContent = T.t;
   $('#tagline').textContent = T.tag;
 
-  $('#reasons').innerHTML = reasons(o, n, u, ev)
+  $('#reasons').innerHTML = (ev.score == null ? [{k:'warn',x:'Tiada metrik setara untuk kategori ini. Sila lihat jadual spesifikasi.'}] : reasons(o, n, u, ev))
     .map(r => `
       <li class="${r.k}">
         <span aria-hidden="true">${ICON[r.k]}</span>
@@ -3181,10 +5431,10 @@ function run(scroll) {
 
   if (!o || !n) {
     err.textContent = !o && !n
-      ? 'Sila pilih kedua-dua telefon daripada senarai.'
+      ? 'Sila pilih kedua-dua phone daripada senarai.'
       : !o
-        ? 'Sila pilih telefon awak sekarang daripada senarai.'
-        : 'Sila pilih telefon yang awak nak beli daripada senarai.';
+        ? 'Sila pilih phone awak sekarang daripada senarai.'
+        : 'Sila pilih phone yang awak nak beli daripada senarai.';
 
     const invalid = !o ? c1 : c2;
 
@@ -3196,7 +5446,7 @@ function run(scroll) {
 
   if (o.id === n.id) {
     err.textContent =
-      'Dua-dua telefon sama la 😅 Pilih model lain untuk dibandingkan.';
+      'Dua-dua phone sama la 😅 Pilih model lain untuk dibandingkan.';
 
     c2.input.focus();
     return;
@@ -3233,8 +5483,8 @@ $('#moreBtn').addEventListener('click', e => {
   e.currentTarget.setAttribute('aria-expanded', open);
 
   e.currentTarget.textContent = open
-    ? 'Tutup Spesifikasi ▲'
-    : 'Baca Lanjut ▼';
+    ? 'Tutup spesifikasi ▲'
+    : 'Lihat spesifikasi ▼';
 
   if (open) {
     spec.scrollIntoView({
@@ -3331,7 +5581,7 @@ async function buildCard() {
     x.fillText(t, W / 2, y);
   };
 
-  lab('TELEFON SEKARANG', 430);
+  lab('PHONE SEKARANG', 430);
 
   fit(x, o.n, 940, 92, 800);
   x.fillStyle = '#fff';
@@ -3463,7 +5713,7 @@ $('#shareBtn').addEventListener('click', async () => {
 
 /*
   Buka terus dari pautan:
-  ?lama=iphone-13&baru=iphone-18-pro&guna=gaming
+  ?lama=phone-13&baru=phone-18-pro&guna=gaming
 */
 (function() {
   const q = new URLSearchParams(location.search);
